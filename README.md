@@ -21,4 +21,16 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* Entities:
+
+* Users
+
+* Tests
+
+* Questions
+
+* Answers
+
+* Categories 
+
+
