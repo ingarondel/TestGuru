@@ -1,0 +1,87 @@
+Started GET "/" for 127.0.0.1 at 2024-04-08 04:05:09 -0700
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/railties-7.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.2ms | Allocations: 577)
+Completed 200 OK in 67ms (Views: 27.5ms | ActiveRecord: 0.0ms | Allocations: 10117)
+
+
+Started GET "/about.html" for 127.0.0.1 at 2024-04-08 04:26:12 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/about.html"):
+  
+Started GET "/about.html" for 127.0.0.1 at 2024-04-08 04:27:11 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/about.html"):
+  
+Started GET "/about" for 127.0.0.1 at 2024-04-08 04:27:16 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/about"):
+  
+Started GET "/about" for 127.0.0.1 at 2024-04-08 04:28:53 -0700
+  
+ActionController::RoutingError (uninitialized constant PagesController):
+  
+Started GET "/about" for 127.0.0.1 at 2024-04-08 04:29:23 -0700
+  
+ArgumentError ('' is not a supported controller name. This can lead to potential routing problems. See https://guides.rubyonrails.org/routing.html#specifying-a-controller-to-use):
+  
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/about" for 127.0.0.1 at 2024-04-08 04:33:33 -0700
+  
+ArgumentError ('' is not a supported controller name. This can lead to potential routing problems. See https://guides.rubyonrails.org/routing.html#specifying-a-controller-to-use):
+  
+config/routes.rb:3:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/about" for 127.0.0.1 at 2024-04-08 04:33:53 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/about"):
+  
+Started GET "/about.html" for 127.0.0.1 at 2024-04-08 04:33:59 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/about.html"):
+  
+Started GET "/about.html.erb" for 127.0.0.1 at 2024-04-08 04:39:20 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/about.html.erb"):
+  
+Started GET "/about/about.html" for 127.0.0.1 at 2024-04-08 05:04:34 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/about/about.html"):
+  
+Started GET "/about/about.html" for 127.0.0.1 at 2024-04-08 05:04:53 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/about/about.html"):
+  
+Started GET "/about/about.html" for 127.0.0.1 at 2024-04-08 05:04:56 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/about/about.html"):
+  
+Started GET "/about/about.html" for 127.0.0.1 at 2024-04-08 05:05:04 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/about/about.html"):
+  
+Started GET "/about/about.html" for 127.0.0.1 at 2024-04-08 05:05:11 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/about/about.html"):
+  
+Started GET "/about/about.html" for 127.0.0.1 at 2024-04-08 05:06:23 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/about/about.html"):
+  
+Started GET "/about/about.html" for 127.0.0.1 at 2024-04-08 05:06:27 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/about/about.html"):
+  
+Started GET "/about/about.html" for 127.0.0.1 at 2024-04-08 05:07:10 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/about/about.html"):
+  
+Started GET "/about/about.html" for 127.0.0.1 at 2024-04-08 05:08:25 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/about/about.html"):
+  
