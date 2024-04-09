@@ -799,3 +799,12 @@ Migrating to AddProgressToTestsUsers (20240409123956)
   [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."level" = ? /* loading for pp */ ORDER BY "tests"."created_at" DESC LIMIT ?[0m  [["level", 3], ["LIMIT", 11]]
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/tests/1/start" for 127.0.0.1 at 2024-04-09 09:26:46 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (5.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TestsController#start as HTML
+  Parameters: {"id"=>"1"}
+  Rendering text template
+  Rendered text template (Duration: 0.8ms | Allocations: 4)
+Completed 200 OK in 92ms (Views: 52.4ms | ActiveRecord: 0.0ms | Allocations: 4537)
+
+
