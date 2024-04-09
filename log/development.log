@@ -794,3 +794,8 @@ Migrating to AddProgressToTestsUsers (20240409123956)
   [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240409123956') RETURNING "version"[0m
   [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT "tests".* FROM "tests" /* loading for pp */ ORDER BY "tests"."created_at" DESC LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mTest Load (0.6ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."level" = ? /* loading for pp */ ORDER BY "tests"."created_at" DESC LIMIT ?[0m  [["level", 1], ["LIMIT", 11]]
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."level" = ? /* loading for pp */ ORDER BY "tests"."created_at" DESC LIMIT ?[0m  [["level", 3], ["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
