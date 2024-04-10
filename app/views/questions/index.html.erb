@@ -1,0 +1,14 @@
+<center><h1>All Questions</h1></center>
+<h3><%= @test.title %> Test</h3>
+
+<% @questions.each do |question| %>
+  <%= "#{question.id}. #{question.body}" %>
+  <form action="/questions/<%= question.id %>" method="post">
+  	
+    <input type="hidden" name="_method" value="delete">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+    <input type="submit" value="Delete">
+  </form>
+  <br>
+<% end %>
