@@ -11,7 +11,7 @@ class Test < ApplicationRecord
 
 	validates  :level, numericality: { only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 10 }
 
-	default_scope, -> { joins(:category).order(title: :asc) }
+	default_scope -> { joins(:category).order(title: :asc) }
 
 	scope      :easy, -> { where(level: 0..1).order(created_at: :desc) }
 	scope      :medium, -> { where(level: 2..4).order(created_at: :desc) }
