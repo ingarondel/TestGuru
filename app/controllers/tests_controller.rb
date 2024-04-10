@@ -1,33 +1,35 @@
 class TestsController < ApplicationController
 	def index
-		#render html: '<h1>All Tests<h1>'.html_safe
-
-		#render json: { tests: Test.all }
-
-		#render inline: '<p>My favourite language is: <%= %[ybuR].reverse! %>!</p>'
-
-		#render file: 'public/about.html', layout: false
-
-		#head 204
-
-		#head :no_content
-
 		#byebug
+		result = ["Class: #{params.class}", "Parametrs: #{params.inspect}"]
 
-		#render inline: '<%= console%>'
-
-		#logger.info(self.object_id)
-
-		respond_to do |format|
-			format.html {render plain: 'All tests'}
-			format.json {render json: { tests: Test.all}}
-		end
+		render plain: result.join("\n")
 	end
 
 	def show
-		#render plain: 'Show tests'
-
 		redirect_to root_path
 	end
 
+	def new
+	
+	end
+
+	def create
+	
+		test = Test.create(test_params)
+		
+		render plain: test.inspect
+	end
+
+	def search
+		result = ["Class: #{params.class}", "Parametrs: #{params.inspect}"]
+
+		render plain: result.join("\n")
+	end
+
+	private
+
+	def test_params
+		params.require(:test).permit(:title, :level, :category_id)
+	end
 end
