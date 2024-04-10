@@ -4201,3 +4201,5 @@ Processing by QuestionsController#index as HTML
 Completed 200 OK in 37ms (Views: 20.9ms | ActiveRecord: 8.9ms | Allocations: 3269)
 
 
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
