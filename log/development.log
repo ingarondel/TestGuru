@@ -1108,3 +1108,66 @@ Processing by TestsController#search as HTML
 Completed 200 OK in 36ms (Views: 28.8ms | ActiveRecord: 0.0ms | Allocations: 830)
 
 
+Started GET "/tests/1/" for 127.0.0.1 at 2024-04-10 06:56:19 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTest Load (1.0ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:22:in `find_test'
+  Rendering inline template
+  Rendered inline template (Duration: 16.7ms | Allocations: 180)
+Completed 200 OK in 315ms (Views: 43.4ms | ActiveRecord: 28.8ms | Allocations: 11239)
+
+
+Started GET "/tests/5" for 127.0.0.1 at 2024-04-10 06:56:32 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:22:in `find_test'
+  Rendering inline template
+  Rendered inline template (Duration: 2.6ms | Allocations: 101)
+Completed 200 OK in 43ms (Views: 30.6ms | ActiveRecord: 0.2ms | Allocations: 917)
+
+
+Started GET "/tests/5" for 127.0.0.1 at 2024-04-10 07:02:08 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:25:in `find_test'
+  Rendering inline template
+  Rendered inline template (Duration: 2.2ms | Allocations: 140)
+Action [show] was finished
+Completed 200 OK in 183ms (Views: 36.1ms | ActiveRecord: 18.4ms | Allocations: 11041)
+
+
+Started GET "/tests/5" for 127.0.0.1 at 2024-04-10 07:04:38 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTest Load (0.6ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:25:in `find_test'
+Execution time: 0.042587ms
+Action [show] was finished
+Completed 200 OK in 250ms (ActiveRecord: 22.7ms | Allocations: 10230)
+
+
+Started GET "/tests/5" for 127.0.0.1 at 2024-04-10 07:04:58 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mTest Load (0.7ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:25:in `find_test'
+  Rendering inline template
+  Rendered inline template (Duration: 2.8ms | Allocations: 140)
+Execution time: 11.86364ms
+Action [show] was finished
+Completed 200 OK in 188ms (Views: 11.4ms | ActiveRecord: 29.6ms | Allocations: 11067)
+
+
+Started GET "/tests/532" for 127.0.0.1 at 2024-04-10 07:17:33 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"532"}
+  [1m[36mTest Load (6.9ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 532], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:27:in `find_test'
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 1)
+Completed 200 OK in 65ms (Views: 6.2ms | ActiveRecord: 11.3ms | Allocations: 8209)
+
+
