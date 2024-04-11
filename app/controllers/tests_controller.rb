@@ -15,6 +15,9 @@ class TestsController < ApplicationController
 
 	def show
 		render inline: '<%= @test.title %>'
+
+		@test = Test.find(params[:id])
+	    @questions = @test.questions
 	end
 
 	def new
