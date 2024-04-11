@@ -4203,3 +4203,350 @@ Completed 200 OK in 37ms (Views: 20.9ms | ActiveRecord: 8.9ms | Allocations: 326
 
   [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
   [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2024-04-11 00:41:59 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:14
+  Rendered collection of tests/_test.html.erb [8 times] (Duration: 9.1ms | Allocations: 1118)
+  Rendered tests/index.html.erb within layouts/application (Duration: 175.7ms | Allocations: 88969)
+  Rendered layout layouts/application.html.erb (Duration: 399.5ms | Allocations: 122666)
+Completed 200 OK in 520ms (Views: 406.2ms | ActiveRecord: 7.9ms | Allocations: 147963)
+
+
+Started GET "/tests/2" for 127.0.0.1 at 2024-04-11 00:42:07 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/show.html.erb within layouts/application
+  Rendered tests/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 332)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 4038)
+Completed 200 OK in 57ms (Views: 16.3ms | ActiveRecord: 0.2ms | Allocations: 9343)
+
+
+Started GET "/tests/1" for 127.0.0.1 at 2024-04-11 00:45:15 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/show.html.erb within layouts/application
+  Rendered tests/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 362)
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 16109)
+Completed 200 OK in 68ms (Views: 40.7ms | ActiveRecord: 5.1ms | Allocations: 28263)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-11 00:45:16 -0700
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:14
+  Rendered collection of tests/_test.html.erb [8 times] (Duration: 10.4ms | Allocations: 992)
+  Rendered tests/index.html.erb within layouts/application (Duration: 82.6ms | Allocations: 2147)
+  Rendered layout layouts/application.html.erb (Duration: 129.4ms | Allocations: 3494)
+Completed 200 OK in 135ms (Views: 131.7ms | ActiveRecord: 0.3ms | Allocations: 3897)
+
+
+Started GET "/tests/new" for 127.0.0.1 at 2024-04-11 00:45:17 -0700
+Processing by TestsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 1.0ms | Allocations: 244)
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/tests/_form.html.erb:15
+  Rendered tests/_form.html.erb (Duration: 46.8ms | Allocations: 8398)
+  Rendered tests/new.html.erb within layouts/application (Duration: 123.9ms | Allocations: 8695)
+  Rendered layout layouts/application.html.erb (Duration: 128.7ms | Allocations: 9971)
+Completed 200 OK in 139ms (Views: 130.5ms | ActiveRecord: 1.4ms | Allocations: 10408)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-11 00:45:34 -0700
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:14
+  Rendered collection of tests/_test.html.erb [8 times] (Duration: 3.8ms | Allocations: 780)
+  Rendered tests/index.html.erb within layouts/application (Duration: 21.5ms | Allocations: 5387)
+  Rendered layout layouts/application.html.erb (Duration: 59.6ms | Allocations: 21140)
+Completed 200 OK in 76ms (Views: 59.3ms | ActiveRecord: 4.8ms | Allocations: 28637)
+
+
+Started GET "/tests/3" for 127.0.0.1 at 2024-04-11 00:45:38 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/show.html.erb within layouts/application
+  Rendered tests/show.html.erb within layouts/application (Duration: 4.2ms | Allocations: 255)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 1593)
+Completed 200 OK in 36ms (Views: 24.1ms | ActiveRecord: 0.5ms | Allocations: 3179)
+
+
+Started GET "/tests/3/edit" for 127.0.0.1 at 2024-04-11 00:51:02 -0700
+Processing by TestsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mTest Load (1.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:26:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/edit.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 1.3ms | Allocations: 230)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/tests/_form.html.erb:15
+  Rendered tests/_form.html.erb (Duration: 23.0ms | Allocations: 6759)
+  Rendered tests/edit.html.erb within layouts/application (Duration: 24.8ms | Allocations: 7082)
+  Rendered layout layouts/application.html.erb (Duration: 54.1ms | Allocations: 22490)
+Completed 200 OK in 98ms (Views: 56.4ms | ActiveRecord: 2.5ms | Allocations: 34030)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-11 00:51:03 -0700
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:14
+  Rendered collection of tests/_test.html.erb [8 times] (Duration: 63.1ms | Allocations: 5398)
+  Rendered tests/index.html.erb within layouts/application (Duration: 71.6ms | Allocations: 6474)
+  Rendered layout layouts/application.html.erb (Duration: 72.9ms | Allocations: 6551)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 0.4ms | Allocations: 6984)
+
+
+  
+ActionView::Template::Error (undefined method `delete_test_path' for #<ActionView::Base:0x000000000186c8>
+Did you mean?  edit_test_path):
+    4: 		<td><%= link_to 'Show', test_path(test) %> </td>
+    5: 		<td><%= link_to 'Edit', edit_test_path(test) %> </td>
+    6: 		<td><%= link_to 'Delete',
+    7:             delete_test_path(test),
+    8:             method: :delete,
+    9:             data:   { confirm: 'Are you sure?' } %>
+   10:  		</td>
+  
+app/views/tests/_test.html.erb:7
+app/views/tests/index.html.erb:14
+Started GET "/tests" for 127.0.0.1 at 2024-04-11 00:52:22 -0700
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:14
+  Rendered collection of tests/_test.html.erb [8 times] (Duration: 24.7ms | Allocations: 4470)
+  Rendered tests/index.html.erb within layouts/application (Duration: 38.3ms | Allocations: 9131)
+  Rendered layout layouts/application.html.erb (Duration: 38.8ms | Allocations: 9210)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 3.5ms | Allocations: 16679)
+
+
+  
+ActionView::Template::Error (undefined method `destroy_test_path' for #<ActionView::Base:0x0000000001cc28>):
+    4: 		<td><%= link_to 'Show', test_path(test) %> </td>
+    5: 		<td><%= link_to 'Edit', edit_test_path(test) %> </td>
+    6: 		<td><%= link_to 'Delete',
+    7:             destroy_test_path(test),
+    8:             method: :delete,
+    9:             data:   { confirm: 'Are you sure?' } %>
+   10:  		</td>
+  
+app/views/tests/_test.html.erb:7
+app/views/tests/index.html.erb:14
+Started GET "/tests" for 127.0.0.1 at 2024-04-11 00:53:49 -0700
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:14
+  Rendered collection of tests/_test.html.erb [8 times] (Duration: 10.7ms | Allocations: 1014)
+  Rendered tests/index.html.erb within layouts/application (Duration: 38.9ms | Allocations: 5679)
+  Rendered layout layouts/application.html.erb (Duration: 68.7ms | Allocations: 21431)
+Completed 200 OK in 101ms (Views: 68.8ms | ActiveRecord: 7.9ms | Allocations: 28923)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-11 00:58:20 -0700
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:14
+  Rendered collection of tests/_test.html.erb [8 times] (Duration: 7.1ms | Allocations: 1014)
+  Rendered tests/index.html.erb within layouts/application (Duration: 31.9ms | Allocations: 5644)
+  Rendered layout layouts/application.html.erb (Duration: 83.2ms | Allocations: 21404)
+Completed 200 OK in 106ms (Views: 81.7ms | ActiveRecord: 6.1ms | Allocations: 28879)
+
+
+Started GET "/tests/2" for 127.0.0.1 at 2024-04-11 00:58:23 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTest Load (1.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/show.html.erb within layouts/application
+  Rendered tests/show.html.erb within layouts/application (Duration: 1.0ms | Allocations: 251)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 1581)
+Completed 200 OK in 24ms (Views: 6.5ms | ActiveRecord: 1.4ms | Allocations: 3141)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-11 00:58:25 -0700
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:14
+  Rendered collection of tests/_test.html.erb [8 times] (Duration: 13.7ms | Allocations: 778)
+  Rendered tests/index.html.erb within layouts/application (Duration: 24.3ms | Allocations: 1542)
+  Rendered layout layouts/application.html.erb (Duration: 31.8ms | Allocations: 2890)
+Completed 200 OK in 41ms (Views: 36.4ms | ActiveRecord: 0.3ms | Allocations: 3205)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-11 01:00:16 -0700
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:14
+  Rendered collection of tests/_test.html.erb [8 times] (Duration: 2.9ms | Allocations: 1014)
+  Rendered tests/index.html.erb within layouts/application (Duration: 21.0ms | Allocations: 5620)
+  Rendered layout layouts/application.html.erb (Duration: 65.1ms | Allocations: 22372)
+Completed 200 OK in 94ms (Views: 70.0ms | ActiveRecord: 3.1ms | Allocations: 29829)
+
+
+Started GET "/tests/2" for 127.0.0.1 at 2024-04-11 01:00:19 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTest Load (0.9ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/show.html.erb within layouts/application
+  Rendered tests/show.html.erb within layouts/application (Duration: 4.5ms | Allocations: 251)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 2984)
+Completed 200 OK in 41ms (Views: 20.2ms | ActiveRecord: 1.0ms | Allocations: 4544)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-11 01:00:48 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:14
+  Rendered collection of tests/_test.html.erb [8 times] (Duration: 5.4ms | Allocations: 1118)
+  Rendered tests/index.html.erb within layouts/application (Duration: 168.1ms | Allocations: 88968)
+  Rendered layout layouts/application.html.erb (Duration: 1136.4ms | Allocations: 197832)
+Completed 200 OK in 1251ms (Views: 1143.6ms | ActiveRecord: 4.4ms | Allocations: 223143)
+
+
+Started GET "/tests/2" for 127.0.0.1 at 2024-04-11 01:00:52 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/show.html.erb within layouts/application
+  Rendered tests/show.html.erb within layouts/application (Duration: 7.2ms | Allocations: 334)
+  Rendered layout layouts/application.html.erb (Duration: 74.3ms | Allocations: 2666)
+Completed 200 OK in 130ms (Views: 75.8ms | ActiveRecord: 0.2ms | Allocations: 5863)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-11 01:02:56 -0700
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.8ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:14
+  Rendered collection of tests/_test.html.erb [8 times] (Duration: 3.6ms | Allocations: 785)
+  Rendered tests/index.html.erb within layouts/application (Duration: 9.3ms | Allocations: 1569)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 3706)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.7ms | Allocations: 4034)
+
+
+Started GET "/tests/2" for 127.0.0.1 at 2024-04-11 01:02:58 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/show.html.erb within layouts/application
+  Rendered tests/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 71)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 2214)
+Completed 200 OK in 16ms (Views: 10.9ms | ActiveRecord: 0.2ms | Allocations: 3019)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-11 01:03:42 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (1.8ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:14
+  Rendered collection of tests/_test.html.erb [8 times] (Duration: 3.4ms | Allocations: 1118)
+  Rendered tests/index.html.erb within layouts/application (Duration: 158.9ms | Allocations: 88969)
+  Rendered layout layouts/application.html.erb (Duration: 943.8ms | Allocations: 200877)
+Completed 200 OK in 1006ms (Views: 946.3ms | ActiveRecord: 5.9ms | Allocations: 226188)
+
+
+Started GET "/tests/2" for 127.0.0.1 at 2024-04-11 01:03:47 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:8:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/show.html.erb within layouts/application
+  Rendered tests/show.html.erb within layouts/application (Duration: 1.6ms | Allocations: 334)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2683)
+Completed 200 OK in 15ms (Views: 8.5ms | ActiveRecord: 0.2ms | Allocations: 5880)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-11 01:05:03 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:14
+  Rendered collection of tests/_test.html.erb [8 times] (Duration: 3.8ms | Allocations: 1118)
+  Rendered tests/index.html.erb within layouts/application (Duration: 112.4ms | Allocations: 88969)
+  Rendered layout layouts/application.html.erb (Duration: 383.7ms | Allocations: 150834)
+Completed 200 OK in 440ms (Views: 386.3ms | ActiveRecord: 3.8ms | Allocations: 176145)
+
+
+Started DELETE "/tests/2" for 127.0.0.1 at 2024-04-11 01:05:30 -0700
+Processing by TestsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:40:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tests_controller.rb:42:in `destroy'
+  [1m[36mQuestion Load (7.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/controllers/tests_controller.rb:42:in `destroy'
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 14]]
+  ↳ app/controllers/tests_controller.rb:42:in `destroy'
+  [1m[36mQuestion Destroy (2.4ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = ?[0m  [["id", 14]]
+  ↳ app/controllers/tests_controller.rb:42:in `destroy'
+  [1m[36mTestsUser Load (0.2ms)[0m  [1m[34mSELECT "tests_users".* FROM "tests_users" WHERE "tests_users"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/controllers/tests_controller.rb:42:in `destroy'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "tests_users" ON "users"."id" = "tests_users"."user_id" WHERE "tests_users"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/controllers/tests_controller.rb:42:in `destroy'
+  [1m[36mTest Destroy (0.2ms)[0m  [1m[31mDELETE FROM "tests" WHERE "tests"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/tests_controller.rb:42:in `destroy'
+  [1m[36mTRANSACTION (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tests_controller.rb:42:in `destroy'
+Redirected to http://localhost:3000/tests
+Completed 302 Found in 367ms (ActiveRecord: 17.5ms | Allocations: 63441)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-11 01:05:30 -0700
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:14
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 1.5ms | Allocations: 698)
+  Rendered tests/index.html.erb within layouts/application (Duration: 4.6ms | Allocations: 1496)
+  Rendered layout layouts/application.html.erb (Duration: 18.7ms | Allocations: 5014)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.1ms | Allocations: 5385)
+
+
