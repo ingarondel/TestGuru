@@ -4,6 +4,7 @@
 		<td><center><%= test.questions.count %></center></td>
 		<td><%= link_to 'Show', test_path(test) %> </td>
 		<td><%= link_to 'Edit', edit_test_path(test) %> </td>
+		<td><%= button_to 'Start', start_test_path(test) %></td>
 		<td><%= link_to 'Delete',
             test_path(test),
             method: :delete,
