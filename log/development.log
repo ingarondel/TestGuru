@@ -6911,3 +6911,775 @@ Processing by TestsController#index as HTML
 Completed 200 OK in 67ms (Views: 63.3ms | ActiveRecord: 2.3ms | Allocations: 11120)
 
 
+Started GET "/login" for 127.0.0.1 at 2024-04-20 05:17:03 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 1.9ms | Allocations: 1397)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 1734)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 1837)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 3205)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with url: sessions_path, local: true do |form| %>
+<% #if flash[:alert] %>
+  <%= #content_tag :p, flash[:alert], class: 'flash alert' %>
+<% #end %>
+
+  <p>
+    <%= form.label :email %><br>
+    <%= form.text_field :email, id: :email %><br>
+  </p>
+
+  <p>
+    <%= form.label :password %><br>
+    <%= form.password_field :password, id: :password%><br>
+  </p>
+
+  <p><%= form.submit 'Enter'%></p>
+<% end %>
+):
+1:    <%= form_with url: sessions_path, local: true do |form| %>
+2:    <% #if flash[:alert] %>
+3:      <%= #content_tag :p, flash[:alert], class: 'flash alert' %>
+4:    <% #end %>
+5:    
+6:      <p>
+7:        <%= form.label :email %><br>
+8:        <%= form.text_field :email, id: :email %><br>
+9:      </p>
+10:    
+11:      <p>
+12:        <%= form.label :password %><br>
+13:        <%= form.password_field :password, id: :password%><br>
+14:      </p>
+15:    
+16:      <p><%= form.submit 'Enter'%></p>
+17:    <% end %>
+  
+app/views/sessions/_form.html.erb:6: syntax error, unexpected '<', expecting ')'
+app/views/sessions/_form.html.erb:9: syntax error, unexpected '<'
+app/views/sessions/_form.html.erb:14: unknown regexp option - p
+app/views/sessions/_form.html.erb:16: syntax error, unexpected '<'
+app/views/sessions/_form.html.erb:16: syntax error, unexpected constant, expecting ')'
+app/views/sessions/_form.html.erb:19: unterminated regexp meets end of file
+app/views/sessions/_form.html.erb:19: syntax error, unexpected end-of-input, expecting ')'
+app/views/sessions/new.html.erb:2
+Started GET "/login" for 127.0.0.1 at 2024-04-20 05:17:22 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 15.8ms | Allocations: 4076)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 17.1ms | Allocations: 4402)
+  Rendered layout layouts/application.html.erb (Duration: 61.6ms | Allocations: 21901)
+Completed 200 OK in 66ms (Views: 64.5ms | ActiveRecord: 0.0ms | Allocations: 23205)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-04-20 05:17:33 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"admin@admin.com", "password"=>"[FILTERED]", "commit"=>"Enter"}
+  [1m[36mUser Load (9.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/tests
+Completed 302 Found in 279ms (ActiveRecord: 15.4ms | Allocations: 7441)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 05:17:33 -0700
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:15
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 28.7ms | Allocations: 11178)
+  Rendered tests/index.html.erb within layouts/application (Duration: 36.8ms | Allocations: 14948)
+  Rendered layout layouts/application.html.erb (Duration: 40.7ms | Allocations: 18163)
+Completed 200 OK in 52ms (Views: 40.4ms | ActiveRecord: 1.6ms | Allocations: 23919)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-04-20 05:31:38 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 7.2ms | Allocations: 2756)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 3068)
+  Rendered layout layouts/application.html.erb (Duration: 70.9ms | Allocations: 20522)
+Completed 200 OK in 79ms (Views: 76.7ms | ActiveRecord: 0.0ms | Allocations: 21834)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-04-20 05:31:49 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"admin@admin.com", "password"=>"[FILTERED]", "commit"=>"Enter"}
+  [1m[36mUser Load (5.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/tests
+Completed 302 Found in 374ms (ActiveRecord: 6.5ms | Allocations: 7406)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 05:31:49 -0700
+Processing by TestsController#index as HTML
+Completed 500 Internal Server Error in 35ms (ActiveRecord: 0.0ms | Allocations: 3293)
+
+
+  
+NoMethodError (undefined method `auhtenticate_user!' for #<TestsController:0x00000000023a28>
+Did you mean?  authenticate_user!):
+  
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:403:in `block in make_lambda'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:202:in `block (2 levels) in halting'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:203:in `block in halting'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:598:in `block in invoke_before'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:598:in `each'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:598:in `invoke_before'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:119:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.1.3.2) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.3.2) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.2) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.10) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.10) lib/rack/etag.rb:29:in `call'
+rack (3.0.10) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.10) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.10) lib/rack/method_override.rb:28:in `call'
+rack (3.0.10) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.10) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 05:32:08 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:15
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 55.3ms | Allocations: 11247)
+  Rendered tests/index.html.erb within layouts/application (Duration: 80.5ms | Allocations: 15455)
+  Rendered layout layouts/application.html.erb (Duration: 118.3ms | Allocations: 32932)
+Completed 200 OK in 181ms (Views: 117.4ms | ActiveRecord: 15.2ms | Allocations: 47617)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-04-20 05:32:14 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 7.4ms | Allocations: 2854)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 9.5ms | Allocations: 3136)
+  Rendered layout layouts/application.html.erb (Duration: 21.8ms | Allocations: 6346)
+Completed 200 OK in 33ms (Views: 30.8ms | ActiveRecord: 0.0ms | Allocations: 6884)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-04-20 05:32:23 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"admin@admin.com", "password"=>"[FILTERED]", "commit"=>"Enter"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/tests
+Completed 302 Found in 398ms (ActiveRecord: 0.3ms | Allocations: 1206)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 05:32:23 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:15
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 36.3ms | Allocations: 6559)
+  Rendered tests/index.html.erb within layouts/application (Duration: 41.1ms | Allocations: 7324)
+  Rendered layout layouts/application.html.erb (Duration: 48.1ms | Allocations: 10423)
+Completed 200 OK in 60ms (Views: 48.3ms | ActiveRecord: 2.2ms | Allocations: 11435)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 05:32:35 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:15
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 53.4ms | Allocations: 6513)
+  Rendered tests/index.html.erb within layouts/application (Duration: 61.9ms | Allocations: 7266)
+  Rendered layout layouts/application.html.erb (Duration: 73.0ms | Allocations: 10365)
+Completed 200 OK in 79ms (Views: 72.8ms | ActiveRecord: 2.0ms | Allocations: 11382)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 05:33:01 -0700
+Processing by TestsController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms | Allocations: 292)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-04-20 05:33:01 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 9.6ms | Allocations: 2417)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 10.9ms | Allocations: 2489)
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | Allocations: 5588)
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 0.0ms | Allocations: 5889)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-04-20 05:33:07 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"admin@admin.com", "password"=>"[FILTERED]", "commit"=>"Enter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/tests
+Completed 302 Found in 390ms (ActiveRecord: 0.2ms | Allocations: 894)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 05:33:07 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:15
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 41.2ms | Allocations: 6511)
+  Rendered tests/index.html.erb within layouts/application (Duration: 44.4ms | Allocations: 7264)
+  Rendered layout layouts/application.html.erb (Duration: 54.8ms | Allocations: 10363)
+Completed 200 OK in 64ms (Views: 54.1ms | ActiveRecord: 2.0ms | Allocations: 11368)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 05:40:02 -0700
+Processing by TestsController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 459)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-04-20 05:40:02 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 10.0ms | Allocations: 2889)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 20.3ms | Allocations: 3203)
+  Rendered layout layouts/application.html.erb (Duration: 151.5ms | Allocations: 10454)
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 0.0ms | Allocations: 11725)
+
+
+  
+LoadError (cannot load such file -- sassc):
+  
+app/views/layouts/application.html.erb:9
+Started GET "/login" for 127.0.0.1 at 2024-04-20 05:41:35 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 4.1ms | Allocations: 2430)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2502)
+  Rendered layout layouts/application.html.erb (Duration: 36.5ms | Allocations: 8516)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms | Allocations: 8807)
+
+
+  
+LoadError (cannot load such file -- sassc):
+  
+app/views/layouts/application.html.erb:9
+Started GET "/login" for 127.0.0.1 at 2024-04-20 05:41:41 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 3.4ms | Allocations: 2430)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 2502)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 5299)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 5574)
+
+
+  
+LoadError (cannot load such file -- sassc):
+  
+app/views/layouts/application.html.erb:9
+Started GET "/login" for 127.0.0.1 at 2024-04-20 05:42:19 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 50.7ms | Allocations: 4269)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 52.5ms | Allocations: 4718)
+  Rendered layout layouts/application.html.erb (Duration: 361.4ms | Allocations: 58973)
+Completed 200 OK in 401ms (Views: 370.1ms | ActiveRecord: 0.0ms | Allocations: 65822)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-04-20 05:42:24 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user@user.com", "password"=>"[FILTERED]", "commit"=>"Enter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user@user.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 2.0ms | Allocations: 2342)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2422)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 5760)
+Completed 200 OK in 96ms (Views: 11.1ms | ActiveRecord: 3.5ms | Allocations: 27032)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-04-20 05:44:42 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user@user.com", "password"=>"[FILTERED]", "commit"=>"Enter"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user@user.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 3.4ms | Allocations: 2695)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 3009)
+  Rendered layout layouts/application.html.erb (Duration: 52.3ms | Allocations: 20536)
+Completed 200 OK in 88ms (Views: 56.9ms | ActiveRecord: 9.0ms | Allocations: 26908)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-04-20 05:45:00 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"user@user.com", "password"=>"[FILTERED]", "commit"=>"Enter"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 4ms (ActiveRecord: 0.0ms | Allocations: 689)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.1.3.2) lib/action_controller/metal/request_forgery_protection.rb:293:in `handle_unverified_request'
+actionpack (7.1.3.2) lib/action_controller/metal/request_forgery_protection.rb:388:in `handle_unverified_request'
+actionpack (7.1.3.2) lib/action_controller/metal/request_forgery_protection.rb:377:in `verify_authenticity_token'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:403:in `block in make_lambda'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:202:in `block (2 levels) in halting'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:203:in `block in halting'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:598:in `block in invoke_before'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:598:in `each'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:598:in `invoke_before'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:119:in `block in run_callbacks'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.2) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.10) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.10) lib/rack/etag.rb:29:in `call'
+rack (3.0.10) lib/rack/conditional_get.rb:43:in `call'
+rack (3.0.10) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.10) lib/rack/method_override.rb:28:in `call'
+rack (3.0.10) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.10) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/login" for 127.0.0.1 at 2024-04-20 05:45:07 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 6.2ms | Allocations: 2547)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2620)
+  Rendered layout layouts/application.html.erb (Duration: 37.8ms | Allocations: 5961)
+Completed 200 OK in 42ms (Views: 40.6ms | ActiveRecord: 0.0ms | Allocations: 6301)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-04-20 05:45:15 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"use12r@user.com", "password"=>"[FILTERED]", "commit"=>"Enter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "use12r@user.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 3.2ms | Allocations: 2346)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 2418)
+  Rendered layout layouts/application.html.erb (Duration: 20.7ms | Allocations: 5600)
+Completed 200 OK in 30ms (Views: 23.8ms | ActiveRecord: 0.2ms | Allocations: 6709)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-04-20 05:45:20 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"use12r@user.com", "password"=>"[FILTERED]", "commit"=>"Enter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "use12r@user.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 5.4ms | Allocations: 2347)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 2419)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 5602)
+Completed 200 OK in 24ms (Views: 18.8ms | ActiveRecord: 0.1ms | Allocations: 6619)
+
+
+Started GET "/tests/" for 127.0.0.1 at 2024-04-20 05:47:20 -0700
+Processing by TestsController#index as HTML
+Redirected to http://localhost:3000/login
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 707)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-04-20 05:47:20 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 4.2ms | Allocations: 3043)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 5.7ms | Allocations: 3353)
+  Rendered layout layouts/application.html.erb (Duration: 52.1ms | Allocations: 20839)
+Completed 200 OK in 67ms (Views: 63.4ms | ActiveRecord: 0.0ms | Allocations: 22138)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-04-20 05:47:30 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 10.0ms | Allocations: 2529)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 10.8ms | Allocations: 2601)
+  Rendered layout layouts/application.html.erb (Duration: 23.1ms | Allocations: 5787)
+Completed 200 OK in 26ms (Views: 24.5ms | ActiveRecord: 0.0ms | Allocations: 6104)
+
+
+Started GET "/login" for 127.0.0.1 at 2024-04-20 05:51:44 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 6.0ms | Allocations: 2961)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 3271)
+  Rendered layout layouts/application.html.erb (Duration: 195.4ms | Allocations: 40081)
+Completed 500 Internal Server Error in 199ms (ActiveRecord: 0.0ms | Allocations: 41362)
+
+
+  
+ActionView::Template::Error (undefined method `logged_in?' for #<ActionView::Base:0x0000000001e118>
+Did you mean?  logger?):
+    12:   </head>
+    13: 
+    14:   <body>
+    15:     <% if logged_in? %>
+    16:     <p class="nav user">Welcome, <b><%= corrent_user.email %></b>Guru</p>
+    17:     <% end %>
+    18: 
+  
+app/views/layouts/application.html.erb:15
+Started GET "/login" for 127.0.0.1 at 2024-04-20 05:52:59 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 5.6ms | Allocations: 2535)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 6.6ms | Allocations: 2607)
+  Rendered layout layouts/application.html.erb (Duration: 51.5ms | Allocations: 9962)
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 0.0ms | Allocations: 10255)
+
+
+  
+ActionView::Template::Error (undefined method `logged_in?' for #<ActionView::Base:0x0000000001e438>
+Did you mean?  logger?):
+    12:   </head>
+    13: 
+    14:   <body>
+    15:     <% if logged_in? %>
+    16:     <p class="nav user">Welcome, <b><%= corrent_user.email %></b>Guru</p>
+    17:     <% end %>
+    18: 
+  
+app/views/layouts/application.html.erb:15
+Started GET "/login" for 127.0.0.1 at 2024-04-20 05:57:25 -0700
+Processing by SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/_form.html.erb (Duration: 8.6ms | Allocations: 2963)
+  Rendered sessions/new.html.erb within layouts/application (Duration: 10.5ms | Allocations: 3273)
+  Rendered layout layouts/application.html.erb (Duration: 55.8ms | Allocations: 20898)
+Completed 200 OK in 61ms (Views: 59.4ms | ActiveRecord: 0.0ms | Allocations: 22202)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2024-04-20 05:57:35 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"admin@admin.com", "password"=>"[FILTERED]", "commit"=>"Enter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:6:in `create'
+Redirected to http://localhost:3000/tests
+Completed 302 Found in 361ms (ActiveRecord: 3.9ms | Allocations: 90402)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 05:57:35 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:15
+  [1m[36mQuestion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 88.1ms | Allocations: 15061)
+  Rendered tests/index.html.erb within layouts/application (Duration: 128.4ms | Allocations: 55665)
+  Rendered layout layouts/application.html.erb (Duration: 154.1ms | Allocations: 63368)
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 2.7ms | Allocations: 71310)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `corrent_user' for #<ActionView::Base:0x00000000023d98>
+Did you mean?  current_user
+               @current_user):
+    13: 
+    14:   <body>
+    15:     <% if logged_in? %>
+    16:     <p class="nav user">Welcome, <b><%= corrent_user.email %></b>Guru</p>
+    17:     <% end %>
+    18: 
+    19:     <%= yield %>
+  
+app/views/layouts/application.html.erb:16
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 05:58:01 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:14:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:15
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 52.0ms | Allocations: 11248)
+  Rendered tests/index.html.erb within layouts/application (Duration: 67.3ms | Allocations: 15456)
+  Rendered layout layouts/application.html.erb (Duration: 122.4ms | Allocations: 33119)
+Completed 200 OK in 180ms (Views: 124.6ms | ActiveRecord: 9.2ms | Allocations: 47732)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 05:59:53 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:16:in `current_user'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:15
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 66.1ms | Allocations: 11239)
+  Rendered tests/index.html.erb within layouts/application (Duration: 80.3ms | Allocations: 15449)
+  Rendered layout layouts/application.html.erb (Duration: 118.8ms | Allocations: 33024)
+Completed 200 OK in 176ms (Views: 118.4ms | ActiveRecord: 8.0ms | Allocations: 47593)
+
+
