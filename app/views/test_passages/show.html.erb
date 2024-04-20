@@ -13,4 +13,6 @@
 	<% end %>
 
 	<p><%= form.submit 'Next' %></p>
+	<p>Current question: <%= @test_passage.current_question_number %></p>
+	<p>Total questions: <%= @test_passage.test.questions.count %></p>
 <% end %>
