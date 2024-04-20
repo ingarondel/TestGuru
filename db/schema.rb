@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_11_170929) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_20_094842) do
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
     t.boolean "correct", default: false, null: false
@@ -37,7 +37,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_11_170929) do
   create_table "test_passages", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "test_id", null: false
-    t.integer "current_question_id", null: false
+    t.integer "current_question_id"
     t.integer "correct_question", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
