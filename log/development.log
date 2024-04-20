@@ -6778,3 +6778,136 @@ Migrating to RemoveEmailAndRenameNameToEmailInUsers (20240420111836)
   [1m[36mActiveRecord::SchemaMigration Create (30.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240420111836') RETURNING "version"[0m
   [1m[36mTRANSACTION (76.1ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users" for 127.0.0.1 at 2024-04-20 04:46:48 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (2.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "admin", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "admin@admin.com"], ["admin", nil], ["created_at", "2024-04-20 11:46:49.489154"], ["updated_at", "2024-04-20 11:46:49.489154"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 500 Internal Server Error in 539ms (ActiveRecord: 7.6ms | Allocations: 108389)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: users.admin):
+  
+Started POST "/users" for 127.0.0.1 at 2024-04-20 04:47:12 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (3.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "admin", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "admin@admin.com"], ["admin", nil], ["created_at", "2024-04-20 11:47:12.992426"], ["updated_at", "2024-04-20 11:47:12.992426"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Completed 500 Internal Server Error in 390ms (ActiveRecord: 3.9ms | Allocations: 3587)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: users.admin):
+  
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeAdminColumnInUsers (20240420114809)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "admin" boolean NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "password_digest" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","email","admin","created_at","updated_at","password_digest")
+                     SELECT "id","email","admin","created_at","updated_at","password_digest" FROM "users"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "password_digest" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "users" ("id","email","admin","created_at","updated_at","password_digest")
+                     SELECT "id","email","admin","created_at","updated_at","password_digest" FROM "ausers"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240420114809') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users" for 127.0.0.1 at 2024-04-20 04:49:01 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mUser Create (1.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "admin", "created_at", "updated_at", "password_digest") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "admin@admin.com"], ["admin", nil], ["created_at", "2024-04-20 11:49:02.335084"], ["updated_at", "2024-04-20 11:49:02.335084"], ["password_digest", "[FILTERED]"]]
+  ↳ app/controllers/users_controller.rb:9:in `create'
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:9:in `create'
+Redirected to http://localhost:3000/tests
+Completed 302 Found in 481ms (ActiveRecord: 5.7ms | Allocations: 9641)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 04:49:02 -0700
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:15
+  [1m[36mQuestion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 47.9ms | Allocations: 16623)
+  Rendered tests/index.html.erb within layouts/application (Duration: 82.3ms | Allocations: 57381)
+  Rendered layout layouts/application.html.erb (Duration: 258.3ms | Allocations: 94859)
+Completed 200 OK in 290ms (Views: 259.1ms | ActiveRecord: 2.0ms | Allocations: 104243)
+
+
+Started GET "/tests/1" for 127.0.0.1 at 2024-04-20 04:49:18 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:55:in `find_test'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/show.html.erb:25
+  Rendered collection of questions/_question.html.erb [9 times] (Duration: 4.2ms | Allocations: 1216)
+  Rendered tests/show.html.erb within layouts/application (Duration: 47.1ms | Allocations: 31331)
+  Rendered layout layouts/application.html.erb (Duration: 59.6ms | Allocations: 34808)
+Completed 200 OK in 72ms (Views: 61.5ms | ActiveRecord: 0.6ms | Allocations: 36885)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 04:49:22 -0700
+Processing by TestsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:15
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 50.6ms | Allocations: 6769)
+  Rendered tests/index.html.erb within layouts/application (Duration: 54.9ms | Allocations: 7586)
+  Rendered layout layouts/application.html.erb (Duration: 64.5ms | Allocations: 10752)
+Completed 200 OK in 67ms (Views: 63.3ms | ActiveRecord: 2.3ms | Allocations: 11120)
+
+
