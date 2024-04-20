@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+  get 'menu/show'
+ root to: 'tests#index'
+
+ get 'sessions/new'
  get 'users/new'
 
- root to: 'tests#index'
 
  get :signup, to: 'users#new'
  get :login, to: 'sessions#new'
+ delete '/signout', to: 'sessions#destroy'
 
  resources :users, only: :create
- resources :sessions, only: :create
+ resources :sessions, only: %i[create destroy]
 
   resources :tests do
     resources :questions, shallow: true do 
