@@ -1,17 +1,10 @@
 Rails.application.routes.draw do
-  get 'menu/show'
+devise_for :users, path: :gurus, path_names: {sign_in: :login, sign_out: :logout}
+ 
  root to: 'tests#index'
 
  get 'sessions/new'
  get 'users/new'
-
-
- get :signup, to: 'users#new'
- get :login, to: 'sessions#new'
- delete '/signout', to: 'sessions#destroy'
-
- resources :users, only: :create
- resources :sessions, only: %i[create destroy]
 
   resources :tests do
     resources :questions, shallow: true do 

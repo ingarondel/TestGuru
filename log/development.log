@@ -7683,3 +7683,2190 @@ Processing by TestsController#index as HTML
 Completed 200 OK in 176ms (Views: 118.4ms | ActiveRecord: 8.0ms | Allocations: 47593)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (11.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToUsers (20240420192214)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (4.8ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" varchar[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" datetime(6)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" datetime(6)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "sign_in_count" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "current_sign_in_at" datetime(6)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "last_sign_in_at" datetime(6)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "current_sign_in_ip" varchar[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "last_sign_in_ip" varchar[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmation_token" varchar[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmed_at" datetime(6)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmation_sent_at" datetime(6)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "unconfirmed_email" varchar[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.7ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "password_digest" varchar DEFAULT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime(6) DEFAULT NULL, "remember_created_at" datetime(6) DEFAULT NULL, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6) DEFAULT NULL, "last_sign_in_at" datetime(6) DEFAULT NULL, "current_sign_in_ip" varchar DEFAULT NULL, "last_sign_in_ip" varchar DEFAULT NULL, "confirmation_token" varchar DEFAULT NULL, "confirmed_at" datetime(6) DEFAULT NULL, "confirmation_sent_at" datetime(6) DEFAULT NULL, "unconfirmed_email" varchar DEFAULT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "ausers" ("id","email","admin","created_at","updated_at","password_digest","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email")
+                     SELECT "id","email","admin","created_at","updated_at","password_digest","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email" FROM "users"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime(6) DEFAULT NULL, "remember_created_at" datetime(6) DEFAULT NULL, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6) DEFAULT NULL, "last_sign_in_at" datetime(6) DEFAULT NULL, "current_sign_in_ip" varchar DEFAULT NULL, "last_sign_in_ip" varchar DEFAULT NULL, "confirmation_token" varchar DEFAULT NULL, "confirmed_at" datetime(6) DEFAULT NULL, "confirmation_sent_at" datetime(6) DEFAULT NULL, "unconfirmed_email" varchar DEFAULT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "users" ("id","email","admin","created_at","updated_at","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email")
+                     SELECT "id","email","admin","created_at","updated_at","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email" FROM "ausers"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime(6) DEFAULT NULL, "remember_created_at" datetime(6) DEFAULT NULL, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6) DEFAULT NULL, "last_sign_in_at" datetime(6) DEFAULT NULL, "current_sign_in_ip" varchar DEFAULT NULL, "last_sign_in_ip" varchar DEFAULT NULL, "confirmation_token" varchar DEFAULT NULL, "confirmed_at" datetime(6) DEFAULT NULL, "confirmation_sent_at" datetime(6) DEFAULT NULL, "unconfirmed_email" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "ausers" ("id","email","admin","created_at","updated_at","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email")
+                     SELECT "id","email","admin","created_at","updated_at","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email" FROM "users"[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime(6) DEFAULT NULL, "remember_created_at" datetime(6) DEFAULT NULL, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6) DEFAULT NULL, "last_sign_in_at" datetime(6) DEFAULT NULL, "current_sign_in_ip" varchar DEFAULT NULL, "last_sign_in_ip" varchar DEFAULT NULL, "confirmation_token" varchar DEFAULT NULL, "confirmed_at" datetime(6) DEFAULT NULL, "confirmation_sent_at" datetime(6) DEFAULT NULL, "unconfirmed_email" varchar DEFAULT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id","email","admin","created_at","updated_at","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email")
+                     SELECT "id","email","admin","created_at","updated_at","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email" FROM "ausers"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Destroy (1.6ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddDeviseToUsers (20240420192214)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (3.1ms)[0m  [1m[35mALTER TABLE "users" ADD "encrypted_password" varchar DEFAULT '' NOT NULL[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_token" varchar[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "reset_password_sent_at" datetime(6)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "remember_created_at" datetime(6)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "sign_in_count" integer DEFAULT 0 NOT NULL[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "current_sign_in_at" datetime(6)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "users" ADD "last_sign_in_at" datetime(6)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "current_sign_in_ip" varchar[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "last_sign_in_ip" varchar[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmation_token" varchar[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmed_at" datetime(6)[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" ADD "confirmation_sent_at" datetime(6)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "unconfirmed_email" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "password_digest" varchar DEFAULT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime(6) DEFAULT NULL, "remember_created_at" datetime(6) DEFAULT NULL, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6) DEFAULT NULL, "last_sign_in_at" datetime(6) DEFAULT NULL, "current_sign_in_ip" varchar DEFAULT NULL, "last_sign_in_ip" varchar DEFAULT NULL, "confirmation_token" varchar DEFAULT NULL, "confirmed_at" datetime(6) DEFAULT NULL, "confirmation_sent_at" datetime(6) DEFAULT NULL, "unconfirmed_email" varchar DEFAULT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "ausers" ("id","email","admin","created_at","updated_at","password_digest","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email")
+                     SELECT "id","email","admin","created_at","updated_at","password_digest","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email" FROM "users"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime(6) DEFAULT NULL, "remember_created_at" datetime(6) DEFAULT NULL, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6) DEFAULT NULL, "last_sign_in_at" datetime(6) DEFAULT NULL, "current_sign_in_ip" varchar DEFAULT NULL, "last_sign_in_ip" varchar DEFAULT NULL, "confirmation_token" varchar DEFAULT NULL, "confirmed_at" datetime(6) DEFAULT NULL, "confirmation_sent_at" datetime(6) DEFAULT NULL, "unconfirmed_email" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "users" ("id","email","admin","created_at","updated_at","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email")
+                     SELECT "id","email","admin","created_at","updated_at","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email" FROM "ausers"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar NOT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime(6) DEFAULT NULL, "remember_created_at" datetime(6) DEFAULT NULL, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6) DEFAULT NULL, "last_sign_in_at" datetime(6) DEFAULT NULL, "current_sign_in_ip" varchar DEFAULT NULL, "last_sign_in_ip" varchar DEFAULT NULL, "confirmation_token" varchar DEFAULT NULL, "confirmed_at" datetime(6) DEFAULT NULL, "confirmation_sent_at" datetime(6) DEFAULT NULL, "unconfirmed_email" varchar DEFAULT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "ausers" ("id","email","admin","created_at","updated_at","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email")
+                     SELECT "id","email","admin","created_at","updated_at","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email" FROM "users"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "admin" boolean DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar DEFAULT NULL, "reset_password_sent_at" datetime(6) DEFAULT NULL, "remember_created_at" datetime(6) DEFAULT NULL, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime(6) DEFAULT NULL, "last_sign_in_at" datetime(6) DEFAULT NULL, "current_sign_in_ip" varchar DEFAULT NULL, "last_sign_in_ip" varchar DEFAULT NULL, "confirmation_token" varchar DEFAULT NULL, "confirmed_at" datetime(6) DEFAULT NULL, "confirmation_sent_at" datetime(6) DEFAULT NULL, "unconfirmed_email" varchar DEFAULT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "users" ("id","email","admin","created_at","updated_at","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email")
+                     SELECT "id","email","admin","created_at","updated_at","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","sign_in_count","current_sign_in_at","last_sign_in_at","current_sign_in_ip","last_sign_in_ip","confirmation_token","confirmed_at","confirmation_sent_at","unconfirmed_email" FROM "ausers"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_confirmation_token" ON "users" ("confirmation_token")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20240420192214') RETURNING "version"[0m
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started DELETE "/signout" for 127.0.0.1 at 2024-04-20 13:02:36 -0700
+Started DELETE "/signout" for 127.0.0.1 at 2024-04-20 13:02:36 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [DELETE] "/signout"):
+  
+  
+ActionController::RoutingError (No route matches [DELETE] "/signout"):
+  
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 13:03:13 -0700
+Processing by TestsController#index as HTML
+Completed 401 Unauthorized in 42ms (ActiveRecord: 0.0ms | Allocations: 4820)
+
+
+  
+NoMethodError (undefined method `authentication_keys' for User:Class
+Did you mean?  authenticate_by):
+  
+activerecord (7.1.3.2) lib/active_record/dynamic_matchers.rb:22:in `method_missing'
+devise (4.9.4) lib/devise/failure_app.rb:113:in `i18n_message'
+devise (4.9.4) lib/devise/failure_app.rb:93:in `redirect'
+devise (4.9.4) lib/devise/failure_app.rb:48:in `respond'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+i18n (1.14.4) lib/i18n.rb:322:in `with_locale'
+devise (4.9.4) lib/devise/failure_app.rb:23:in `block in <class:FailureApp>'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:293:in `block in action'
+devise (4.9.4) lib/devise/failure_app.rb:28:in `call'
+devise (4.9.4) lib/devise/delegator.rb:7:in `call'
+warden (1.2.9) lib/warden/manager.rb:143:in `call_failure_app'
+warden (1.2.9) lib/warden/manager.rb:129:in `process_unauthenticated'
+warden (1.2.9) lib/warden/manager.rb:44:in `call'
+rack (3.0.10) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.10) lib/rack/etag.rb:29:in `call'
+rack (3.0.10) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.10) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.10) lib/rack/method_override.rb:28:in `call'
+rack (3.0.10) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.10) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2024-04-20 13:16:54 -0700
+Processing by TestsController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 279)
+
+
+  
+NoMethodError (undefined method `authentication_keys' for User:Class
+Did you mean?  authenticate_by):
+  
+activerecord (7.1.3.2) lib/active_record/dynamic_matchers.rb:22:in `method_missing'
+devise (4.9.4) lib/devise/failure_app.rb:113:in `i18n_message'
+devise (4.9.4) lib/devise/failure_app.rb:93:in `redirect'
+devise (4.9.4) lib/devise/failure_app.rb:48:in `respond'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+i18n (1.14.4) lib/i18n.rb:322:in `with_locale'
+devise (4.9.4) lib/devise/failure_app.rb:23:in `block in <class:FailureApp>'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:293:in `block in action'
+devise (4.9.4) lib/devise/failure_app.rb:28:in `call'
+devise (4.9.4) lib/devise/delegator.rb:7:in `call'
+warden (1.2.9) lib/warden/manager.rb:143:in `call_failure_app'
+warden (1.2.9) lib/warden/manager.rb:129:in `process_unauthenticated'
+warden (1.2.9) lib/warden/manager.rb:44:in `call'
+rack (3.0.10) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.10) lib/rack/etag.rb:29:in `call'
+rack (3.0.10) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.10) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.10) lib/rack/method_override.rb:28:in `call'
+rack (3.0.10) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.10) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/login" for 127.0.0.1 at 2024-04-20 13:16:59 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/login" for 127.0.0.1 at 2024-04-20 13:20:26 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/login"):
+  
+Started GET "/" for 127.0.0.1 at 2024-04-20 13:20:38 -0700
+Processing by TestsController#index as HTML
+Completed 401 Unauthorized in 14ms (ActiveRecord: 0.0ms | Allocations: 2583)
+
+
+  
+NoMethodError (undefined method `authentication_keys' for User:Class
+Did you mean?  authenticate_by):
+  
+activerecord (7.1.3.2) lib/active_record/dynamic_matchers.rb:22:in `method_missing'
+devise (4.9.4) lib/devise/failure_app.rb:113:in `i18n_message'
+devise (4.9.4) lib/devise/failure_app.rb:93:in `redirect'
+devise (4.9.4) lib/devise/failure_app.rb:48:in `respond'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+i18n (1.14.4) lib/i18n.rb:322:in `with_locale'
+devise (4.9.4) lib/devise/failure_app.rb:23:in `block in <class:FailureApp>'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:293:in `block in action'
+devise (4.9.4) lib/devise/failure_app.rb:28:in `call'
+devise (4.9.4) lib/devise/delegator.rb:7:in `call'
+warden (1.2.9) lib/warden/manager.rb:143:in `call_failure_app'
+warden (1.2.9) lib/warden/manager.rb:129:in `process_unauthenticated'
+warden (1.2.9) lib/warden/manager.rb:44:in `call'
+rack (3.0.10) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.10) lib/rack/etag.rb:29:in `call'
+rack (3.0.10) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.10) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.10) lib/rack/method_override.rb:28:in `call'
+rack (3.0.10) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.10) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2024-04-20 13:20:58 -0700
+  
+NameError (uninitialized constant User):
+  
+config/routes.rb:2:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2024-04-20 13:22:26 -0700
+Processing by TestsController#index as HTML
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms | Allocations: 2576)
+
+
+Started GET "/gurus/login" for 127.0.0.1 at 2024-04-20 13:22:26 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 33.7ms | Allocations: 4791)
+  Rendered layout layouts/application.html.erb (Duration: 34.9ms | Allocations: 4875)
+Completed 500 Internal Server Error in 358ms (ActiveRecord: 12.5ms | Allocations: 241521)
+
+
+  
+ActionView::Template::Error (undefined method `session_path' for #<ActionView::Base:0x0000000001adb0>
+Did you mean?  question_path):
+    1: <h2>Log in</h2>
+    2: 
+    3: <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    4:   <div class="field">
+    5:     <%= f.label :email %><br />
+    6:     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  
+devise (4.9.4) app/views/devise/sessions/new.html.erb:3
+actionview (7.1.3.2) lib/action_view/base.rb:264:in `public_send'
+actionview (7.1.3.2) lib/action_view/base.rb:264:in `_run'
+actionview (7.1.3.2) lib/action_view/template.rb:261:in `block in render'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:208:in `instrument'
+actionview (7.1.3.2) lib/action_view/template.rb:549:in `instrument_render_template'
+actionview (7.1.3.2) lib/action_view/template.rb:249:in `render'
+actionview (7.1.3.2) lib/action_view/renderer/template_renderer.rb:66:in `block (2 levels) in render_template'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `instrument'
+actionview (7.1.3.2) lib/action_view/renderer/template_renderer.rb:60:in `block in render_template'
+actionview (7.1.3.2) lib/action_view/renderer/template_renderer.rb:76:in `block in render_with_layout'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `instrument'
+actionview (7.1.3.2) lib/action_view/renderer/template_renderer.rb:75:in `render_with_layout'
+actionview (7.1.3.2) lib/action_view/renderer/template_renderer.rb:59:in `render_template'
+actionview (7.1.3.2) lib/action_view/renderer/template_renderer.rb:11:in `render'
+actionview (7.1.3.2) lib/action_view/renderer/renderer.rb:63:in `render_template_to_object'
+actionview (7.1.3.2) lib/action_view/renderer/renderer.rb:31:in `render_to_object'
+actionview (7.1.3.2) lib/action_view/rendering.rb:135:in `block in _render_template'
+actionview (7.1.3.2) lib/action_view/base.rb:291:in `in_rendering_context'
+actionview (7.1.3.2) lib/action_view/rendering.rb:134:in `_render_template'
+actionpack (7.1.3.2) lib/action_controller/metal/streaming.rb:256:in `_render_template'
+actionview (7.1.3.2) lib/action_view/rendering.rb:121:in `render_to_body'
+actionpack (7.1.3.2) lib/action_controller/metal/rendering.rb:158:in `render_to_body'
+actionpack (7.1.3.2) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+actionpack (7.1.3.2) lib/abstract_controller/rendering.rb:27:in `render'
+actionpack (7.1.3.2) lib/action_controller/metal/rendering.rb:139:in `render'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:29:in `block (2 levels) in render'
+/home/inga/.rvm/rubies/ruby-3.0.2/lib/ruby/3.0.0/benchmark.rb:308:in `realtime'
+activesupport (7.1.3.2) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:29:in `block in render'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:98:in `cleanup_view_runtime'
+activerecord (7.1.3.2) lib/active_record/railties/controller_runtime.rb:39:in `cleanup_view_runtime'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:28:in `render'
+responders (3.1.1) lib/action_controller/responder.rb:245:in `default_render'
+responders (3.1.1) lib/action_controller/responder.rb:175:in `to_html'
+responders (3.1.1) lib/action_controller/responder.rb:168:in `respond'
+responders (3.1.1) lib/action_controller/responder.rb:161:in `call'
+responders (3.1.1) lib/action_controller/respond_with.rb:216:in `respond_with'
+devise (4.9.4) app/controllers/devise/sessions_controller.rb:14:in `new'
+actionpack (7.1.3.2) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+turbo-rails (2.0.5) lib/turbo-rails.rb:24:in `with_request_id'
+turbo-rails (2.0.5) app/controllers/concerns/turbo/request_id_tracking.rb:10:in `turbo_tracking_request_id'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+actiontext (7.1.3.2) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.3.2) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.3.2) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.3.2) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.3.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.3.2) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.3.2) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.3.2) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.3.2) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.3.2) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.3.2) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/routing/mapper.rb:21:in `block in <class:Constraints>'
+actionpack (7.1.3.2) lib/action_dispatch/routing/mapper.rb:51:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.3.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.3.2) lib/action_dispatch/routing/route_set.rb:882:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (3.0.10) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.10) lib/rack/etag.rb:29:in `call'
+rack (3.0.10) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.10) lib/rack/head.rb:15:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.3.2) lib/active_record/migration.rb:655:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.3.2) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.3.2) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.3.2) lib/active_support/broadcast_logger.rb:240:in `method_missing'
+railties (7.1.3.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.10) lib/rack/method_override.rb:28:in `call'
+rack (3.0.10) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.10) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.3.2) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.3.2) lib/rails/engine.rb:536:in `call'
+puma (6.4.2) lib/puma/configuration.rb:272:in `call'
+puma (6.4.2) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.2) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.2) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.2) lib/puma/server.rb:464:in `process_client'
+puma (6.4.2) lib/puma/server.rb:245:in `block in run'
+puma (6.4.2) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/gurus/login" for 127.0.0.1 at 2024-04-20 13:24:08 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 4.2ms | Allocations: 743)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 63.6ms | Allocations: 5022)
+  Rendered shared/_header.html.erb (Duration: 1.2ms | Allocations: 185)
+  Rendered shared/_menu.html.erb (Duration: 2.8ms | Allocations: 375)
+  Rendered shared/_flash.html.erb (Duration: 1.3ms | Allocations: 195)
+  Rendered shared/_footer.html.erb (Duration: 1.8ms | Allocations: 294)
+  Rendered layout layouts/application.html.erb (Duration: 536.5ms | Allocations: 59030)
+Completed 200 OK in 1096ms (Views: 569.4ms | ActiveRecord: 7.7ms | Allocations: 303473)
+
+
+Started GET "/gurus/sign_up" for 127.0.0.1 at 2024-04-20 13:24:16 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 1.4ms | Allocations: 246)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 141)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 11.8ms | Allocations: 1917)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 19)
+  Rendered shared/_menu.html.erb (Duration: 0.5ms | Allocations: 92)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 27)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 33.5ms | Allocations: 5692)
+Completed 200 OK in 46ms (Views: 38.1ms | ActiveRecord: 0.0ms | Allocations: 6876)
+
+
+Started POST "/gurus" for 127.0.0.1 at 2024-04-20 13:24:23 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (6.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 768ms (ActiveRecord: 6.9ms | Allocations: 11356)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/models/user.rb:19:in `block in <class:User>'
+Started POST "/gurus" for 127.0.0.1 at 2024-04-20 13:24:54 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (6.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "admin", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "admin@admin.com"], ["admin", nil], ["created_at", "2024-04-20 20:24:55.810091"], ["updated_at", "2024-04-20 20:24:55.810091"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", "2024-04-20 20:24:55.810643"], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (2.7ms)[0m  [1m[36mcommit transaction[0m
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb (Duration: 5.3ms | Allocations: 340)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 73.5ms
+Delivered mail 6624249843d0d_2a4f44fc-494@ubuntu.mail (164.7ms)
+Date: Sat, 20 Apr 2024 13:24:56 -0700
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: admin@admin.com
+Message-ID: <6624249843d0d_2a4f44fc-494@ubuntu.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome admin@admin.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/gurus/confirmation?confirmation_token=i2WY9d78VrP6BjDsoshs">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 303 See Other in 1324ms (ActiveRecord: 16.4ms | Allocations: 96606)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-20 13:24:56 -0700
+Processing by TestsController#index as HTML
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms | Allocations: 578)
+
+
+Started GET "/gurus/login" for 127.0.0.1 at 2024-04-20 13:24:56 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 7.2ms | Allocations: 661)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 25.2ms | Allocations: 2136)
+  Rendered shared/_header.html.erb (Duration: 1.3ms | Allocations: 138)
+  Rendered shared/_menu.html.erb (Duration: 2.8ms | Allocations: 317)
+  Rendered shared/_flash.html.erb (Duration: 1.5ms | Allocations: 178)
+  Rendered shared/_footer.html.erb (Duration: 1.6ms | Allocations: 232)
+  Rendered layout layouts/application.html.erb (Duration: 177.3ms | Allocations: 21130)
+Completed 200 OK in 194ms (Views: 186.8ms | ActiveRecord: 0.0ms | Allocations: 22670)
+
+
+Started POST "/gurus/login" for 127.0.0.1 at 2024-04-20 13:25:16 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 692ms (ActiveRecord: 0.6ms | Allocations: 4023)
+
+
+Started GET "/gurus/login" for 127.0.0.1 at 2024-04-20 13:25:17 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 1.7ms | Allocations: 179)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 6.1ms | Allocations: 1066)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered shared/_menu.html.erb (Duration: 0.5ms | Allocations: 92)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 34)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 4843)
+Completed 200 OK in 28ms (Views: 24.4ms | ActiveRecord: 0.0ms | Allocations: 5742)
+
+
+Started GET "/gurus/sign_up" for 127.0.0.1 at 2024-04-20 13:25:23 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 4.3ms | Allocations: 234)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 138)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 14.1ms | Allocations: 1747)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 18)
+  Rendered shared/_menu.html.erb (Duration: 0.6ms | Allocations: 87)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 37.0ms | Allocations: 5377)
+Completed 200 OK in 44ms (Views: 41.0ms | ActiveRecord: 0.0ms | Allocations: 6237)
+
+
+Started POST "/gurus" for 127.0.0.1 at 2024-04-20 13:25:32 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (5.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 3.0ms | Allocations: 472)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 142)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 18.7ms | Allocations: 1975)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 23)
+  Rendered shared/_menu.html.erb (Duration: 2.0ms | Allocations: 91)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 56)
+  Rendered layout layouts/application.html.erb (Duration: 54.9ms | Allocations: 5673)
+Completed 422 Unprocessable Entity in 787ms (Views: 58.7ms | ActiveRecord: 5.9ms | Allocations: 11652)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-20 13:25:51 -0700
+Processing by TestsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 330)
+
+
+Started GET "/gurus/login" for 127.0.0.1 at 2024-04-20 13:25:51 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 2.5ms | Allocations: 177)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 12.0ms | Allocations: 992)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 18)
+  Rendered shared/_menu.html.erb (Duration: 0.8ms | Allocations: 87)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 33)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 45.8ms | Allocations: 4632)
+Completed 200 OK in 51ms (Views: 48.0ms | ActiveRecord: 0.0ms | Allocations: 5392)
+
+
+Started GET "/gurus/sign_up" for 127.0.0.1 at 2024-04-20 13:26:04 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 13)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 5.6ms | Allocations: 127)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 26.0ms | Allocations: 1001)
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 18)
+  Rendered shared/_menu.html.erb (Duration: 2.5ms | Allocations: 87)
+  Rendered shared/_flash.html.erb (Duration: 1.2ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 3.0ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 112.4ms | Allocations: 4632)
+Completed 200 OK in 126ms (Views: 116.5ms | ActiveRecord: 0.0ms | Allocations: 5310)
+
+
+Started GET "/gurus/confirmation?confirmation_token=[FILTERED]" for 127.0.0.1 at 2024-04-20 13:28:28 -0700
+Processing by Devise::ConfirmationsController#show as */*
+  Parameters: {"confirmation_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (8.8ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "confirmed_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2024-04-20 20:28:28.355673"], ["confirmed_at", "2024-04-20 20:28:28.353680"], ["id", 1]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/gurus/login
+Completed 302 Found in 44ms (ActiveRecord: 10.3ms | Allocations: 5224)
+
+
+Started GET "/gurus/login" for 127.0.0.1 at 2024-04-20 13:28:46 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 2.6ms | Allocations: 179)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 18.3ms | Allocations: 1069)
+  Rendered shared/_header.html.erb (Duration: 0.8ms | Allocations: 20)
+  Rendered shared/_menu.html.erb (Duration: 1.5ms | Allocations: 87)
+  Rendered shared/_flash.html.erb (Duration: 0.5ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 1.2ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 93.5ms | Allocations: 4807)
+Completed 200 OK in 108ms (Views: 99.4ms | ActiveRecord: 0.0ms | Allocations: 5602)
+
+
+Started POST "/gurus/login" for 127.0.0.1 at 2024-04-20 13:28:52 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (4.8ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2024-04-20 20:28:53.504624"], ["sign_in_count", 1], ["current_sign_in_at", "2024-04-20 20:28:53.503850"], ["last_sign_in_at", "2024-04-20 20:28:53.503850"], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["id", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 709ms (ActiveRecord: 5.6ms | Allocations: 5826)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-20 13:28:53 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:17
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 122.9ms | Allocations: 15161)
+  Rendered tests/index.html.erb within layouts/application (Duration: 191.2ms | Allocations: 55842)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 21)
+  Rendered shared/_menu.html.erb (Duration: 2.4ms | Allocations: 61)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 42)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 79)
+  Rendered layout layouts/application.html.erb (Duration: 221.3ms | Allocations: 59703)
+Completed 200 OK in 280ms (Views: 220.3ms | ActiveRecord: 5.6ms | Allocations: 67870)
+
+
+Started DELETE "/gurus/logout" for 127.0.0.1 at 2024-04-20 13:33:17 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started DELETE "/gurus/logout" for 127.0.0.1 at 2024-04-20 13:33:17 -0700
+Processing by Devise::SessionsController#destroy as HTML
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Redirected to http://localhost:3000/
+Completed 303 See Other in 759ms (ActiveRecord: 7.0ms | Allocations: 249217)
+
+
+Completed 303 See Other in 776ms (ActiveRecord: 4.4ms | Allocations: 249917)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-20 13:33:19 -0700
+Processing by TestsController#index as HTML
+Completed 401 Unauthorized in 15ms (ActiveRecord: 0.0ms | Allocations: 614)
+
+
+Started GET "/gurus/login" for 127.0.0.1 at 2024-04-20 13:33:19 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 4.8ms | Allocations: 743)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 25.9ms | Allocations: 4115)
+  Rendered shared/_header.html.erb (Duration: 1.6ms | Allocations: 179)
+  Rendered shared/_menu.html.erb (Duration: 3.0ms | Allocations: 345)
+  Rendered shared/_flash.html.erb (Duration: 1.6ms | Allocations: 183)
+  Rendered shared/_footer.html.erb (Duration: 6.0ms | Allocations: 294)
+  Rendered layout layouts/application.html.erb (Duration: 265.2ms | Allocations: 43842)
+Completed 200 OK in 284ms (Views: 278.0ms | ActiveRecord: 0.0ms | Allocations: 49466)
+
+
+Started GET "/gurus/sign_up" for 127.0.0.1 at 2024-04-20 13:33:25 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_error_messages.html.erb (Duration: 3.0ms | Allocations: 246)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 140)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 21.1ms | Allocations: 1916)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 19)
+  Rendered shared/_menu.html.erb (Duration: 0.8ms | Allocations: 92)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 54.6ms | Allocations: 5690)
+Completed 200 OK in 66ms (Views: 59.8ms | ActiveRecord: 0.0ms | Allocations: 6861)
+
+
+Started POST "/gurus" for 127.0.0.1 at 2024-04-20 13:33:38 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"user@user.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (3.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user@user.com"], ["LIMIT", 1]]
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "user@user.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("email", "admin", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "confirmation_token", "confirmed_at", "confirmation_sent_at", "unconfirmed_email") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "user@user.com"], ["admin", nil], ["created_at", "2024-04-20 20:33:39.362776"], ["updated_at", "2024-04-20 20:33:39.362776"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["sign_in_count", 0], ["current_sign_in_at", nil], ["last_sign_in_at", nil], ["current_sign_in_ip", nil], ["last_sign_in_ip", nil], ["confirmation_token", "[FILTERED]"], ["confirmed_at", nil], ["confirmation_sent_at", "2024-04-20 20:33:39.363138"], ["unconfirmed_email", nil]]
+  [1m[36mTRANSACTION (2.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/mailer/confirmation_instructions.html.erb (Duration: 3.5ms | Allocations: 326)
+Devise::Mailer#confirmation_instructions: processed outbound mail in 108.1ms
+Delivered mail 662426a3e4097_2b11458898975@ubuntu.mail (104.8ms)
+Date: Sat, 20 Apr 2024 13:33:39 -0700
+From: guru@mail.com
+Reply-To: guru@mail.com
+To: user@user.com
+Message-ID: <662426a3e4097_2b11458898975@ubuntu.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome user@user.com!</p>
+
+<p>You can confirm your account email through the link below:</p>
+
+<p><a href="http://localhost:3000/gurus/confirmation?confirmation_token=FB1n9XQdraNtwyAi31bP">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 303 See Other in 1406ms (ActiveRecord: 6.9ms | Allocations: 114702)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-20 13:33:40 -0700
+Processing by TestsController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms | Allocations: 443)
+
+
+Started GET "/gurus/login" for 127.0.0.1 at 2024-04-20 13:33:40 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 182)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 11.9ms | Allocations: 1064)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 20)
+  Rendered shared/_menu.html.erb (Duration: 0.6ms | Allocations: 87)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 33)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 57.5ms | Allocations: 4903)
+Completed 200 OK in 71ms (Views: 63.6ms | ActiveRecord: 0.0ms | Allocations: 5708)
+
+
+Started GET "/gurus/confirmation?confirmation_token=[FILTERED]" for ::1 at 2024-04-20 13:33:59 -0700
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["confirmation_token", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (9.0ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "confirmed_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2024-04-20 20:33:59.733212"], ["confirmed_at", "2024-04-20 20:33:59.730336"], ["id", 2]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/gurus/login
+Completed 302 Found in 85ms (ActiveRecord: 10.9ms | Allocations: 5489)
+
+
+Started GET "/gurus/login" for ::1 at 2024-04-20 13:33:59 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 179)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 20.7ms | Allocations: 1075)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered shared/_menu.html.erb (Duration: 1.3ms | Allocations: 87)
+  Rendered shared/_flash.html.erb (Duration: 0.9ms | Allocations: 34)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 55)
+  Rendered layout layouts/application.html.erb (Duration: 50.9ms | Allocations: 4828)
+Completed 200 OK in 58ms (Views: 53.9ms | ActiveRecord: 0.0ms | Allocations: 5644)
+
+
+Started GET "/gurus/login" for ::1 at 2024-04-20 13:34:10 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 4.9ms | Allocations: 177)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 63.2ms | Allocations: 992)
+  Rendered shared/_header.html.erb (Duration: 12.0ms | Allocations: 18)
+  Rendered shared/_menu.html.erb (Duration: 1.9ms | Allocations: 87)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 7.8ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 291.3ms | Allocations: 4618)
+Completed 200 OK in 328ms (Views: 321.6ms | ActiveRecord: 0.0ms | Allocations: 5341)
+
+
+Started POST "/gurus/login" for ::1 at 2024-04-20 13:34:30 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"user@user.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "user@user.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (2.9ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2024-04-20 20:34:31.718795"], ["sign_in_count", 1], ["current_sign_in_at", "2024-04-20 20:34:31.718224"], ["last_sign_in_at", "2024-04-20 20:34:31.718224"], ["current_sign_in_ip", "::1"], ["last_sign_in_ip", "::1"], ["id", 2]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 810ms (ActiveRecord: 4.3ms | Allocations: 5966)
+
+
+Started GET "/" for ::1 at 2024-04-20 13:34:31 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (1.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:17
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 109.3ms | Allocations: 15074)
+  Rendered tests/index.html.erb within layouts/application (Duration: 196.7ms | Allocations: 55805)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered shared/_menu.html.erb (Duration: 0.4ms | Allocations: 61)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 42)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 79)
+  Rendered layout layouts/application.html.erb (Duration: 221.7ms | Allocations: 59734)
+Completed 200 OK in 269ms (Views: 218.7ms | ActiveRecord: 8.7ms | Allocations: 70141)
+
+
+Started DELETE "/gurus/logout" for ::1 at 2024-04-20 13:34:43 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 303 See Other in 60ms (ActiveRecord: 0.5ms | Allocations: 2043)
+
+
+Started GET "/" for ::1 at 2024-04-20 13:34:43 -0700
+Processing by TestsController#index as HTML
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms | Allocations: 332)
+
+
+Started GET "/gurus/login" for ::1 at 2024-04-20 13:34:43 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/shared/_links.html.erb (Duration: 2.7ms | Allocations: 180)
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/devise-4.9.4/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 29.3ms | Allocations: 1028)
+  Rendered shared/_header.html.erb (Duration: 1.8ms | Allocations: 18)
+  Rendered shared/_menu.html.erb (Duration: 1.3ms | Allocations: 87)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 33)
+  Rendered shared/_footer.html.erb (Duration: 2.5ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 105.6ms | Allocations: 4668)
+Completed 200 OK in 131ms (Views: 109.8ms | ActiveRecord: 0.0ms | Allocations: 5419)
+
+
+Started GET "/gurus/login" for 127.0.0.1 at 2024-04-20 13:37:37 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 4.0ms | Allocations: 662)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 13.7ms | Allocations: 2158)
+  Rendered shared/_header.html.erb (Duration: 2.2ms | Allocations: 138)
+  Rendered shared/_menu.html.erb (Duration: 2.3ms | Allocations: 339)
+  Rendered shared/_flash.html.erb (Duration: 1.7ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 2.9ms | Allocations: 232)
+  Rendered layout layouts/application.html.erb (Duration: 98.2ms | Allocations: 21186)
+Completed 200 OK in 146ms (Views: 108.8ms | ActiveRecord: 4.7ms | Allocations: 30899)
+
+
+Started POST "/gurus/login" for 127.0.0.1 at 2024-04-20 13:39:27 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Enter"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (3.7ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "sign_in_count" = ?, "current_sign_in_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2024-04-20 20:39:28.264617"], ["sign_in_count", 2], ["current_sign_in_at", "2024-04-20 20:39:28.263447"], ["id", 1]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 683ms (ActiveRecord: 7.8ms | Allocations: 7237)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-20 13:39:28 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:17
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (1.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 64.4ms | Allocations: 11297)
+  Rendered tests/index.html.erb within layouts/application (Duration: 84.2ms | Allocations: 15535)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered shared/_menu.html.erb (Duration: 0.6ms | Allocations: 61)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 42)
+  Rendered shared/_footer.html.erb (Duration: 2.4ms | Allocations: 79)
+  Rendered layout layouts/application.html.erb (Duration: 109.2ms | Allocations: 19395)
+Completed 200 OK in 135ms (Views: 108.0ms | ActiveRecord: 6.3ms | Allocations: 27242)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-20 13:39:38 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:17
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 56.0ms | Allocations: 6536)
+  Rendered tests/index.html.erb within layouts/application (Duration: 62.7ms | Allocations: 7299)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 17)
+  Rendered shared/_menu.html.erb (Duration: 0.4ms | Allocations: 49)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 86.9ms | Allocations: 10967)
+Completed 200 OK in 119ms (Views: 88.8ms | ActiveRecord: 2.9ms | Allocations: 12725)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-20 13:39:42 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (1.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:17
+  [1m[36mQuestion Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (14.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 133.1ms | Allocations: 6534)
+  Rendered tests/index.html.erb within layouts/application (Duration: 161.7ms | Allocations: 7289)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | Allocations: 17)
+  Rendered shared/_menu.html.erb (Duration: 0.7ms | Allocations: 49)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.8ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 208.1ms | Allocations: 10888)
+Completed 200 OK in 230ms (Views: 192.0ms | ActiveRecord: 20.2ms | Allocations: 12502)
+
+
+Started GET "/tests/1" for 127.0.0.1 at 2024-04-20 13:40:00 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:56:in `find_test'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/show.html.erb:25
+  Rendered collection of questions/_question.html.erb [9 times] (Duration: 5.3ms | Allocations: 1216)
+  Rendered tests/show.html.erb within layouts/application (Duration: 82.8ms | Allocations: 34341)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 17)
+  Rendered shared/_menu.html.erb (Duration: 0.5ms | Allocations: 51)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 2.1ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 120.7ms | Allocations: 38112)
+Completed 200 OK in 161ms (Views: 123.0ms | ActiveRecord: 0.9ms | Allocations: 41032)
+
+
+Started GET "/tests/1" for 127.0.0.1 at 2024-04-20 13:54:10 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:55:in `find_test'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/show.html.erb:25
+  Rendered collection of questions/_question.html.erb [9 times] (Duration: 13.9ms | Allocations: 1184)
+  Rendered tests/show.html.erb within layouts/application (Duration: 64.1ms | Allocations: 10034)
+  Rendered shared/_header.html.erb (Duration: 1.5ms | Allocations: 130)
+  Rendered shared/_menu.html.erb (Duration: 2.2ms | Allocations: 285)
+  Rendered shared/_flash.html.erb (Duration: 1.7ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 6.5ms | Allocations: 232)
+  Rendered layout layouts/application.html.erb (Duration: 157.8ms | Allocations: 28874)
+Completed 200 OK in 317ms (Views: 165.2ms | ActiveRecord: 9.4ms | Allocations: 50176)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 13:54:16 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.6ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:17
+  [1m[36mQuestion Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 66.6ms | Allocations: 6871)
+  Rendered tests/index.html.erb within layouts/application (Duration: 81.0ms | Allocations: 7934)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered shared/_menu.html.erb (Duration: 0.5ms | Allocations: 49)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 107.1ms | Allocations: 11536)
+Completed 200 OK in 135ms (Views: 108.6ms | ActiveRecord: 6.0ms | Allocations: 13328)
+
+
+Started POST "/tests/2/start" for 127.0.0.1 at 2024-04-20 13:54:18 -0700
+Processing by TestsController#start as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:55:in `find_test'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tests_controller.rb:48:in `start'
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["test_id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:35:in `before_validation_set_first_question'
+  [1m[36mTestPassage Create (0.8ms)[0m  [1m[32mINSERT INTO "test_passages" ("user_id", "test_id", "current_question_id", "correct_question", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 1], ["test_id", 2], ["current_question_id", 14], ["correct_question", 0], ["created_at", "2024-04-20 20:54:18.887914"], ["updated_at", "2024-04-20 20:54:18.887914"]]
+  ↳ app/controllers/tests_controller.rb:48:in `start'
+  [1m[36mTRANSACTION (10.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tests_controller.rb:48:in `start'
+  [1m[36mTestPassage Load (0.5ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."user_id" = ? AND "test_passages"."test_id" = ? ORDER BY "test_passages"."id" DESC LIMIT ?[0m  [["user_id", 1], ["test_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20:in `test_passage'
+Redirected to http://localhost:3000/test_passages/11
+Completed 302 Found in 288ms (ActiveRecord: 33.2ms | Allocations: 55689)
+
+
+Started GET "/test_passages/11" for 127.0.0.1 at 2024-04-20 13:54:18 -0700
+Processing by TestPassagesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.3ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/show.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:1
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:4
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 14]]
+  ↳ app/views/test_passages/show.html.erb:8
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ? AND (id <= 14)[0m  [["test_id", 2]]
+  ↳ app/models/test_passage.rb:10:in `current_question_number'
+  [1m[36mQuestion Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/test_passages/show.html.erb:17
+  Rendered test_passages/show.html.erb within layouts/application (Duration: 143.0ms | Allocations: 39332)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 22)
+  Rendered shared/_menu.html.erb (Duration: 0.4ms | Allocations: 53)
+  Rendered shared/_flash.html.erb (Duration: 0.6ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 179.5ms | Allocations: 43087)
+Completed 200 OK in 203ms (Views: 180.3ms | ActiveRecord: 3.8ms | Allocations: 46422)
+
+
+Started PUT "/test_passages/11" for 127.0.0.1 at 2024-04-20 13:54:23 -0700
+Processing by TestPassagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "answer_ids"=>["6"], "commit"=>"Next", "id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.2ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:50:in `correct_answers'
+  [1m[36mAnswer Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ?[0m  [["question_id", 14], ["correct", 1]]
+  ↳ app/models/test_passage.rb:43:in `correct_answer?'
+  [1m[36mAnswer Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ? AND "answers"."id" = ?[0m  [["question_id", 14], ["correct", 1], ["id", 6]]
+  ↳ app/models/test_passage.rb:45:in `correct_answer?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTest Load (3.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ? AND (id > 14) ORDER BY "questions"."id" ASC LIMIT ?[0m  [["test_id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTestPassage Update (0.3ms)[0m  [1m[33mUPDATE "test_passages" SET "current_question_id" = ?, "correct_question" = ?, "updated_at" = ? WHERE "test_passages"."id" = ?[0m  [["current_question_id", 15], ["correct_question", 1], ["updated_at", "2024-04-20 20:54:23.836732"], ["id", 11]]
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 15]]
+  ↳ app/views/test_passages/show.html.erb:8
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ? AND (id <= 15)[0m  [["test_id", 2]]
+  ↳ app/models/test_passage.rb:10:in `current_question_number'
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/test_passages/show.html.erb:17
+  Rendered test_passages/show.html.erb within layouts/application (Duration: 24.6ms | Allocations: 3771)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered shared/_menu.html.erb (Duration: 0.4ms | Allocations: 49)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 43.6ms | Allocations: 7367)
+Completed 200 OK in 126ms (Views: 45.0ms | ActiveRecord: 7.7ms | Allocations: 15003)
+
+
+Started PUT "/test_passages/11" for 127.0.0.1 at 2024-04-20 13:54:26 -0700
+Processing by TestPassagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "answer_ids"=>["7"], "commit"=>"Next", "id"=>"11"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.2ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:50:in `correct_answers'
+  [1m[36mAnswer Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ?[0m  [["question_id", 15], ["correct", 1]]
+  ↳ app/models/test_passage.rb:43:in `correct_answer?'
+  [1m[36mAnswer Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ? AND "answers"."id" = ?[0m  [["question_id", 15], ["correct", 1], ["id", 7]]
+  ↳ app/models/test_passage.rb:45:in `correct_answer?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTest Load (5.7ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ? AND (id > 15) ORDER BY "questions"."id" ASC LIMIT ?[0m  [["test_id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTestPassage Update (0.3ms)[0m  [1m[33mUPDATE "test_passages" SET "current_question_id" = ?, "correct_question" = ?, "updated_at" = ? WHERE "test_passages"."id" = ?[0m  [["current_question_id", nil], ["correct_question", 2], ["updated_at", "2024-04-20 20:54:26.686983"], ["id", 11]]
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/test_passage.rb:17:in `accept!'
+Completed 500 Internal Server Error in 83ms (ActiveRecord: 8.2ms | Allocations: 9650)
+
+
+  
+NameError (uninitialized constant TestPassagesController::TestMailer
+Did you mean?  TestsMailer):
+  
+app/controllers/test_passages_controller.rb:17:in `update'
+Started PUT "/test_passages/11" for 127.0.0.1 at 2024-04-20 13:55:11 -0700
+Processing by TestPassagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "answer_ids"=>["7"], "commit"=>"Next", "id"=>"11"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.3ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+Completed 500 Internal Server Error in 161ms (ActiveRecord: 7.7ms | Allocations: 25483)
+
+
+  
+NoMethodError (undefined method `answers' for nil:NilClass):
+  
+app/models/test_passage.rb:50:in `correct_answers'
+app/models/test_passage.rb:43:in `correct_answer?'
+app/models/test_passage.rb:14:in `accept!'
+app/controllers/test_passages_controller.rb:15:in `update'
+Started PUT "/test_passages/11" for 127.0.0.1 at 2024-04-20 13:55:20 -0700
+Processing by TestPassagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "answer_ids"=>["7"], "commit"=>"Next", "id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.2ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.5ms | Allocations: 3027)
+
+
+  
+NoMethodError (undefined method `answers' for nil:NilClass):
+  
+app/models/test_passage.rb:50:in `correct_answers'
+app/models/test_passage.rb:43:in `correct_answer?'
+app/models/test_passage.rb:14:in `accept!'
+app/controllers/test_passages_controller.rb:15:in `update'
+Started PUT "/test_passages/11" for 127.0.0.1 at 2024-04-20 13:57:57 -0700
+Processing by TestPassagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "answer_ids"=>["7"], "commit"=>"Next", "id"=>"11"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.3ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+Completed 500 Internal Server Error in 270ms (ActiveRecord: 20.2ms | Allocations: 25577)
+
+
+  
+NoMethodError (undefined method `answers' for nil:NilClass):
+  
+app/models/test_passage.rb:47:in `correct_answers'
+app/models/test_passage.rb:43:in `correct_answer?'
+app/models/test_passage.rb:14:in `accept!'
+app/controllers/test_passages_controller.rb:15:in `update'
+Started GET "/test_passages/11" for 127.0.0.1 at 2024-04-20 14:01:34 -0700
+Processing by TestPassagesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.2ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:1
+  Rendered test_passages/show.html.erb within layouts/application (Duration: 116.2ms | Allocations: 14917)
+  Rendered layout layouts/application.html.erb (Duration: 117.2ms | Allocations: 14998)
+Completed 500 Internal Server Error in 166ms (ActiveRecord: 1.9ms | Allocations: 18165)
+
+
+  
+ActionView::Template::Error (undefined method `body' for nil:NilClass):
+    1: <h1>Passing The <%= @test_passage.test.title %> Test</h1>
+    2: 
+    3: <b>
+    4: 	<%= @test_passage.current_question.body %>
+    5: </b>
+    6: 
+    7: <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+  
+app/views/test_passages/show.html.erb:4
+Started POST "/tests/1/start" for 127.0.0.1 at 2024-04-20 14:01:43 -0700
+Processing by TestsController#start as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:55:in `find_test'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/test_passage.rb:35:in `before_validation_set_first_question'
+  [1m[36mQuestion Load (1.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["test_id", 1], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:35:in `before_validation_set_first_question'
+  [1m[36mTestPassage Create (0.6ms)[0m  [1m[32mINSERT INTO "test_passages" ("user_id", "test_id", "current_question_id", "correct_question", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 1], ["test_id", 1], ["current_question_id", 4], ["correct_question", 0], ["created_at", "2024-04-20 21:01:43.245944"], ["updated_at", "2024-04-20 21:01:43.245944"]]
+  ↳ app/controllers/tests_controller.rb:48:in `start'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tests_controller.rb:48:in `start'
+  [1m[36mTestPassage Load (0.5ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."user_id" = ? AND "test_passages"."test_id" = ? ORDER BY "test_passages"."id" DESC LIMIT ?[0m  [["user_id", 1], ["test_id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20:in `test_passage'
+Redirected to http://localhost:3000/test_passages/12
+Completed 302 Found in 94ms (ActiveRecord: 10.9ms | Allocations: 13851)
+
+
+Started GET "/test_passages/12" for 127.0.0.1 at 2024-04-20 14:01:43 -0700
+Processing by TestPassagesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.3ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/show.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:1
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:4
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 4]]
+  ↳ app/views/test_passages/show.html.erb:8
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ? AND (id <= 4)[0m  [["test_id", 1]]
+  ↳ app/models/test_passage.rb:10:in `current_question_number'
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/test_passages/show.html.erb:17
+  Rendered test_passages/show.html.erb within layouts/application (Duration: 78.0ms | Allocations: 15234)
+  Rendered shared/_header.html.erb (Duration: 1.3ms | Allocations: 137)
+  Rendered shared/_menu.html.erb (Duration: 3.4ms | Allocations: 291)
+  Rendered shared/_flash.html.erb (Duration: 1.4ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 4.0ms | Allocations: 232)
+  Rendered layout layouts/application.html.erb (Duration: 153.0ms | Allocations: 34255)
+Completed 200 OK in 172ms (Views: 152.3ms | ActiveRecord: 2.8ms | Allocations: 36388)
+
+
+Started PUT "/test_passages/12" for 127.0.0.1 at 2024-04-20 14:01:49 -0700
+Processing by TestPassagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "answer_ids"=>["2"], "commit"=>"Next", "id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.2ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:47:in `correct_answers'
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? /* loading for inspect */ LIMIT ?[0m  [["question_id", 4], ["LIMIT", 11]]
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.8ms | Allocations: 6360)
+
+
+  [1m[36mCACHE Answer Load (0.0ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ? /* loading for inspect */ LIMIT ?[0m  [["question_id", 4], ["LIMIT", 11]]
+  
+NoMethodError (undefined method `correct' for #<ActiveRecord::Associations::CollectionProxy [#<Answer id: 1, body: "inga", correct: true, question_id: 4, created_at: "2024-04-11 16:46:21.959228000 +0300", updated_at: "2024-04-11 16:46:21.959228000 +0300">, #<Answer id: 2, body: "Inga", correct: true, question_id: 4, created_at: "2024-04-11 16:56:51.376113000 +0300", updated_at: "2024-04-11 16:56:51.376113000 +0300">, #<Answer id: 3, body: "s", correct: false, question_id: 4, created_at: "2024-04-11 16:57:07.592798000 +0300", updated_at: "2024-04-11 16:57:07.592798000 +0300">]>
+Did you mean?  collect):
+  
+app/models/test_passage.rb:47:in `correct_answers'
+app/models/test_passage.rb:43:in `correct_answer?'
+app/models/test_passage.rb:14:in `accept!'
+app/controllers/test_passages_controller.rb:15:in `update'
+Started GET "/test_passages/12" for 127.0.0.1 at 2024-04-20 14:02:04 -0700
+Processing by TestPassagesController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.2ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/show.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:1
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:4
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 4]]
+  ↳ app/views/test_passages/show.html.erb:8
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ? AND (id <= 4)[0m  [["test_id", 1]]
+  ↳ app/models/test_passage.rb:10:in `current_question_number'
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/test_passages/show.html.erb:17
+  Rendered test_passages/show.html.erb within layouts/application (Duration: 135.3ms | Allocations: 31839)
+  Rendered shared/_header.html.erb (Duration: 2.1ms | Allocations: 135)
+  Rendered shared/_menu.html.erb (Duration: 3.2ms | Allocations: 293)
+  Rendered shared/_flash.html.erb (Duration: 1.1ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 1.5ms | Allocations: 232)
+  Rendered layout layouts/application.html.erb (Duration: 215.9ms | Allocations: 50868)
+Completed 200 OK in 323ms (Views: 216.6ms | ActiveRecord: 12.2ms | Allocations: 73284)
+
+
+Started PUT "/test_passages/12" for 127.0.0.1 at 2024-04-20 14:02:07 -0700
+Processing by TestPassagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "answer_ids"=>["2"], "commit"=>"Next", "id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.2ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:50:in `correct_answers'
+  [1m[36mAnswer Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ?[0m  [["question_id", 4], ["correct", 1]]
+  ↳ app/models/test_passage.rb:43:in `correct_answer?'
+  [1m[36mAnswer Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ? AND "answers"."id" = ?[0m  [["question_id", 4], ["correct", 1], ["id", 2]]
+  ↳ app/models/test_passage.rb:45:in `correct_answer?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTest Load (3.9ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ? AND (id > 4) ORDER BY "questions"."id" ASC LIMIT ?[0m  [["test_id", 1], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTestPassage Update (0.2ms)[0m  [1m[33mUPDATE "test_passages" SET "current_question_id" = ?, "updated_at" = ? WHERE "test_passages"."id" = ?[0m  [["current_question_id", 5], ["updated_at", "2024-04-20 21:02:07.756776"], ["id", 12]]
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  [1m[36mTRANSACTION (3.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 5]]
+  ↳ app/views/test_passages/show.html.erb:8
+  [1m[36mQuestion Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ? AND (id <= 5)[0m  [["test_id", 1]]
+  ↳ app/models/test_passage.rb:10:in `current_question_number'
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/test_passages/show.html.erb:17
+  Rendered test_passages/show.html.erb within layouts/application (Duration: 20.8ms | Allocations: 2655)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 17)
+  Rendered shared/_menu.html.erb (Duration: 0.9ms | Allocations: 49)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 47.2ms | Allocations: 6319)
+Completed 200 OK in 112ms (Views: 48.8ms | ActiveRecord: 11.0ms | Allocations: 14756)
+
+
+Started PUT "/test_passages/12" for 127.0.0.1 at 2024-04-20 14:02:10 -0700
+Processing by TestPassagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Next", "id"=>"12"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.1ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:50:in `correct_answers'
+  [1m[36mAnswer Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ?[0m  [["question_id", 5], ["correct", 1]]
+  ↳ app/models/test_passage.rb:43:in `correct_answer?'
+  [1m[36mAnswer Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ? AND "answers"."id" IS NULL[0m  [["question_id", 5], ["correct", 1]]
+  ↳ app/models/test_passage.rb:45:in `correct_answer?'
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 1.7ms | Allocations: 4729)
+
+
+  
+NoMethodError (undefined method `count' for nil:NilClass):
+  
+app/models/test_passage.rb:46:in `correct_answer?'
+app/models/test_passage.rb:14:in `accept!'
+app/controllers/test_passages_controller.rb:15:in `update'
+Started GET "/" for 127.0.0.1 at 2024-04-20 14:02:17 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:17
+  [1m[36mQuestion Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 61.5ms | Allocations: 6873)
+  Rendered tests/index.html.erb within layouts/application (Duration: 66.9ms | Allocations: 8023)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered shared/_menu.html.erb (Duration: 0.5ms | Allocations: 49)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 67)
+  Rendered layout layouts/application.html.erb (Duration: 85.0ms | Allocations: 11824)
+Completed 200 OK in 100ms (Views: 83.9ms | ActiveRecord: 3.4ms | Allocations: 13996)
+
+
+Started GET "/tests/2" for 127.0.0.1 at 2024-04-20 14:02:21 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:55:in `find_test'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/show.html.erb:25
+  Rendered collection of questions/_question.html.erb [2 times] (Duration: 6.7ms | Allocations: 452)
+  Rendered tests/show.html.erb within layouts/application (Duration: 19.3ms | Allocations: 2521)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered shared/_menu.html.erb (Duration: 0.3ms | Allocations: 49)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 34.1ms | Allocations: 6129)
+Completed 200 OK in 57ms (Views: 37.9ms | ActiveRecord: 0.8ms | Allocations: 8893)
+
+
+Started GET "/questions/14" for 127.0.0.1 at 2024-04-20 14:02:24 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:63:in `find_question'
+  Rendering layout layouts/application.html.erb
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/questions/show.html.erb:9
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 14]]
+  ↳ app/views/questions/show.html.erb:16
+  Rendered collection of answers/_answer.html.erb [1 times] (Duration: 4.7ms | Allocations: 376)
+  Rendered questions/show.html.erb within layouts/application (Duration: 25.5ms | Allocations: 3620)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 17)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_menu.html.erb:2
+  Rendered shared/_menu.html.erb (Duration: 8.0ms | Allocations: 862)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 67)
+  Rendered layout layouts/application.html.erb (Duration: 47.8ms | Allocations: 8158)
+Completed 200 OK in 62ms (Views: 49.0ms | ActiveRecord: 1.0ms | Allocations: 10084)
+
+
+Started GET "/questions/14/answers/new" for 127.0.0.1 at 2024-04-20 14:02:27 -0700
+Processing by AnswersController#new as HTML
+  Parameters: {"question_id"=>"14"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:41:in `find_question'
+  Rendering layout layouts/application.html.erb
+  Rendering answers/new.html.erb within layouts/application
+  Rendered shared/_errors.html.erb (Duration: 3.0ms | Allocations: 237)
+  Rendered answers/_form.html.erb (Duration: 24.3ms | Allocations: 1967)
+  Rendered answers/new.html.erb within layouts/application (Duration: 49.8ms | Allocations: 2311)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 17)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_menu.html.erb:2
+  Rendered shared/_menu.html.erb (Duration: 11.7ms | Allocations: 992)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 67)
+  Rendered layout layouts/application.html.erb (Duration: 96.5ms | Allocations: 7007)
+Completed 200 OK in 118ms (Views: 101.2ms | ActiveRecord: 1.0ms | Allocations: 8537)
+
+
+Started POST "/questions/14/answers" for 127.0.0.1 at 2024-04-20 14:02:35 -0700
+Processing by AnswersController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "answer"=>{"body"=>"cm,v.", "correct"=>"1"}, "commit"=>"Create Answer", "question_id"=>"14"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:41:in `find_question'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/answers_controller.rb:18:in `create'
+  [1m[36mAnswer Create (23.4ms)[0m  [1m[32mINSERT INTO "answers" ("body", "correct", "question_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["body", "cm,v."], ["correct", 1], ["question_id", 14], ["created_at", "2024-04-20 21:02:35.055701"], ["updated_at", "2024-04-20 21:02:35.055701"]]
+  ↳ app/controllers/answers_controller.rb:18:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/answers_controller.rb:18:in `create'
+Redirected to http://localhost:3000/answers/8
+Completed 302 Found in 58ms (ActiveRecord: 24.2ms | Allocations: 3333)
+
+
+Started GET "/answers/8" for 127.0.0.1 at 2024-04-20 14:02:35 -0700
+Processing by AnswersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/answers_controller.rb:45:in `set_answer'
+  Rendering layout layouts/application.html.erb
+  Rendering answers/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/answers/show.html.erb:3
+  Rendered answers/show.html.erb within layouts/application (Duration: 16.0ms | Allocations: 1740)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 17)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_menu.html.erb:2
+  Rendered shared/_menu.html.erb (Duration: 7.1ms | Allocations: 828)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 52.8ms | Allocations: 6333)
+Completed 200 OK in 81ms (Views: 55.4ms | ActiveRecord: 0.8ms | Allocations: 7915)
+
+
+Started GET "/questions/14" for 127.0.0.1 at 2024-04-20 14:02:37 -0700
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:63:in `find_question'
+  Rendering layout layouts/application.html.erb
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/questions/show.html.erb:9
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 14]]
+  ↳ app/views/questions/show.html.erb:16
+  Rendered collection of answers/_answer.html.erb [2 times] (Duration: 1.4ms | Allocations: 258)
+  Rendered questions/show.html.erb within layouts/application (Duration: 18.1ms | Allocations: 2201)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 17)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_menu.html.erb:2
+  Rendered shared/_menu.html.erb (Duration: 6.9ms | Allocations: 829)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 48.8ms | Allocations: 6576)
+Completed 200 OK in 60ms (Views: 50.3ms | ActiveRecord: 0.6ms | Allocations: 7392)
+
+
+Started GET "/tests/2/questions" for 127.0.0.1 at 2024-04-20 14:02:40 -0700
+Processing by QuestionsController#index as HTML
+  Parameters: {"test_id"=>"2"}
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:59:in `find_test'
+  Rendering layout layouts/application.html.erb
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/questions/index.html.erb:12
+  Rendered collection of questions/_question.html.erb [2 times] (Duration: 2.6ms | Allocations: 257)
+  Rendered questions/index.html.erb within layouts/application (Duration: 19.1ms | Allocations: 1295)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 17)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_menu.html.erb:2
+  Rendered shared/_menu.html.erb (Duration: 9.0ms | Allocations: 828)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 61.3ms | Allocations: 5887)
+Completed 200 OK in 74ms (Views: 62.7ms | ActiveRecord: 1.1ms | Allocations: 6791)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 14:02:42 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:17
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 57.4ms | Allocations: 6549)
+  Rendered tests/index.html.erb within layouts/application (Duration: 64.7ms | Allocations: 7304)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered shared/_menu.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 77.5ms | Allocations: 10927)
+Completed 200 OK in 92ms (Views: 76.9ms | ActiveRecord: 3.3ms | Allocations: 12538)
+
+
+Started POST "/tests/2/start" for 127.0.0.1 at 2024-04-20 14:02:45 -0700
+Processing by TestsController#start as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:55:in `find_test'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/test_passage.rb:35:in `before_validation_set_first_question'
+  [1m[36mQuestion Load (15.9ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["test_id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:35:in `before_validation_set_first_question'
+  [1m[36mTestPassage Create (1.4ms)[0m  [1m[32mINSERT INTO "test_passages" ("user_id", "test_id", "current_question_id", "correct_question", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 1], ["test_id", 2], ["current_question_id", 14], ["correct_question", 0], ["created_at", "2024-04-20 21:02:45.745154"], ["updated_at", "2024-04-20 21:02:45.745154"]]
+  ↳ app/controllers/tests_controller.rb:48:in `start'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tests_controller.rb:48:in `start'
+  [1m[36mTestPassage Load (0.4ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."user_id" = ? AND "test_passages"."test_id" = ? ORDER BY "test_passages"."id" DESC LIMIT ?[0m  [["user_id", 1], ["test_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20:in `test_passage'
+Redirected to http://localhost:3000/test_passages/13
+Completed 302 Found in 120ms (ActiveRecord: 18.8ms | Allocations: 8639)
+
+
+Started GET "/test_passages/13" for 127.0.0.1 at 2024-04-20 14:02:45 -0700
+Processing by TestPassagesController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.4ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/show.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:1
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:4
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 14]]
+  ↳ app/views/test_passages/show.html.erb:8
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ? AND (id <= 14)[0m  [["test_id", 2]]
+  ↳ app/models/test_passage.rb:10:in `current_question_number'
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/test_passages/show.html.erb:17
+  Rendered test_passages/show.html.erb within layouts/application (Duration: 46.7ms | Allocations: 6204)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered shared/_menu.html.erb (Duration: 0.8ms | Allocations: 49)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 1.0ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 75.4ms | Allocations: 9843)
+Completed 200 OK in 97ms (Views: 76.6ms | ActiveRecord: 1.9ms | Allocations: 11936)
+
+
+Started PUT "/test_passages/13" for 127.0.0.1 at 2024-04-20 14:02:48 -0700
+Processing by TestPassagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "answer_ids"=>["8"], "commit"=>"Next", "id"=>"13"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.2ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:50:in `correct_answers'
+  [1m[36mAnswer Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ?[0m  [["question_id", 14], ["correct", 1]]
+  ↳ app/models/test_passage.rb:43:in `correct_answer?'
+  [1m[36mAnswer Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ? AND "answers"."id" = ?[0m  [["question_id", 14], ["correct", 1], ["id", 8]]
+  ↳ app/models/test_passage.rb:45:in `correct_answer?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTest Load (2.8ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mQuestion Load (1.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ? AND (id > 14) ORDER BY "questions"."id" ASC LIMIT ?[0m  [["test_id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTestPassage Update (0.6ms)[0m  [1m[33mUPDATE "test_passages" SET "current_question_id" = ?, "updated_at" = ? WHERE "test_passages"."id" = ?[0m  [["current_question_id", 15], ["updated_at", "2024-04-20 21:02:48.936138"], ["id", 13]]
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 15]]
+  ↳ app/views/test_passages/show.html.erb:8
+  [1m[36mQuestion Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ? AND (id <= 15)[0m  [["test_id", 2]]
+  ↳ app/models/test_passage.rb:10:in `current_question_number'
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/test_passages/show.html.erb:17
+  Rendered test_passages/show.html.erb within layouts/application (Duration: 34.0ms | Allocations: 3765)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 17)
+  Rendered shared/_menu.html.erb (Duration: 0.6ms | Allocations: 49)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 65.5ms | Allocations: 7428)
+Completed 200 OK in 151ms (Views: 67.7ms | ActiveRecord: 8.4ms | Allocations: 14759)
+
+
+Started PUT "/test_passages/13" for 127.0.0.1 at 2024-04-20 14:02:52 -0700
+Processing by TestPassagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "answer_ids"=>["7"], "commit"=>"Next", "id"=>"13"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.3ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:50:in `correct_answers'
+  [1m[36mAnswer Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ?[0m  [["question_id", 15], ["correct", 1]]
+  ↳ app/models/test_passage.rb:43:in `correct_answer?'
+  [1m[36mAnswer Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ? AND "answers"."id" = ?[0m  [["question_id", 15], ["correct", 1], ["id", 7]]
+  ↳ app/models/test_passage.rb:45:in `correct_answer?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTest Load (3.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ? AND (id > 15) ORDER BY "questions"."id" ASC LIMIT ?[0m  [["test_id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTestPassage Update (0.3ms)[0m  [1m[33mUPDATE "test_passages" SET "current_question_id" = ?, "correct_question" = ?, "updated_at" = ? WHERE "test_passages"."id" = ?[0m  [["current_question_id", nil], ["correct_question", 1], ["updated_at", "2024-04-20 21:02:52.831357"], ["id", 13]]
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/mailers/tests_mailer.rb:4:in `completed_test'
+  Rendering layout layouts/mailer.html.erb
+  Rendering tests_mailer/completed_test.html.erb within layouts/mailer
+  Rendered tests_mailer/completed_test.html.erb within layouts/mailer (Duration: 6.6ms | Allocations: 272)
+  Rendered layout layouts/mailer.html.erb (Duration: 8.7ms | Allocations: 540)
+  Rendering layout layouts/mailer.text.erb
+  Rendering tests_mailer/completed_test.text.erb within layouts/mailer
+  Rendered tests_mailer/completed_test.text.erb within layouts/mailer (Duration: 2.0ms | Allocations: 171)
+  Rendered layout layouts/mailer.text.erb (Duration: 3.7ms | Allocations: 359)
+TestsMailer#completed_test: processed outbound mail in 51.5ms
+Delivered mail 66242d7ce5b61_2b1145889915a@ubuntu.mail (104.5ms)
+Date: Sat, 20 Apr 2024 14:02:52 -0700
+From: "TestGuru <guru@mail.com"
+To: admin@admin.com
+Message-ID: <66242d7ce5b61_2b1145889915a@ubuntu.mail>
+Subject: U just completed the TestGuru test!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_66242d7ce302f_2b11458899026";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_66242d7ce302f_2b11458899026
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hooray!
+==============
+
+Congratulations! You completed the  <b>mytnrtbr</b> test. Why not to finish http://localhost:3000/tests?
+
+----==_mimepart_66242d7ce302f_2b11458899026
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+     .mailbox{
+      border: 3px solid #3c85e0;
+      padding: 10px;
+      border-radius: 5px;
+      width: 70%;
+      margin:  0 auto;
+      margin-top: 25px;
+     }
+    </style>
+  </head>
+
+  <body>
+    <div class="mailbox">
+    <h1> Hooray! </h1>
+<p>
+  Congratulations! You completed the <b>mytnrtbr</b> test. Why not to finish <a href="http://localhost:3000/tests">more</a>?
+</p>
+  </div>
+  </body>
+</html>
+
+----==_mimepart_66242d7ce302f_2b11458899026--
+
+Redirected to http://localhost:3000/test_passages/13/result
+Completed 302 Found in 311ms (ActiveRecord: 10.0ms | Allocations: 51205)
+
+
+Started GET "/test_passages/13/result" for 127.0.0.1 at 2024-04-20 14:02:53 -0700
+Processing by TestPassagesController#result as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.2ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/result.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/test_passages/result.html.erb:1
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/models/test_passage.rb:25:in `score'
+  [1m[36mCACHE Question Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/models/test_passage.rb:25:in `score'
+  Rendered test_passages/result.html.erb within layouts/application (Duration: 31.0ms | Allocations: 2221)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered shared/_menu.html.erb (Duration: 0.3ms | Allocations: 50)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 67)
+  Rendered layout layouts/application.html.erb (Duration: 74.6ms | Allocations: 5969)
+Completed 200 OK in 122ms (Views: 81.8ms | ActiveRecord: 0.8ms | Allocations: 8355)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 14:03:07 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:17
+  [1m[36mQuestion Count (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+Started GET "/" for 127.0.0.1 at 2024-04-20 14:03:07 -0700
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 278.5ms | Allocations: 6796)
+  Rendered tests/index.html.erb within layouts/application (Duration: 330.8ms | Allocations: 8073)
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (14.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (31.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:17
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 17)
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  Rendered shared/_menu.html.erb (Duration: 0.6ms | Allocations: 49)
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 20)
+  [1m[36mQuestion Count (29.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered shared/_footer.html.erb (Duration: 0.5ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 914.2ms | Allocations: 17741)
+Completed 200 OK in 958ms (Views: 921.7ms | ActiveRecord: 11.1ms | Allocations: 19353)
+
+
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 339.5ms | Allocations: 7635)
+  Rendered tests/index.html.erb within layouts/application (Duration: 517.7ms | Allocations: 9391)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered shared/_menu.html.erb (Duration: 0.4ms | Allocations: 49)
+  Rendered shared/_flash.html.erb (Duration: 0.6ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 696.6ms | Allocations: 12993)
+Completed 200 OK in 844ms (Views: 654.2ms | ActiveRecord: 80.4ms | Allocations: 16134)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 14:04:04 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:17
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 31.8ms | Allocations: 6533)
+  Rendered tests/index.html.erb within layouts/application (Duration: 34.9ms | Allocations: 7288)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered shared/_menu.html.erb (Duration: 1.0ms | Allocations: 49)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 52.1ms | Allocations: 10887)
+Completed 200 OK in 72ms (Views: 55.2ms | ActiveRecord: 1.6ms | Allocations: 12494)
+
+
+Started GET "/tests/1" for 127.0.0.1 at 2024-04-20 14:04:06 -0700
+Processing by TestsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:55:in `find_test'
+  Rendering layout layouts/application.html.erb
+  Rendering tests/show.html.erb within layouts/application
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/show.html.erb:25
+  Rendered collection of questions/_question.html.erb [9 times] (Duration: 3.3ms | Allocations: 913)
+  Rendered tests/show.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1980)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered shared/_menu.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 5588)
+Completed 200 OK in 33ms (Views: 24.1ms | ActiveRecord: 0.6ms | Allocations: 7699)
+
+
+Started DELETE "/questions/5" for 127.0.0.1 at 2024-04-20 14:04:16 -0700
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"5"}
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:63:in `find_question'
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:42:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/questions_controller.rb:43:in `destroy'
+  [1m[36mAnswer Load (2.9ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 5]]
+  ↳ app/controllers/questions_controller.rb:43:in `destroy'
+  [1m[36mQuestion Destroy (2.0ms)[0m  [1m[31mDELETE FROM "questions" WHERE "questions"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/questions_controller.rb:43:in `destroy'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/questions_controller.rb:43:in `destroy'
+Redirected to http://localhost:3000/tests/1/questions
+Completed 302 Found in 26ms (ActiveRecord: 6.2ms | Allocations: 4077)
+
+
+Started GET "/tests/1/questions" for 127.0.0.1 at 2024-04-20 14:04:16 -0700
+Processing by QuestionsController#index as HTML
+  Parameters: {"test_id"=>"1"}
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests".* FROM "tests" WHERE "tests"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/questions_controller.rb:59:in `find_test'
+  Rendering layout layouts/application.html.erb
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/questions/index.html.erb:12
+  Rendered collection of questions/_question.html.erb [8 times] (Duration: 2.4ms | Allocations: 821)
+  Rendered questions/index.html.erb within layouts/application (Duration: 7.2ms | Allocations: 1797)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | Allocations: 17)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/shared/_menu.html.erb:2
+  Rendered shared/_menu.html.erb (Duration: 8.3ms | Allocations: 828)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 39.3ms | Allocations: 6456)
+Completed 200 OK in 49ms (Views: 39.6ms | ActiveRecord: 0.4ms | Allocations: 7302)
+
+
+Started GET "/tests" for 127.0.0.1 at 2024-04-20 14:04:20 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests".* FROM "tests"[0m
+  ↳ app/views/tests/index.html.erb:17
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [7 times] (Duration: 41.5ms | Allocations: 6533)
+  Rendered tests/index.html.erb within layouts/application (Duration: 45.4ms | Allocations: 7288)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | Allocations: 17)
+  Rendered shared/_menu.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 55.0ms | Allocations: 10887)
+Completed 200 OK in 63ms (Views: 53.5ms | ActiveRecord: 2.7ms | Allocations: 12503)
+
+
+Started GET "/mailers/tests_mailer" for 127.0.0.1 at 2024-04-20 14:06:19 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/mailers/tests_mailer"):
+  
+Started GET "/rails/mailers/tests_mailer" for 127.0.0.1 at 2024-04-20 14:06:27 -0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"tests_mailer"}
+  Rendering layout /home/inga/.rvm/gems/ruby-3.0.2/gems/railties-7.1.3.2/lib/rails/templates/layouts/application.html.erb
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/railties-7.1.3.2/lib/rails/templates/rails/mailers/mailer.html.erb within layouts/application
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/railties-7.1.3.2/lib/rails/templates/rails/mailers/mailer.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1288)
+  Rendered layout /home/inga/.rvm/gems/ruby-3.0.2/gems/railties-7.1.3.2/lib/rails/templates/layouts/application.html.erb (Duration: 6.7ms | Allocations: 1671)
+Completed 200 OK in 27ms (Views: 19.8ms | ActiveRecord: 0.0ms | Allocations: 3359)
+
+
+Started GET "/rails/mailers/tests_mailer/completed_test" for 127.0.0.1 at 2024-04-20 14:06:30 -0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"tests_mailer/completed_test"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ test/mailers/previews/tests_mailer_preview.rb:5:in `completed_test'
+  [1m[36mTest Load (0.7ms)[0m  [1m[34mSELECT "tests".* FROM "tests" ORDER BY "tests"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ test/mailers/previews/tests_mailer_preview.rb:5:in `completed_test'
+  Rendering layout layouts/mailer.html.erb
+  Rendering tests_mailer/completed_test.html.erb within layouts/mailer
+  Rendered tests_mailer/completed_test.html.erb within layouts/mailer (Duration: 0.4ms | Allocations: 64)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.1ms | Allocations: 149)
+  Rendering layout layouts/mailer.text.erb
+  Rendering tests_mailer/completed_test.text.erb within layouts/mailer
+  Rendered tests_mailer/completed_test.text.erb within layouts/mailer (Duration: 0.3ms | Allocations: 42)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.7ms | Allocations: 127)
+TestsMailer#completed_test: processed outbound mail in 13.2ms
+  Rendering /home/inga/.rvm/gems/ruby-3.0.2/gems/railties-7.1.3.2/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /home/inga/.rvm/gems/ruby-3.0.2/gems/railties-7.1.3.2/lib/rails/templates/rails/mailers/email.html.erb (Duration: 15.0ms | Allocations: 9192)
+Completed 200 OK in 51ms (Views: 17.5ms | ActiveRecord: 1.1ms | Allocations: 23706)
+
+
+Started GET "/rails/mailers/tests_mailer/completed_test?part=text%2Fhtml" for 127.0.0.1 at 2024-04-20 14:06:30 -0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"tests_mailer/completed_test"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ test/mailers/previews/tests_mailer_preview.rb:5:in `completed_test'
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" ORDER BY "tests"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ test/mailers/previews/tests_mailer_preview.rb:5:in `completed_test'
+  Rendering layout layouts/mailer.html.erb
+  Rendering tests_mailer/completed_test.html.erb within layouts/mailer
+  Rendered tests_mailer/completed_test.html.erb within layouts/mailer (Duration: 1.0ms | Allocations: 60)
+  Rendered layout layouts/mailer.html.erb (Duration: 4.3ms | Allocations: 145)
+  Rendering layout layouts/mailer.text.erb
+  Rendering tests_mailer/completed_test.text.erb within layouts/mailer
+  Rendered tests_mailer/completed_test.text.erb within layouts/mailer (Duration: 0.4ms | Allocations: 42)
+  Rendered layout layouts/mailer.text.erb (Duration: 3.6ms | Allocations: 127)
+TestsMailer#completed_test: processed outbound mail in 21.2ms
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 3)
+Completed 200 OK in 46ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 13808)
+
+
+Started GET "/rails/mailers/tests_mailer/completed_test?part=text%2Fplain" for 127.0.0.1 at 2024-04-20 14:06:40 -0700
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/plain", "path"=>"tests_mailer/completed_test"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ test/mailers/previews/tests_mailer_preview.rb:5:in `completed_test'
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" ORDER BY "tests"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ test/mailers/previews/tests_mailer_preview.rb:5:in `completed_test'
+  Rendering layout layouts/mailer.html.erb
+  Rendering tests_mailer/completed_test.html.erb within layouts/mailer
+  Rendered tests_mailer/completed_test.html.erb within layouts/mailer (Duration: 0.5ms | Allocations: 89)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.2ms | Allocations: 175)
+  Rendering layout layouts/mailer.text.erb
+  Rendering tests_mailer/completed_test.text.erb within layouts/mailer
+  Rendered tests_mailer/completed_test.text.erb within layouts/mailer (Duration: 0.3ms | Allocations: 42)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.8ms | Allocations: 127)
+TestsMailer#completed_test: processed outbound mail in 16.2ms
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 1)
+Completed 200 OK in 37ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 13901)
+
+
