@@ -1,0 +1,26 @@
+
+<center>
+<p>
+	
+	<h1><%= @test.title %> Test</h1>
+</p>
+</center>
+
+<p>
+	<strong>Level:</strong>
+	<%= @test.level %>
+</p>
+
+<p>
+	<strong>Category:</strong>
+	<%= @test.category_id %>
+</p>
+
+<%= link_to "Edit", edit_admin_test_path(@test) %>
+<%= link_to "Back", admin_tests_path %>
+
+
+<table>
+	<center><h1>Questions List of <%= @test.title %> Test</h1></center>	
+	<%= render partial: 'questions/question', collection: @test.questions %>
+</table>
