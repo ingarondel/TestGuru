@@ -22,5 +22,5 @@
 
 <table>
 	<center><h1>Questions List of <%= @test.title %> Test</h1></center>	
-	<%= render partial: 'questions/question', collection: @test.questions %>
+	 <%= render @test.questions %>
 </table>
