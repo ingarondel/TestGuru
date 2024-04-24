@@ -25,6 +25,14 @@ ru:
   tests:
     index:
       header: "Доступные тесты"
+      title: "Название:"
+      level: "Уровень:"
+      count: "Количество:"
+      action: "Действие"
+      admin: "Режим администратора"
+    test:
+      start: "Начать"
+
 
   test_passages:
     result:
@@ -32,10 +40,36 @@ ru:
 
   admin:
     tests:
-      create:
-        success: "Тест был успешно добавлен"
       index:
         header: "Доступные тесты"
+        title: "Название:"
+        level: "Уровень:"
+        count: "Количествo:"
+        actions: "Действия"
+        create: "Создание нового теста:"
+      test:
+        show: "Посмотреть|"
+        edit: "Редактировать|"
+        delete: "Удалить"
+        confirm: "Вы уверены?"
+      form:
+        prompt: "Пожалуйста, выберите"
+      edit:
+        header: "Редактирование теста "
+        back: "Назад"
+      new:
+        header: "Создание нового теста"
+        back: "Назад"
+      create:
+        success: "Тест был успешно добавлен"
+      show:
+        header: "тест"
+        level: "Уровень: "
+        category: "Категория: "  
+        edit: "Редактировать|"
+        create: "Создать вопрос"
+        back: "Назад"
+        list: "Список вопросов"
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
