@@ -34,6 +34,52 @@ en:
     result:
       header: "The %{title} Test was successfully completed "
 
+  devise:
+    confirmations:
+      new:
+        header: "Resend confirmation instructions"
+    mailer:
+      confirmation_instructions:
+        header: "Welcome, "
+        confirm: "You can confirm your account email through the link below:"
+        account: "Confirm my account"
+      email_changed:
+        header: "Hello, "
+        changed: "We're contacting you to notify you that your email is being changed to "
+      password_change:
+        header: "Hello, "
+        changed: "We're contacting you to notify you that your password has been changed."
+      reset_password_instructions:
+        header: "Hello, "
+        changetxt: "Someone has requested a link to change your password. You can do this through the link below"
+        change: "Change my password"
+        text: "If you didn't request this, please ignore this email.Your password won't change until you access the link above and create a new one."
+      unlock_instructions:
+        header: "Hello, "
+        locked: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+        click: "Click the link below to unlock your account:"
+        unlock: "Unlock my account"
+    passwords: 
+      edit:
+        header: "Change your password"
+        new: "New password"
+        confirm: "Confirm new password"
+        submit: "Change my password"
+      new:
+        header: "Forgot your password?"
+        submit: "Send me reset password instructions"
+      shared:
+        links: 
+          login: "Log in"
+          signup: "Sign up"
+          forgot: "Forgot your password?"
+          confirmation: "Didn't receive confirmation instructions?"
+          unlock: "Didn't receive unlock instructions?"
+          signwith: "Sign in with: %{provider}"
+      unlocks:
+        new:
+          header: "Resend unlock instructions"
+          submit: "Resend unlock instructions"
   admin:
 
     tests:
