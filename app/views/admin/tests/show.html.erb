@@ -22,5 +22,8 @@
 
 <table>
 	<center><h1>Questions List of <%= @test.title %> Test</h1></center>	
-	<%= render partial: 'questions/question', collection: @test.questions %>
+	<p>
+  <%= link_to 'New question', new_admin_test_question_path(@test) %>
+</p>
+	 <%= render @test.questions %>
 </table>

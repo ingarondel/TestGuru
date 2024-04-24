@@ -3,9 +3,6 @@ devise_for :users, path: :gurus, path_names: {sign_in: :login, sign_out: :logout
  
  root to: 'tests#index'
 
- get 'sessions/new'
- get 'users/new'
-
   resources :tests, only: :index do
     resources :questions, shallow: true do 
       resources :answers, shallow: true
@@ -21,6 +18,10 @@ devise_for :users, path: :gurus, path_names: {sign_in: :login, sign_out: :logout
     end
   end
 namespace :admin do 
-  resources :tests 
+  resources :tests do
+        resources :questions, shallow: true do
+          resources :answers, shallow: true
+        end
+      end
 end
 end

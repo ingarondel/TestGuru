@@ -15,5 +15,10 @@
     <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %>
   </p><br>
 
+  <p>
+    <%= form.label :author %></br>
+    <%= form.text_field :author, value: current_user.first_name, readonly: true %>
+  </p>
+
   <p><%= form.submit %></p>
 <% end %>
