@@ -13017,3 +13017,1587 @@ Processing by Admin::TestsController#create as HTML
 Completed 200 OK in 111ms (Views: 67.2ms | ActiveRecord: 5.3ms | Allocations: 10457)
 
 
+Started GET "/admin/tests/2?lang=ru" for 127.0.0.1 at 2024-04-24 01:06:43 -0700
+Processing by Admin::TestsController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"2"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/tests_controller.rb:54:in `find_test'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/tests/show.html.erb within layouts/admin
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/admin/tests/show.html.erb:28
+  Rendered collection of admin/questions/_question.html.erb [2 times] (Duration: 3.3ms | Allocations: 730)
+  Rendered admin/tests/show.html.erb within layouts/admin (Duration: 78.0ms | Allocations: 33788)
+  Rendered admin/_nav.html.erb (Duration: 1.7ms | Allocations: 217)
+  Rendered shared/_flash.html.erb (Duration: 3.6ms | Allocations: 164)
+  Rendered layout layouts/admin.html.erb (Duration: 93.7ms | Allocations: 36018)
+Completed 200 OK in 219ms (Views: 94.9ms | ActiveRecord: 4.5ms | Allocations: 70311)
+
+
+Started GET "/admin/questions/14?lang=ru" for 127.0.0.1 at 2024-04-24 01:06:46 -0700
+Processing by Admin::QuestionsController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/admin/questions_controller.rb:63:in `find_question'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/questions/show.html.erb within layouts/admin
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/questions/show.html.erb:9
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 14]]
+  ↳ app/views/admin/questions/show.html.erb:16
+  Rendered collection of admin/answers/_answer.html.erb [2 times] (Duration: 2.8ms | Allocations: 734)
+  Rendered admin/questions/show.html.erb within layouts/admin (Duration: 98.5ms | Allocations: 35180)
+  Rendered admin/_nav.html.erb (Duration: 0.3ms | Allocations: 65)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/admin.html.erb (Duration: 103.8ms | Allocations: 36670)
+Completed 200 OK in 128ms (Views: 106.4ms | ActiveRecord: 2.1ms | Allocations: 39959)
+
+
+Started GET "/admin/answers/8?lang=ru" for 127.0.0.1 at 2024-04-24 01:06:49 -0700
+Processing by Admin::AnswersController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/admin/answers_controller.rb:45:in `set_answer'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/answers/show.html.erb within layouts/admin
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/admin/answers/show.html.erb:3
+  Rendered admin/answers/show.html.erb within layouts/admin (Duration: 9.0ms | Allocations: 1877)
+  Rendered admin/_nav.html.erb (Duration: 0.5ms | Allocations: 67)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/admin.html.erb (Duration: 15.3ms | Allocations: 3392)
+Completed 200 OK in 33ms (Views: 17.6ms | ActiveRecord: 0.6ms | Allocations: 6646)
+
+
+Started GET "/admin/questions/14?lang=ru" for 127.0.0.1 at 2024-04-24 01:06:51 -0700
+Processing by Admin::QuestionsController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/admin/questions_controller.rb:63:in `find_question'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/questions/show.html.erb within layouts/admin
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/questions/show.html.erb:9
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 14]]
+  ↳ app/views/admin/questions/show.html.erb:16
+  Rendered collection of admin/answers/_answer.html.erb [2 times] (Duration: 1.9ms | Allocations: 453)
+  Rendered admin/questions/show.html.erb within layouts/admin (Duration: 15.1ms | Allocations: 2658)
+  Rendered admin/_nav.html.erb (Duration: 0.3ms | Allocations: 65)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/admin.html.erb (Duration: 23.5ms | Allocations: 4037)
+Completed 200 OK in 36ms (Views: 25.7ms | ActiveRecord: 0.7ms | Allocations: 6121)
+
+
+Started GET "/admin/answers/8/edit?lang=ru" for 127.0.0.1 at 2024-04-24 01:06:56 -0700
+Processing by Admin::AnswersController#edit as HTML
+  Parameters: {"lang"=>"ru", "id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/admin/answers_controller.rb:45:in `set_answer'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/answers/edit.html.erb within layouts/admin
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/admin/answers/edit.html.erb:4
+  Rendered shared/_errors.html.erb (Duration: 1.3ms | Allocations: 227)
+  Rendered admin/answers/_form.html.erb (Duration: 28.0ms | Allocations: 2808)
+  Rendered admin/answers/edit.html.erb within layouts/admin (Duration: 36.1ms | Allocations: 3924)
+  Rendered admin/_nav.html.erb (Duration: 0.4ms | Allocations: 66)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/admin.html.erb (Duration: 45.0ms | Allocations: 5438)
+Completed 200 OK in 62ms (Views: 49.9ms | ActiveRecord: 0.8ms | Allocations: 7607)
+
+
+Started PATCH "/admin/answers/8?lang=ru" for 127.0.0.1 at 2024-04-24 01:07:02 -0700
+Processing by Admin::AnswersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "answer"=>{"body"=>"true", "correct"=>"1"}, "commit"=>"Update Answer", "lang"=>"ru", "id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/admin/answers_controller.rb:45:in `set_answer'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/answers_controller.rb:26:in `update'
+  [1m[36mAnswer Update (5.5ms)[0m  [1m[33mUPDATE "answers" SET "body" = ?, "updated_at" = ? WHERE "answers"."id" = ?[0m  [["body", "true"], ["updated_at", "2024-04-24 08:07:02.082815"], ["id", 8]]
+  ↳ app/controllers/admin/answers_controller.rb:26:in `update'
+  [1m[36mTRANSACTION (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/answers_controller.rb:26:in `update'
+Redirected to http://localhost:3000/admin/answers/8?lang=ru
+Completed 302 Found in 57ms (ActiveRecord: 8.6ms | Allocations: 4486)
+
+
+Started GET "/admin/answers/8?lang=ru" for 127.0.0.1 at 2024-04-24 01:07:02 -0700
+Processing by Admin::AnswersController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnswer Load (4.0ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/admin/answers_controller.rb:45:in `set_answer'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/answers/show.html.erb within layouts/admin
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/admin/answers/show.html.erb:3
+  Rendered admin/answers/show.html.erb within layouts/admin (Duration: 4.3ms | Allocations: 820)
+  Rendered admin/_nav.html.erb (Duration: 0.4ms | Allocations: 65)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/admin.html.erb (Duration: 11.3ms | Allocations: 2221)
+Completed 200 OK in 30ms (Views: 12.2ms | ActiveRecord: 4.3ms | Allocations: 4330)
+
+
+Started GET "/admin/questions/14?lang=ru" for 127.0.0.1 at 2024-04-24 01:07:03 -0700
+Processing by Admin::QuestionsController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/admin/questions_controller.rb:63:in `find_question'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/questions/show.html.erb within layouts/admin
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/questions/show.html.erb:9
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 14]]
+  ↳ app/views/admin/questions/show.html.erb:16
+  Rendered collection of admin/answers/_answer.html.erb [2 times] (Duration: 1.7ms | Allocations: 451)
+  Rendered admin/questions/show.html.erb within layouts/admin (Duration: 62.0ms | Allocations: 2640)
+  Rendered admin/_nav.html.erb (Duration: 0.3ms | Allocations: 65)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/admin.html.erb (Duration: 75.4ms | Allocations: 4027)
+Completed 200 OK in 97ms (Views: 77.7ms | ActiveRecord: 0.6ms | Allocations: 6107)
+
+
+Started GET "/admin/tests/2?lang=ru" for 127.0.0.1 at 2024-04-24 01:07:06 -0700
+Processing by Admin::TestsController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/tests_controller.rb:54:in `find_test'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/tests/show.html.erb within layouts/admin
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/admin/tests/show.html.erb:28
+  Rendered collection of admin/questions/_question.html.erb [2 times] (Duration: 1.3ms | Allocations: 447)
+  Rendered admin/tests/show.html.erb within layouts/admin (Duration: 5.7ms | Allocations: 1496)
+  Rendered admin/_nav.html.erb (Duration: 0.4ms | Allocations: 65)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/admin.html.erb (Duration: 11.8ms | Allocations: 2888)
+Completed 200 OK in 26ms (Views: 14.5ms | ActiveRecord: 0.4ms | Allocations: 5373)
+
+
+Started GET "/admin/questions/15?lang=ru" for 127.0.0.1 at 2024-04-24 01:07:09 -0700
+Processing by Admin::QuestionsController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"15"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/admin/questions_controller.rb:63:in `find_question'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/questions/show.html.erb within layouts/admin
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/questions/show.html.erb:9
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 15]]
+  ↳ app/views/admin/questions/show.html.erb:16
+  Rendered collection of admin/answers/_answer.html.erb [1 times] (Duration: 3.3ms | Allocations: 257)
+  Rendered admin/questions/show.html.erb within layouts/admin (Duration: 13.8ms | Allocations: 2365)
+  Rendered admin/_nav.html.erb (Duration: 0.4ms | Allocations: 65)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/admin.html.erb (Duration: 20.4ms | Allocations: 3744)
+Completed 200 OK in 42ms (Views: 22.5ms | ActiveRecord: 0.5ms | Allocations: 5836)
+
+
+Started GET "/admin/answers/7/edit?lang=ru" for 127.0.0.1 at 2024-04-24 01:07:11 -0700
+Processing by Admin::AnswersController#edit as HTML
+  Parameters: {"lang"=>"ru", "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/admin/answers_controller.rb:45:in `set_answer'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/answers/edit.html.erb within layouts/admin
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/admin/answers/edit.html.erb:4
+  Rendered shared/_errors.html.erb (Duration: 0.1ms | Allocations: 11)
+  Rendered admin/answers/_form.html.erb (Duration: 3.4ms | Allocations: 723)
+  Rendered admin/answers/edit.html.erb within layouts/admin (Duration: 7.8ms | Allocations: 1555)
+  Rendered admin/_nav.html.erb (Duration: 1.7ms | Allocations: 64)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/admin.html.erb (Duration: 16.5ms | Allocations: 2933)
+Completed 200 OK in 27ms (Views: 17.5ms | ActiveRecord: 0.5ms | Allocations: 5017)
+
+
+Started PATCH "/admin/answers/7?lang=ru" for 127.0.0.1 at 2024-04-24 01:07:21 -0700
+Processing by Admin::AnswersController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "answer"=>{"body"=>"true", "correct"=>"1"}, "commit"=>"Update Answer", "lang"=>"ru", "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnswer Load (1.4ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/admin/answers_controller.rb:45:in `set_answer'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/answers_controller.rb:26:in `update'
+  [1m[36mAnswer Update (2.6ms)[0m  [1m[33mUPDATE "answers" SET "body" = ?, "updated_at" = ? WHERE "answers"."id" = ?[0m  [["body", "true"], ["updated_at", "2024-04-24 08:07:21.447509"], ["id", 7]]
+  ↳ app/controllers/admin/answers_controller.rb:26:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/admin/answers_controller.rb:26:in `update'
+Redirected to http://localhost:3000/admin/answers/7?lang=ru
+Completed 302 Found in 30ms (ActiveRecord: 4.4ms | Allocations: 3972)
+
+
+Started GET "/admin/answers/7?lang=ru" for 127.0.0.1 at 2024-04-24 01:07:21 -0700
+Processing by Admin::AnswersController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/admin/answers_controller.rb:45:in `set_answer'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/answers/show.html.erb within layouts/admin
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/admin/answers/show.html.erb:3
+  Rendered admin/answers/show.html.erb within layouts/admin (Duration: 4.7ms | Allocations: 801)
+  Rendered admin/_nav.html.erb (Duration: 0.3ms | Allocations: 65)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/admin.html.erb (Duration: 9.7ms | Allocations: 2193)
+Completed 200 OK in 24ms (Views: 11.3ms | ActiveRecord: 0.4ms | Allocations: 4289)
+
+
+Started GET "/admin/questions/15?lang=ru" for 127.0.0.1 at 2024-04-24 01:07:23 -0700
+Processing by Admin::QuestionsController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"15"}
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/admin/questions_controller.rb:63:in `find_question'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/questions/show.html.erb within layouts/admin
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/admin/questions/show.html.erb:9
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 15]]
+  ↳ app/views/admin/questions/show.html.erb:16
+  Rendered collection of admin/answers/_answer.html.erb [1 times] (Duration: 1.4ms | Allocations: 257)
+  Rendered admin/questions/show.html.erb within layouts/admin (Duration: 18.5ms | Allocations: 2365)
+  Rendered admin/_nav.html.erb (Duration: 0.4ms | Allocations: 65)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/admin.html.erb (Duration: 25.7ms | Allocations: 3744)
+Completed 200 OK in 47ms (Views: 26.3ms | ActiveRecord: 5.1ms | Allocations: 5822)
+
+
+Started GET "/admin/tests/2?lang=ru" for 127.0.0.1 at 2024-04-24 01:07:25 -0700
+Processing by Admin::TestsController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/admin/tests_controller.rb:54:in `find_test'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/tests/show.html.erb within layouts/admin
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/admin/tests/show.html.erb:28
+  Rendered collection of admin/questions/_question.html.erb [2 times] (Duration: 3.8ms | Allocations: 447)
+  Rendered admin/tests/show.html.erb within layouts/admin (Duration: 9.8ms | Allocations: 1496)
+  Rendered admin/_nav.html.erb (Duration: 0.5ms | Allocations: 65)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/admin.html.erb (Duration: 16.8ms | Allocations: 2888)
+Completed 200 OK in 31ms (Views: 17.9ms | ActiveRecord: 0.6ms | Allocations: 5365)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-24 01:07:31 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.6ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" ORDER BY "tests"."title" ASC[0m
+  ↳ app/views/tests/index.html.erb:19
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 10]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 9]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 11]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 8]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [11 times] (Duration: 55.1ms | Allocations: 10005)
+  Rendered tests/index.html.erb within layouts/application (Duration: 67.3ms | Allocations: 11492)
+  Rendered shared/_header.html.erb (Duration: 1.0ms | Allocations: 157)
+  Rendered shared/_menu.html.erb (Duration: 2.1ms | Allocations: 291)
+  Rendered shared/_flash.html.erb (Duration: 0.5ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 2.1ms | Allocations: 227)
+  Rendered layout layouts/application.html.erb (Duration: 169.6ms | Allocations: 30679)
+Completed 200 OK in 183ms (Views: 173.3ms | ActiveRecord: 2.8ms | Allocations: 33041)
+
+
+Started POST "/tests/2/start?lang=ru" for 127.0.0.1 at 2024-04-24 01:07:35 -0700
+Processing by TestsController#start as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "lang"=>"ru", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:19:in `find_test'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tests_controller.rb:12:in `start'
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["test_id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:35:in `before_validation_set_first_question'
+  [1m[36mTestPassage Create (5.9ms)[0m  [1m[32mINSERT INTO "test_passages" ("user_id", "test_id", "current_question_id", "correct_question", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 1], ["test_id", 2], ["current_question_id", 14], ["correct_question", 0], ["created_at", "2024-04-24 08:07:35.893993"], ["updated_at", "2024-04-24 08:07:35.893993"]]
+  ↳ app/controllers/tests_controller.rb:12:in `start'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tests_controller.rb:12:in `start'
+  [1m[36mTestPassage Load (0.2ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."user_id" = ? AND "test_passages"."test_id" = ? ORDER BY "test_passages"."id" DESC LIMIT ?[0m  [["user_id", 1], ["test_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19:in `test_passage'
+Redirected to http://localhost:3000/test_passages/15?lang=ru
+Completed 302 Found in 160ms (ActiveRecord: 8.6ms | Allocations: 44848)
+
+
+Started GET "/test_passages/15?lang=ru" for 127.0.0.1 at 2024-04-24 01:07:35 -0700
+Processing by TestPassagesController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"15"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.3ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:1
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:4
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 14]]
+  ↳ app/views/test_passages/show.html.erb:8
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ? AND (id <= 14)[0m  [["test_id", 2]]
+  ↳ app/models/test_passage.rb:10:in `current_question_number'
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/test_passages/show.html.erb:17
+  Rendered test_passages/show.html.erb within layouts/application (Duration: 58.1ms | Allocations: 8477)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 59)
+  Rendered shared/_menu.html.erb (Duration: 0.5ms | Allocations: 80)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 72.7ms | Allocations: 12744)
+Completed 200 OK in 105ms (Views: 72.9ms | ActiveRecord: 2.3ms | Allocations: 16119)
+
+
+Started PUT "/test_passages/15?lang=ru" for 127.0.0.1 at 2024-04-24 01:07:41 -0700
+Processing by TestPassagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "answer_ids"=>["8"], "commit"=>"Next", "lang"=>"ru", "id"=>"15"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.1ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:50:in `correct_answers'
+  [1m[36mAnswer Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ?[0m  [["question_id", 14], ["correct", 1]]
+  ↳ app/models/test_passage.rb:43:in `correct_answer?'
+  [1m[36mAnswer Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ? AND "answers"."id" = ?[0m  [["question_id", 14], ["correct", 1], ["id", 8]]
+  ↳ app/models/test_passage.rb:45:in `correct_answer?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTest Load (3.7ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ? AND (id > 14) ORDER BY "questions"."id" ASC LIMIT ?[0m  [["test_id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTestPassage Update (0.2ms)[0m  [1m[33mUPDATE "test_passages" SET "current_question_id" = ?, "updated_at" = ? WHERE "test_passages"."id" = ?[0m  [["current_question_id", 15], ["updated_at", "2024-04-24 08:07:41.712073"], ["id", 15]]
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 15]]
+  ↳ app/views/test_passages/show.html.erb:8
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ? AND (id <= 15)[0m  [["test_id", 2]]
+  ↳ app/models/test_passage.rb:10:in `current_question_number'
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/test_passages/show.html.erb:17
+  Rendered test_passages/show.html.erb within layouts/application (Duration: 18.6ms | Allocations: 3807)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 44)
+  Rendered shared/_menu.html.erb (Duration: 0.3ms | Allocations: 76)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 521.5ms | Allocations: 7899)
+Completed 200 OK in 572ms (Views: 522.5ms | ActiveRecord: 6.3ms | Allocations: 15898)
+
+
+Started PUT "/test_passages/15?lang=ru" for 127.0.0.1 at 2024-04-24 01:07:45 -0700
+Processing by TestPassagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "answer_ids"=>["7"], "commit"=>"Next", "lang"=>"ru", "id"=>"15"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.1ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:50:in `correct_answers'
+  [1m[36mAnswer Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ?[0m  [["question_id", 15], ["correct", 1]]
+  ↳ app/models/test_passage.rb:43:in `correct_answer?'
+  [1m[36mAnswer Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ? AND "answers"."id" = ?[0m  [["question_id", 15], ["correct", 1], ["id", 7]]
+  ↳ app/models/test_passage.rb:45:in `correct_answer?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTest Load (76.0ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mQuestion Load (129.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ? AND (id > 15) ORDER BY "questions"."id" ASC LIMIT ?[0m  [["test_id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTestPassage Update (0.2ms)[0m  [1m[33mUPDATE "test_passages" SET "current_question_id" = ?, "correct_question" = ?, "updated_at" = ? WHERE "test_passages"."id" = ?[0m  [["current_question_id", nil], ["correct_question", 1], ["updated_at", "2024-04-24 08:07:46.094075"], ["id", 15]]
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/mailers/tests_mailer.rb:4:in `completed_test'
+  Rendering layout layouts/mailer.html.erb
+  Rendering tests_mailer/completed_test.html.erb within layouts/mailer
+  Rendered tests_mailer/completed_test.html.erb within layouts/mailer (Duration: 3.5ms | Allocations: 278)
+  Rendered layout layouts/mailer.html.erb (Duration: 5.9ms | Allocations: 546)
+  Rendering layout layouts/mailer.text.erb
+  Rendering tests_mailer/completed_test.text.erb within layouts/mailer
+  Rendered tests_mailer/completed_test.text.erb within layouts/mailer (Duration: 1.4ms | Allocations: 171)
+  Rendered layout layouts/mailer.text.erb (Duration: 2.9ms | Allocations: 359)
+TestsMailer#completed_test: processed outbound mail in 72.9ms
+Delivered mail 6628bdd29cb7f_1a7b4588825dc@ubuntu.mail (125.8ms)
+Date: Wed, 24 Apr 2024 01:07:46 -0700
+From: "TestGuru <guru@mail.com"
+To: admin@admin.com
+Message-ID: <6628bdd29cb7f_1a7b4588825dc@ubuntu.mail>
+Subject: U just completed the TestGuru test!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6628bdd2979a7_1a7b458882440";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_6628bdd2979a7_1a7b458882440
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hooray!
+==============
+
+Congratulations! You completed the  <b>mytnrtbr</b> test. Why not to finish http://localhost:3000/tests?
+
+----==_mimepart_6628bdd2979a7_1a7b458882440
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+     .mailbox{
+      border: 3px solid #3c85e0;
+      padding: 10px;
+      border-radius: 5px;
+      width: 70%;
+      margin:  0 auto;
+      margin-top: 25px;
+     }
+    </style>
+  </head>
+
+  <body>
+    <div class="mailbox">
+    <h1> Hooray! </h1>
+<p>
+  Congratulations! You completed the <b>mytnrtbr</b> test. Why not to finish <a href="http://localhost:3000/tests">more</a>?
+</p>
+  </div>
+  </body>
+</html>
+
+----==_mimepart_6628bdd2979a7_1a7b458882440--
+
+Redirected to http://localhost:3000/test_passages/15/result?lang=ru
+Completed 302 Found in 1338ms (ActiveRecord: 207.1ms | Allocations: 132249)
+
+
+Started GET "/test_passages/15/result?lang=ru" for 127.0.0.1 at 2024-04-24 01:07:46 -0700
+Processing by TestPassagesController#result as HTML
+  Parameters: {"lang"=>"ru", "id"=>"15"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.5ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/result.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/test_passages/result.html.erb:1
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/models/test_passage.rb:25:in `score'
+  [1m[36mCACHE Question Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/models/test_passage.rb:25:in `score'
+  Rendered test_passages/result.html.erb within layouts/application (Duration: 93.0ms | Allocations: 2684)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | Allocations: 45)
+  Rendered shared/_menu.html.erb (Duration: 0.4ms | Allocations: 77)
+  Rendered shared/_flash.html.erb (Duration: 4.8ms | Allocations: 25)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 67)
+  Rendered layout layouts/application.html.erb (Duration: 173.7ms | Allocations: 6947)
+Completed 200 OK in 203ms (Views: 183.5ms | ActiveRecord: 1.0ms | Allocations: 9415)
+
+
+Started GET "/test_passages/15?lang=ru" for 127.0.0.1 at 2024-04-24 01:08:30 -0700
+Processing by TestPassagesController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"15"}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.1ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/show.html.erb within layouts/application
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:1
+  Rendered test_passages/show.html.erb within layouts/application (Duration: 20.7ms | Allocations: 2448)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 2523)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 3.9ms | Allocations: 4615)
+
+
+  
+ActionView::Template::Error (undefined method `body' for nil:NilClass):
+    1: <h1>Passing The <%= @test_passage.test.title %> Test</h1>
+    2: 
+    3: <b>
+    4: 	<%= @test_passage.current_question.body %>
+    5: </b>
+    6: 
+    7: <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>
+  
+app/views/test_passages/show.html.erb:4
+Started POST "/tests/2/start?lang=ru" for 127.0.0.1 at 2024-04-24 01:08:36 -0700
+Processing by TestsController#start as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "lang"=>"ru", "id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:19:in `find_test'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/test_passage.rb:35:in `before_validation_set_first_question'
+  [1m[36mQuestion Load (4.0ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["test_id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:35:in `before_validation_set_first_question'
+  [1m[36mTestPassage Create (1.8ms)[0m  [1m[32mINSERT INTO "test_passages" ("user_id", "test_id", "current_question_id", "correct_question", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 1], ["test_id", 2], ["current_question_id", 14], ["correct_question", 0], ["created_at", "2024-04-24 08:08:36.246665"], ["updated_at", "2024-04-24 08:08:36.246665"]]
+  ↳ app/controllers/tests_controller.rb:12:in `start'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tests_controller.rb:12:in `start'
+  [1m[36mTestPassage Load (0.3ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."user_id" = ? AND "test_passages"."test_id" = ? ORDER BY "test_passages"."id" DESC LIMIT ?[0m  [["user_id", 1], ["test_id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19:in `test_passage'
+Redirected to http://localhost:3000/test_passages/16?lang=ru
+Completed 302 Found in 51ms (ActiveRecord: 6.9ms | Allocations: 6784)
+
+
+Started GET "/test_passages/16?lang=ru" for 127.0.0.1 at 2024-04-24 01:08:36 -0700
+Processing by TestPassagesController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.1ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/show.html.erb within layouts/application
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:1
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 14]]
+  ↳ app/views/test_passages/show.html.erb:8
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ? AND (id <= 14)[0m  [["test_id", 2]]
+  ↳ app/models/test_passage.rb:10:in `current_question_number'
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/test_passages/show.html.erb:17
+  Rendered test_passages/show.html.erb within layouts/application (Duration: 23.3ms | Allocations: 6543)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered shared/_menu.html.erb (Duration: 0.3ms | Allocations: 76)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 48.8ms | Allocations: 10689)
+Completed 200 OK in 61ms (Views: 48.7ms | ActiveRecord: 1.4ms | Allocations: 12774)
+
+
+Started PUT "/test_passages/16?lang=ru" for 127.0.0.1 at 2024-04-24 01:08:40 -0700
+Processing by TestPassagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "answer_ids"=>["6", "8"], "commit"=>"Next", "lang"=>"ru", "id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.7ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:50:in `correct_answers'
+  [1m[36mAnswer Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ?[0m  [["question_id", 14], ["correct", 1]]
+  ↳ app/models/test_passage.rb:43:in `correct_answer?'
+  [1m[36mAnswer Count (2.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ? AND "answers"."id" IN (?, ?)[0m  [["question_id", 14], ["correct", 1], ["id", 6], ["id", 8]]
+  ↳ app/models/test_passage.rb:45:in `correct_answer?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTest Load (3.7ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ? AND (id > 14) ORDER BY "questions"."id" ASC LIMIT ?[0m  [["test_id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTestPassage Update (0.2ms)[0m  [1m[33mUPDATE "test_passages" SET "current_question_id" = ?, "correct_question" = ?, "updated_at" = ? WHERE "test_passages"."id" = ?[0m  [["current_question_id", 15], ["correct_question", 1], ["updated_at", "2024-04-24 08:08:40.465300"], ["id", 16]]
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/show.html.erb within layouts/application
+  [1m[36mAnswer Load (0.5ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 15]]
+  ↳ app/views/test_passages/show.html.erb:8
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ? AND (id <= 15)[0m  [["test_id", 2]]
+  ↳ app/models/test_passage.rb:10:in `current_question_number'
+  [1m[36mQuestion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/test_passages/show.html.erb:17
+  Rendered test_passages/show.html.erb within layouts/application (Duration: 10.8ms | Allocations: 3800)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | Allocations: 44)
+  Rendered shared/_menu.html.erb (Duration: 0.3ms | Allocations: 76)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 31.3ms | Allocations: 7949)
+Completed 200 OK in 87ms (Views: 33.5ms | ActiveRecord: 8.5ms | Allocations: 15671)
+
+
+Started PUT "/test_passages/16?lang=ru" for 127.0.0.1 at 2024-04-24 01:08:44 -0700
+Processing by TestPassagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "answer_ids"=>["7"], "commit"=>"Next", "lang"=>"ru", "id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.1ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:50:in `correct_answers'
+  [1m[36mAnswer Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ?[0m  [["question_id", 15], ["correct", 1]]
+  ↳ app/models/test_passage.rb:43:in `correct_answer?'
+  [1m[36mAnswer Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ? AND "answers"."id" = ?[0m  [["question_id", 15], ["correct", 1], ["id", 7]]
+  ↳ app/models/test_passage.rb:45:in `correct_answer?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTest Load (5.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ? AND (id > 15) ORDER BY "questions"."id" ASC LIMIT ?[0m  [["test_id", 2], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTestPassage Update (0.4ms)[0m  [1m[33mUPDATE "test_passages" SET "current_question_id" = ?, "correct_question" = ?, "updated_at" = ? WHERE "test_passages"."id" = ?[0m  [["current_question_id", nil], ["correct_question", 2], ["updated_at", "2024-04-24 08:08:44.379646"], ["id", 16]]
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/mailers/tests_mailer.rb:4:in `completed_test'
+  Rendering layout layouts/mailer.html.erb
+  Rendering tests_mailer/completed_test.html.erb within layouts/mailer
+  Rendered tests_mailer/completed_test.html.erb within layouts/mailer (Duration: 0.8ms | Allocations: 60)
+  Rendered layout layouts/mailer.html.erb (Duration: 1.4ms | Allocations: 145)
+  Rendering layout layouts/mailer.text.erb
+  Rendering tests_mailer/completed_test.text.erb within layouts/mailer
+  Rendered tests_mailer/completed_test.text.erb within layouts/mailer (Duration: 0.2ms | Allocations: 42)
+  Rendered layout layouts/mailer.text.erb (Duration: 0.9ms | Allocations: 127)
+TestsMailer#completed_test: processed outbound mail in 16.7ms
+Delivered mail 6628be0c62ebf_1a7b4538827a8@ubuntu.mail (60.0ms)
+Date: Wed, 24 Apr 2024 01:08:44 -0700
+From: "TestGuru <guru@mail.com"
+To: admin@admin.com
+Message-ID: <6628be0c62ebf_1a7b4538827a8@ubuntu.mail>
+Subject: U just completed the TestGuru test!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6628be0c617d2_1a7b45388267e";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_6628be0c617d2_1a7b45388267e
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hooray!
+==============
+
+Congratulations! You completed the  <b>mytnrtbr</b> test. Why not to finish http://localhost:3000/tests?
+
+----==_mimepart_6628be0c617d2_1a7b45388267e
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style>
+     .mailbox{
+      border: 3px solid #3c85e0;
+      padding: 10px;
+      border-radius: 5px;
+      width: 70%;
+      margin:  0 auto;
+      margin-top: 25px;
+     }
+    </style>
+  </head>
+
+  <body>
+    <div class="mailbox">
+    <h1> Hooray! </h1>
+<p>
+  Congratulations! You completed the <b>mytnrtbr</b> test. Why not to finish <a href="http://localhost:3000/tests">more</a>?
+</p>
+  </div>
+  </body>
+</html>
+
+----==_mimepart_6628be0c617d2_1a7b45388267e--
+
+Redirected to http://localhost:3000/test_passages/16/result?lang=ru
+Completed 302 Found in 136ms (ActiveRecord: 7.7ms | Allocations: 42938)
+
+
+Started GET "/test_passages/16/result?lang=ru" for 127.0.0.1 at 2024-04-24 01:08:44 -0700
+Processing by TestPassagesController#result as HTML
+  Parameters: {"lang"=>"ru", "id"=>"16"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.1ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/result.html.erb within layouts/application
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/test_passages/result.html.erb:1
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/models/test_passage.rb:25:in `score'
+  [1m[36mCACHE Question Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/models/test_passage.rb:25:in `score'
+  Rendered test_passages/result.html.erb within layouts/application (Duration: 31.3ms | Allocations: 2318)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered shared/_menu.html.erb (Duration: 0.3ms | Allocations: 76)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 64.9ms | Allocations: 6416)
+Completed 200 OK in 87ms (Views: 65.8ms | ActiveRecord: 0.8ms | Allocations: 8495)
+
+
+Started DELETE "/gurus/logout?lang=ru" for 127.0.0.1 at 2024-04-24 01:27:06 -0700
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "lang"=>"ru"}
+  [1m[36mUser Load (20.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/?lang=ru
+Completed 303 See Other in 121ms (ActiveRecord: 24.5ms | Allocations: 20592)
+
+
+Started GET "/?lang=ru" for 127.0.0.1 at 2024-04-24 01:27:06 -0700
+Processing by TestsController#index as HTML
+  Parameters: {"lang"=>"ru"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 566)
+
+
+Started GET "/gurus/login" for 127.0.0.1 at 2024-04-24 01:27:06 -0700
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 3.8ms | Allocations: 689)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 19.9ms | Allocations: 2204)
+  Rendered shared/_header.html.erb (Duration: 1.2ms | Allocations: 165)
+  Rendered shared/_menu.html.erb (Duration: 3.2ms | Allocations: 381)
+  Rendered shared/_flash.html.erb (Duration: 1.2ms | Allocations: 178)
+  Rendered shared/_footer.html.erb (Duration: 4.2ms | Allocations: 232)
+  Rendered layout layouts/application.html.erb (Duration: 110.9ms | Allocations: 21703)
+Completed 200 OK in 132ms (Views: 123.4ms | ActiveRecord: 0.0ms | Allocations: 23638)
+
+
+Started POST "/gurus/login?lang=ru" for 127.0.0.1 at 2024-04-24 01:27:09 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Enter", "lang"=>"ru"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 581)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Enter", "lang"=>"ru"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 203)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.7ms | Allocations: 1022)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 45)
+  Rendered shared/_menu.html.erb (Duration: 0.5ms | Allocations: 125)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 23)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 5158)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 0.0ms | Allocations: 5767)
+
+
+Started GET "/gurus/sign_up?lang=ru" for 127.0.0.1 at 2024-04-24 01:27:15 -0700
+Processing by Devise::RegistrationsController#new as HTML
+  Parameters: {"lang"=>"ru"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.1ms | Allocations: 244)
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 157)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 15.8ms | Allocations: 2383)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 46)
+  Rendered shared/_menu.html.erb (Duration: 0.5ms | Allocations: 146)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.6ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 41.0ms | Allocations: 6735)
+Completed 200 OK in 52ms (Views: 46.4ms | ActiveRecord: 0.0ms | Allocations: 7924)
+
+
+Started POST "/gurus?lang=ru" for 127.0.0.1 at 2024-04-24 01:27:17 -0700
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "lang"=>"ru"}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (7.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering layout layouts/application.html.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 3.6ms | Allocations: 1005)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 159)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 45.2ms | Allocations: 3559)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 50)
+  Rendered shared/_menu.html.erb (Duration: 0.6ms | Allocations: 145)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered shared/_footer.html.erb (Duration: 0.4ms | Allocations: 56)
+  Rendered layout layouts/application.html.erb (Duration: 63.3ms | Allocations: 7844)
+Completed 422 Unprocessable Entity in 94ms (Views: 64.8ms | ActiveRecord: 8.1ms | Allocations: 13592)
+
+
+Started GET "/gurus/login?lang=ru" for 127.0.0.1 at 2024-04-24 01:27:31 -0700
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"lang"=>"ru"}
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 203)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 1035)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | Allocations: 45)
+  Rendered shared/_menu.html.erb (Duration: 0.7ms | Allocations: 141)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 5184)
+Completed 200 OK in 31ms (Views: 26.5ms | ActiveRecord: 0.0ms | Allocations: 5903)
+
+
+Started POST "/gurus/login?lang=ru" for 127.0.0.1 at 2024-04-24 01:27:35 -0700
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Enter", "lang"=>"ru"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "admin@admin.com"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Update (3.6ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2024-04-24 08:27:36.124894"], ["sign_in_count", 10], ["current_sign_in_at", "2024-04-24 08:27:36.123346"], ["last_sign_in_at", "2024-04-24 06:24:55.483817"], ["id", 1]]
+  [1m[36mTRANSACTION (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/admin/tests?lang=ru
+Completed 303 See Other in 347ms (ActiveRecord: 6.3ms | Allocations: 6164)
+
+
+Started GET "/admin/tests?lang=ru" for 127.0.0.1 at 2024-04-24 01:27:36 -0700
+Processing by Admin::TestsController#index as HTML
+  Parameters: {"lang"=>"ru"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/tests/index.html.erb within layouts/admin
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" ORDER BY "tests"."title" ASC[0m
+  ↳ app/views/admin/tests/index.html.erb:17
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 10]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 9]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 11]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 8]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  Rendered collection of admin/tests/_test.html.erb [11 times] (Duration: 84.5ms | Allocations: 14460)
+  Rendered admin/tests/index.html.erb within layouts/admin (Duration: 114.3ms | Allocations: 21188)
+  Rendered admin/_nav.html.erb (Duration: 1.1ms | Allocations: 217)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 42)
+  Rendered layout layouts/admin.html.erb (Duration: 123.6ms | Allocations: 23292)
+Completed 200 OK in 161ms (Views: 125.7ms | ActiveRecord: 4.9ms | Allocations: 33318)
+
+
+Started GET "/admin/tests/4?lang=ru" for 127.0.0.1 at 2024-04-24 01:27:38 -0700
+Processing by Admin::TestsController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admin/tests_controller.rb:54:in `find_test'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/tests/show.html.erb within layouts/admin
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/admin/tests/show.html.erb:28
+  Rendered collection of templates [0 times] (Duration: 0.1ms | Allocations: 16)
+  Rendered admin/tests/show.html.erb within layouts/admin (Duration: 13.8ms | Allocations: 1359)
+  Rendered admin/_nav.html.erb (Duration: 0.3ms | Allocations: 65)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/admin.html.erb (Duration: 19.1ms | Allocations: 2752)
+Completed 200 OK in 39ms (Views: 22.2ms | ActiveRecord: 0.8ms | Allocations: 5506)
+
+
+Started GET "/admin/tests/4/questions/new?lang=ru" for 127.0.0.1 at 2024-04-24 01:27:41 -0700
+Processing by Admin::QuestionsController#new as HTML
+  Parameters: {"lang"=>"ru", "test_id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admin/questions_controller.rb:59:in `find_test'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/questions/new.html.erb within layouts/admin
+  Rendered shared/_errors.html.erb (Duration: 2.1ms | Allocations: 237)
+  Rendered admin/questions/_form.html.erb (Duration: 8.0ms | Allocations: 1242)
+  Rendered admin/questions/new.html.erb within layouts/admin (Duration: 12.0ms | Allocations: 1590)
+  Rendered admin/_nav.html.erb (Duration: 0.3ms | Allocations: 65)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 26)
+  Rendered layout layouts/admin.html.erb (Duration: 18.0ms | Allocations: 3074)
+Completed 200 OK in 33ms (Views: 20.0ms | ActiveRecord: 0.2ms | Allocations: 8296)
+
+
+Started POST "/admin/tests/4/questions?lang=ru" for 127.0.0.1 at 2024-04-24 01:27:43 -0700
+Processing by Admin::QuestionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "question"=>{"body"=>""}, "commit"=>"Create Question", "lang"=>"ru", "test_id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admin/questions_controller.rb:59:in `find_test'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/questions/new.html.erb within layouts/admin
+  Rendered shared/_errors.html.erb (Duration: 1.0ms | Allocations: 325)
+  Rendered admin/questions/_form.html.erb (Duration: 11.1ms | Allocations: 1169)
+  Rendered admin/questions/new.html.erb within layouts/admin (Duration: 12.2ms | Allocations: 1295)
+  Rendered admin/_nav.html.erb (Duration: 0.6ms | Allocations: 70)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/admin.html.erb (Duration: 22.4ms | Allocations: 2727)
+Completed 200 OK in 42ms (Views: 23.5ms | ActiveRecord: 0.3ms | Allocations: 6649)
+
+
+Started GET "/admin/tests/4?lang=ru" for 127.0.0.1 at 2024-04-24 01:27:47 -0700
+Processing by Admin::TestsController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"4"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admin/tests_controller.rb:54:in `find_test'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/tests/show.html.erb within layouts/admin
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/admin/tests/show.html.erb:28
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 14)
+  Rendered admin/tests/show.html.erb within layouts/admin (Duration: 5.2ms | Allocations: 994)
+  Rendered admin/_nav.html.erb (Duration: 0.5ms | Allocations: 65)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/admin.html.erb (Duration: 17.9ms | Allocations: 2386)
+Completed 200 OK in 35ms (Views: 19.2ms | ActiveRecord: 0.4ms | Allocations: 4866)
+
+
+Started GET "/admin/tests?lang=ru" for 127.0.0.1 at 2024-04-24 01:28:00 -0700
+Processing by Admin::TestsController#index as HTML
+  Parameters: {"lang"=>"ru"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/tests/index.html.erb within layouts/admin
+  [1m[36mTest Load (0.6ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" ORDER BY "tests"."title" ASC[0m
+  ↳ app/views/admin/tests/index.html.erb:17
+  [1m[36mQuestion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 10]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 9]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 11]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 8]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  Rendered collection of admin/tests/_test.html.erb [11 times] (Duration: 77.5ms | Allocations: 14819)
+  Rendered admin/tests/index.html.erb within layouts/admin (Duration: 108.9ms | Allocations: 23027)
+  Rendered admin/_nav.html.erb (Duration: 1.1ms | Allocations: 217)
+  Rendered shared/_flash.html.erb (Duration: 0.9ms | Allocations: 164)
+  Rendered layout layouts/admin.html.erb (Duration: 120.6ms | Allocations: 25314)
+Completed 200 OK in 518ms (Views: 119.5ms | ActiveRecord: 10.4ms | Allocations: 54919)
+
+
+Started GET "/admin/tests/new?lang=ru" for 127.0.0.1 at 2024-04-24 01:28:02 -0700
+Processing by Admin::TestsController#new as HTML
+  Parameters: {"lang"=>"ru"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/tests/new.html.erb within layouts/admin
+  Rendered shared/_errors.html.erb (Duration: 1.0ms | Allocations: 234)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/tests/_form.html.erb:15
+  Rendered admin/tests/_form.html.erb (Duration: 22.1ms | Allocations: 4398)
+  Rendered admin/tests/new.html.erb within layouts/admin (Duration: 25.8ms | Allocations: 4689)
+  Rendered admin/_nav.html.erb (Duration: 0.3ms | Allocations: 64)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/admin.html.erb (Duration: 34.1ms | Allocations: 6068)
+Completed 200 OK in 48ms (Views: 35.3ms | ActiveRecord: 0.7ms | Allocations: 8014)
+
+
+Started POST "/admin/tests?lang=ru" for 127.0.0.1 at 2024-04-24 01:28:04 -0700
+Processing by Admin::TestsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "test"=>{"title"=>"", "level"=>"0", "category_id"=>"", "author"=>"Inga"}, "commit"=>"Создать Тест", "lang"=>"ru"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :author. Context: { controller: Admin::TestsController, action: create, request: #<ActionDispatch::Request:0x00007f39c09d7ed8>, params: {"authenticity_token"=>"[FILTERED]", "test"=>{"title"=>"", "level"=>"0", "category_id"=>"", "author"=>"Inga"}, "commit"=>"Создать Тест", "lang"=>"ru", "controller"=>"admin/tests", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/tests_controller.rb:21:in `create'
+  [1m[36mTest Exists? (4.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tests" WHERE "tests"."title" = ? AND "tests"."level" = ? LIMIT ?[0m  [["title", ""], ["level", 0], ["LIMIT", 1]]
+  ↳ app/controllers/admin/tests_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/admin/tests_controller.rb:21:in `create'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/tests/new.html.erb within layouts/admin
+  Rendered shared/_errors.html.erb (Duration: 4.1ms | Allocations: 617)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/tests/_form.html.erb:15
+  Rendered admin/tests/_form.html.erb (Duration: 17.3ms | Allocations: 2376)
+  Rendered admin/tests/new.html.erb within layouts/admin (Duration: 18.1ms | Allocations: 2488)
+  Rendered admin/_nav.html.erb (Duration: 0.3ms | Allocations: 69)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/admin.html.erb (Duration: 23.9ms | Allocations: 3919)
+Completed 200 OK in 71ms (Views: 25.0ms | ActiveRecord: 4.8ms | Allocations: 9530)
+
+
+Started POST "/admin/tests?lang=ru" for 127.0.0.1 at 2024-04-24 01:28:25 -0700
+Processing by Admin::TestsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "test"=>{"title"=>"", "level"=>"", "category_id"=>"", "author"=>"Inga"}, "commit"=>"Создать Тест", "lang"=>"ru"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :author. Context: { controller: Admin::TestsController, action: create, request: #<ActionDispatch::Request:0x00007f39a03b7618>, params: {"authenticity_token"=>"[FILTERED]", "test"=>{"title"=>"", "level"=>"", "category_id"=>"", "author"=>"Inga"}, "commit"=>"Создать Тест", "lang"=>"ru", "controller"=>"admin/tests", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/tests_controller.rb:21:in `create'
+  [1m[36mTest Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "tests" WHERE "tests"."title" = ? AND "tests"."level" IS NULL LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/admin/tests_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/admin/tests_controller.rb:21:in `create'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/tests/new.html.erb within layouts/admin
+  Rendered shared/_errors.html.erb (Duration: 4.6ms | Allocations: 998)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/tests/_form.html.erb:15
+  Rendered admin/tests/_form.html.erb (Duration: 17.2ms | Allocations: 3313)
+  Rendered admin/tests/new.html.erb within layouts/admin (Duration: 17.9ms | Allocations: 3425)
+  Rendered admin/_nav.html.erb (Duration: 0.3ms | Allocations: 69)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 22)
+  Rendered layout layouts/admin.html.erb (Duration: 24.2ms | Allocations: 4856)
+Completed 200 OK in 51ms (Views: 25.6ms | ActiveRecord: 2.8ms | Allocations: 9939)
+
+
+Started POST "/admin/tests?lang=ru" for 127.0.0.1 at 2024-04-24 01:28:50 -0700
+Processing by Admin::TestsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "test"=>{"title"=>"", "level"=>"", "category_id"=>"", "author"=>"Inga"}, "commit"=>"Создать Тест", "lang"=>"ru"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :author. Context: { controller: Admin::TestsController, action: create, request: #<ActionDispatch::Request:0x00007f39bcc10c08>, params: {"authenticity_token"=>"[FILTERED]", "test"=>{"title"=>"", "level"=>"", "category_id"=>"", "author"=>"Inga"}, "commit"=>"Создать Тест", "lang"=>"ru", "controller"=>"admin/tests", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/admin/tests_controller.rb:21:in `create'
+  [1m[36mTest Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "tests" WHERE "tests"."title" = ? AND "tests"."level" IS NULL LIMIT ?[0m  [["title", ""], ["LIMIT", 1]]
+  ↳ app/controllers/admin/tests_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/admin/tests_controller.rb:21:in `create'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/tests/new.html.erb within layouts/admin
+  Rendered shared/_errors.html.erb (Duration: 10.9ms | Allocations: 2291)
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/tests/_form.html.erb:15
+  Rendered admin/tests/_form.html.erb (Duration: 41.2ms | Allocations: 7490)
+  Rendered admin/tests/new.html.erb within layouts/admin (Duration: 44.9ms | Allocations: 7838)
+  Rendered admin/_nav.html.erb (Duration: 1.4ms | Allocations: 216)
+  Rendered shared/_flash.html.erb (Duration: 1.9ms | Allocations: 163)
+  Rendered layout layouts/admin.html.erb (Duration: 57.9ms | Allocations: 10033)
+Completed 200 OK in 213ms (Views: 60.3ms | ActiveRecord: 14.3ms | Allocations: 49258)
+
+
+Started GET "/admin/tests?lang=ru" for 127.0.0.1 at 2024-04-24 01:38:49 -0700
+Processing by Admin::TestsController#index as HTML
+  Parameters: {"lang"=>"ru"}
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/tests/index.html.erb within layouts/admin
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" ORDER BY "tests"."title" ASC[0m
+  ↳ app/views/admin/tests/index.html.erb:17
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 10]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 9]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 11]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 8]]
+  ↳ app/views/admin/tests/_test.html.erb:4
+  Rendered collection of admin/tests/_test.html.erb [11 times] (Duration: 97.8ms | Allocations: 14815)
+  Rendered admin/tests/index.html.erb within layouts/admin (Duration: 145.8ms | Allocations: 22665)
+  Rendered admin/_nav.html.erb (Duration: 1.0ms | Allocations: 217)
+  Rendered shared/_flash.html.erb (Duration: 2.4ms | Allocations: 164)
+  Rendered layout layouts/admin.html.erb (Duration: 162.2ms | Allocations: 24942)
+Completed 200 OK in 304ms (Views: 161.5ms | ActiveRecord: 10.4ms | Allocations: 53190)
+
+
+Started GET "/" for 127.0.0.1 at 2024-04-24 01:38:55 -0700
+Processing by TestsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" ORDER BY "tests"."title" ASC[0m
+  ↳ app/views/tests/index.html.erb:19
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 10]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 9]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 11]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 8]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [11 times] (Duration: 63.6ms | Allocations: 9943)
+  Rendered tests/index.html.erb within layouts/application (Duration: 77.0ms | Allocations: 11384)
+  Rendered shared/_header.html.erb (Duration: 0.7ms | Allocations: 157)
+  Rendered shared/_menu.html.erb (Duration: 1.9ms | Allocations: 291)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 1.1ms | Allocations: 227)
+  Rendered layout layouts/application.html.erb (Duration: 166.9ms | Allocations: 30570)
+Completed 200 OK in 186ms (Views: 170.3ms | ActiveRecord: 3.8ms | Allocations: 32930)
+
+
+Started POST "/tests/3/start?lang=ru" for 127.0.0.1 at 2024-04-24 01:38:59 -0700
+Processing by TestsController#start as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "lang"=>"ru", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:19:in `find_test'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/tests_controller.rb:12:in `start'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["test_id", 3], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:35:in `before_validation_set_first_question'
+  [1m[36mTestPassage Create (0.3ms)[0m  [1m[32mINSERT INTO "test_passages" ("user_id", "test_id", "current_question_id", "correct_question", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 1], ["test_id", 3], ["current_question_id", 16], ["correct_question", 0], ["created_at", "2024-04-24 08:38:59.973261"], ["updated_at", "2024-04-24 08:38:59.973261"]]
+  ↳ app/controllers/tests_controller.rb:12:in `start'
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tests_controller.rb:12:in `start'
+  [1m[36mTestPassage Load (0.7ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."user_id" = ? AND "test_passages"."test_id" = ? ORDER BY "test_passages"."id" DESC LIMIT ?[0m  [["user_id", 1], ["test_id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19:in `test_passage'
+Redirected to http://localhost:3000/test_passages/17?lang=ru
+Completed 302 Found in 187ms (ActiveRecord: 15.5ms | Allocations: 21338)
+
+
+Started GET "/test_passages/17?lang=ru" for 127.0.0.1 at 2024-04-24 01:39:00 -0700
+Processing by TestPassagesController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"17"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (2.3ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/show.html.erb within layouts/application
+  [1m[36mTest Load (0.7ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:1
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:4
+  [1m[36mAnswer Load (0.3ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 16]]
+  ↳ app/views/test_passages/show.html.erb:8
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ? AND (id <= 16)[0m  [["test_id", 3]]
+  ↳ app/models/test_passage.rb:10:in `current_question_number'
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/test_passages/show.html.erb:17
+  Rendered test_passages/show.html.erb within layouts/application (Duration: 150.3ms | Allocations: 13853)
+  Rendered shared/_header.html.erb (Duration: 1.7ms | Allocations: 59)
+  Rendered shared/_menu.html.erb (Duration: 0.4ms | Allocations: 80)
+  Rendered shared/_flash.html.erb (Duration: 0.3ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 1.0ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 195.3ms | Allocations: 18105)
+Completed 200 OK in 230ms (Views: 190.4ms | ActiveRecord: 11.2ms | Allocations: 21494)
+
+
+Started PUT "/test_passages/17?lang=ru" for 127.0.0.1 at 2024-04-24 01:39:04 -0700
+Processing by TestPassagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "answer_ids"=>["9"], "commit"=>"Next", "lang"=>"ru", "id"=>"17"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.2ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  [1m[36mQuestion Load (1.7ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:50:in `correct_answers'
+  [1m[36mAnswer Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ?[0m  [["question_id", 16], ["correct", 1]]
+  ↳ app/models/test_passage.rb:43:in `correct_answer?'
+  [1m[36mAnswer Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ? AND "answers"."id" = ?[0m  [["question_id", 16], ["correct", 1], ["id", 9]]
+  ↳ app/models/test_passage.rb:45:in `correct_answer?'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTest Load (5.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ? AND (id > 16) ORDER BY "questions"."id" ASC LIMIT ?[0m  [["test_id", 3], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTestPassage Update (0.2ms)[0m  [1m[33mUPDATE "test_passages" SET "current_question_id" = ?, "updated_at" = ? WHERE "test_passages"."id" = ?[0m  [["current_question_id", nil], ["updated_at", "2024-04-24 08:39:04.789749"], ["id", 17]]
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/mailers/tests_mailer.rb:4:in `completed_test'
+  Rendering layout layouts/mailer.html.erb
+  Rendering tests_mailer/completed_test.ru.html.erb within layouts/mailer
+  Rendered tests_mailer/completed_test.ru.html.erb within layouts/mailer (Duration: 1.3ms | Allocations: 276)
+  Rendered layout layouts/mailer.html.erb (Duration: 4.2ms | Allocations: 542)
+  Rendering layout layouts/mailer.text.erb
+  Rendering tests_mailer/completed_test.ru.text.erb within layouts/mailer
+  Rendered tests_mailer/completed_test.ru.text.erb within layouts/mailer (Duration: 0.7ms | Allocations: 169)
+  Rendered layout layouts/mailer.text.erb (Duration: 4.9ms | Allocations: 357)
+TestsMailer#completed_test: processed outbound mail in 57.6ms
+Delivered mail 6628c528d9b58_1a7b4574829cd@ubuntu.mail (153.9ms)
+Date: Wed, 24 Apr 2024 01:39:04 -0700
+From: "TestGuru <guru@mail.com"
+To: admin@admin.com
+Message-ID: <6628c528d9b58_1a7b4574829cd@ubuntu.mail>
+Subject: =?UTF-8?Q?=D0=92=D1=8B_=D1=83=D1=81=D0=BF=D0=B5=D1=88=D0=BD=D0=BE?=
+ =?UTF-8?Q?_=D0=B7=D0=B0=D0=B2=D0=B5=D1=80=D1=88=D0=B8=D0=BB=D0=B8?=
+ =?UTF-8?Q?_=D1=82=D0=B5=D1=81=D1=82_=D0=BD=D0=B0_TestGuru!?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6628c528d279d_1a7b457482899";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_6628c528d279d_1a7b457482899
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+0KPRgNCwIQ0KPT09PT09PT09PT09PT0NCg0K0J/QvtC30LTRgNCw0LLQu9GP
+0Y4hINCS0Ysg0LLRi9C/0L7Qu9C90LjQu9C4ICA8Yj5kcnlmdHlndWtsPC9i
+PiDRgtC10YHRgi4g0J/QvtGH0LXQvNGDINCx0Ysg0L3QtSDQt9Cw0LrQvtC9
+0YfQuNGC0YwgaHR0cDovL2xvY2FsaG9zdDozMDAwL3Rlc3RzPw0K
+
+----==_mimepart_6628c528d279d_1a7b457482899
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiPg0KICAgIDxzdHlsZT4NCiAgICAgLm1haWxib3h7
+DQogICAgICBib3JkZXI6IDNweCBzb2xpZCAjM2M4NWUwOw0KICAgICAgcGFk
+ZGluZzogMTBweDsNCiAgICAgIGJvcmRlci1yYWRpdXM6IDVweDsNCiAgICAg
+IHdpZHRoOiA3MCU7DQogICAgICBtYXJnaW46ICAwIGF1dG87DQogICAgICBt
+YXJnaW4tdG9wOiAyNXB4Ow0KICAgICB9DQogICAgPC9zdHlsZT4NCiAgPC9o
+ZWFkPg0KDQogIDxib2R5Pg0KICAgIDxkaXYgY2xhc3M9Im1haWxib3giPg0K
+ICAgIDxoMT4g0KPRgNCwISA8L2gxPg0KPHA+DQogINCf0L7Qt9C00YDQsNCy
+0LvRj9GOISDQktGLINCy0YvQv9C+0LvQvdC40LvQuDxiPmRyeWZ0eWd1a2w8
+L2I+INGC0LXRgdGCLiDQn9C+0YfQtdC80YMg0LHRiyDQvdC1INC30LDQutC+
+0L3Rh9C40YLRjCA8YSBocmVmPSJodHRwOi8vbG9jYWxob3N0OjMwMDAvdGVz
+dHMiPtC10YnQtTwvYT4/DQo8L3A+DQogIDwvZGl2Pg0KICA8L2JvZHk+DQo8
+L2h0bWw+DQo=
+
+----==_mimepart_6628c528d279d_1a7b457482899--
+
+Redirected to http://localhost:3000/test_passages/17/result?lang=ru
+Completed 302 Found in 312ms (ActiveRecord: 9.2ms | Allocations: 49906)
+
+
+Started GET "/test_passages/17/result?lang=ru" for 127.0.0.1 at 2024-04-24 01:39:05 -0700
+Processing by TestPassagesController#result as HTML
+  Parameters: {"lang"=>"ru", "id"=>"17"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.1ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/result.html.erb within layouts/application
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/test_passages/result.html.erb:1
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/models/test_passage.rb:25:in `score'
+  [1m[36mCACHE Question Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/models/test_passage.rb:25:in `score'
+  Rendered test_passages/result.html.erb within layouts/application (Duration: 24.5ms | Allocations: 2627)
+  Rendered shared/_header.html.erb (Duration: 0.8ms | Allocations: 44)
+  Rendered shared/_menu.html.erb (Duration: 0.3ms | Allocations: 77)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 67)
+  Rendered layout layouts/application.html.erb (Duration: 56.5ms | Allocations: 6863)
+Completed 200 OK in 102ms (Views: 57.1ms | ActiveRecord: 0.6ms | Allocations: 9262)
+
+
+Started GET "/test_passages/17/result?lang=ru" for 127.0.0.1 at 2024-04-24 01:39:43 -0700
+Processing by TestPassagesController#result as HTML
+  Parameters: {"lang"=>"ru", "id"=>"17"}
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.4ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/result.html.erb within layouts/application
+  [1m[36mTest Load (0.6ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/test_passages/result.html.erb:1
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/models/test_passage.rb:25:in `score'
+  [1m[36mCACHE Question Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/models/test_passage.rb:25:in `score'
+  Rendered test_passages/result.html.erb within layouts/application (Duration: 132.1ms | Allocations: 20613)
+  Rendered shared/_header.html.erb (Duration: 0.9ms | Allocations: 159)
+  Rendered shared/_menu.html.erb (Duration: 1.6ms | Allocations: 318)
+  Rendered shared/_flash.html.erb (Duration: 0.9ms | Allocations: 163)
+  Rendered shared/_footer.html.erb (Duration: 0.9ms | Allocations: 232)
+  Rendered layout layouts/application.html.erb (Duration: 206.3ms | Allocations: 40193)
+Completed 200 OK in 346ms (Views: 204.2ms | ActiveRecord: 35.2ms | Allocations: 71741)
+
+
+Started GET "/tests?lang=ru" for 127.0.0.1 at 2024-04-24 01:39:49 -0700
+Processing by TestsController#index as HTML
+  Parameters: {"lang"=>"ru"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering tests/index.html.erb within layouts/application
+  [1m[36mTest Load (0.5ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" ORDER BY "tests"."title" ASC[0m
+  ↳ app/views/tests/index.html.erb:19
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 5]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 6]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (3.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 10]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 9]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 11]]
+  ↳ app/views/tests/_test.html.erb:4
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 8]]
+  ↳ app/views/tests/_test.html.erb:4
+  Rendered collection of tests/_test.html.erb [11 times] (Duration: 56.4ms | Allocations: 9967)
+  Rendered tests/index.html.erb within layouts/application (Duration: 66.1ms | Allocations: 11457)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | Allocations: 44)
+  Rendered shared/_menu.html.erb (Duration: 0.6ms | Allocations: 68)
+  Rendered shared/_flash.html.erb (Duration: 0.7ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 67)
+  Rendered layout layouts/application.html.erb (Duration: 87.9ms | Allocations: 15667)
+Completed 200 OK in 97ms (Views: 85.5ms | ActiveRecord: 3.8ms | Allocations: 17970)
+
+
+Started POST "/tests/3/start?lang=ru" for 127.0.0.1 at 2024-04-24 01:39:52 -0700
+Processing by TestsController#start as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "lang"=>"ru", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/tests_controller.rb:19:in `find_test'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/test_passage.rb:35:in `before_validation_set_first_question'
+  [1m[36mQuestion Load (2.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ? ORDER BY "questions"."id" ASC LIMIT ?[0m  [["test_id", 3], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:35:in `before_validation_set_first_question'
+  [1m[36mTestPassage Create (0.9ms)[0m  [1m[32mINSERT INTO "test_passages" ("user_id", "test_id", "current_question_id", "correct_question", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["user_id", 1], ["test_id", 3], ["current_question_id", 16], ["correct_question", 0], ["created_at", "2024-04-24 08:39:52.233878"], ["updated_at", "2024-04-24 08:39:52.233878"]]
+  ↳ app/controllers/tests_controller.rb:12:in `start'
+  [1m[36mTRANSACTION (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/tests_controller.rb:12:in `start'
+  [1m[36mTestPassage Load (0.6ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."user_id" = ? AND "test_passages"."test_id" = ? ORDER BY "test_passages"."id" DESC LIMIT ?[0m  [["user_id", 1], ["test_id", 3], ["LIMIT", 1]]
+  ↳ app/models/user.rb:19:in `test_passage'
+Redirected to http://localhost:3000/test_passages/18?lang=ru
+Completed 302 Found in 78ms (ActiveRecord: 6.4ms | Allocations: 12830)
+
+
+Started GET "/test_passages/18?lang=ru" for 127.0.0.1 at 2024-04-24 01:39:52 -0700
+Processing by TestPassagesController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.4ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/show.html.erb within layouts/application
+  [1m[36mTest Load (0.1ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:1
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:4
+  [1m[36mAnswer Load (0.2ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 16]]
+  ↳ app/views/test_passages/show.html.erb:8
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ? AND (id <= 16)[0m  [["test_id", 3]]
+  ↳ app/models/test_passage.rb:10:in `current_question_number'
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/test_passages/show.html.erb:17
+  Rendered test_passages/show.html.erb within layouts/application (Duration: 52.4ms | Allocations: 13766)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | Allocations: 59)
+  Rendered shared/_menu.html.erb (Duration: 0.4ms | Allocations: 80)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 72)
+  Rendered layout layouts/application.html.erb (Duration: 71.4ms | Allocations: 18017)
+Completed 200 OK in 92ms (Views: 78.1ms | ActiveRecord: 2.2ms | Allocations: 20181)
+
+
+Started PUT "/test_passages/18?lang=ru" for 127.0.0.1 at 2024-04-24 01:39:54 -0700
+Processing by TestPassagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Next", "lang"=>"ru", "id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.2ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:50:in `correct_answers'
+  [1m[36mAnswer Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ?[0m  [["question_id", 16], ["correct", 1]]
+  ↳ app/models/test_passage.rb:43:in `correct_answer?'
+  [1m[36mAnswer Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ? AND "answers"."id" IS NULL[0m  [["question_id", 16], ["correct", 1]]
+  ↳ app/models/test_passage.rb:45:in `correct_answer?'
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.1ms | Allocations: 4928)
+
+
+  
+NoMethodError (undefined method `count' for nil:NilClass):
+  
+app/models/test_passage.rb:46:in `correct_answer?'
+app/models/test_passage.rb:14:in `accept!'
+app/controllers/test_passages_controller.rb:15:in `update'
+Started GET "/test_passages/18?lang=ru" for 127.0.0.1 at 2024-04-24 01:39:57 -0700
+Processing by TestPassagesController#show as HTML
+  Parameters: {"lang"=>"ru", "id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.2ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/show.html.erb within layouts/application
+  [1m[36mTest Load (0.3ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:1
+  [1m[36mQuestion Load (0.1ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/test_passages/show.html.erb:4
+  [1m[36mAnswer Load (0.1ms)[0m  [1m[34mSELECT "answers".* FROM "answers" WHERE "answers"."question_id" = ?[0m  [["question_id", 16]]
+  ↳ app/views/test_passages/show.html.erb:8
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ? AND (id <= 16)[0m  [["test_id", 3]]
+  ↳ app/models/test_passage.rb:10:in `current_question_number'
+  [1m[36mQuestion Count (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/test_passages/show.html.erb:17
+  Rendered test_passages/show.html.erb within layouts/application (Duration: 31.0ms | Allocations: 5527)
+  Rendered shared/_header.html.erb (Duration: 0.6ms | Allocations: 44)
+  Rendered shared/_menu.html.erb (Duration: 0.5ms | Allocations: 76)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered shared/_footer.html.erb (Duration: 0.2ms | Allocations: 51)
+  Rendered layout layouts/application.html.erb (Duration: 47.8ms | Allocations: 9611)
+Completed 200 OK in 72ms (Views: 46.0ms | ActiveRecord: 3.7ms | Allocations: 11719)
+
+
+Started PUT "/test_passages/18?lang=ru" for 127.0.0.1 at 2024-04-24 01:40:01 -0700
+Processing by TestPassagesController#update as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "answer_ids"=>["9"], "commit"=>"Next", "lang"=>"ru", "id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.1ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:50:in `correct_answers'
+  [1m[36mAnswer Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ?[0m  [["question_id", 16], ["correct", 1]]
+  ↳ app/models/test_passage.rb:43:in `correct_answer?'
+  [1m[36mAnswer Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "answers" WHERE "answers"."question_id" = ? AND "answers"."correct" = ? AND "answers"."id" = ?[0m  [["question_id", 16], ["correct", 1], ["id", 9]]
+  ↳ app/models/test_passage.rb:45:in `correct_answer?'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTest Load (3.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mQuestion Load (0.2ms)[0m  [1m[34mSELECT "questions".* FROM "questions" WHERE "questions"."test_id" = ? AND (id > 16) ORDER BY "questions"."id" ASC LIMIT ?[0m  [["test_id", 3], ["LIMIT", 1]]
+  ↳ app/models/test_passage.rb:54:in `next_question'
+  [1m[36mTestPassage Update (0.4ms)[0m  [1m[33mUPDATE "test_passages" SET "current_question_id" = ?, "updated_at" = ? WHERE "test_passages"."id" = ?[0m  [["current_question_id", nil], ["updated_at", "2024-04-24 08:40:01.972575"], ["id", 18]]
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/models/test_passage.rb:17:in `accept!'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/mailers/tests_mailer.rb:4:in `completed_test'
+  Rendering layout layouts/mailer.html.erb
+  Rendering tests_mailer/completed_test.ru.html.erb within layouts/mailer
+  Rendered tests_mailer/completed_test.ru.html.erb within layouts/mailer (Duration: 3.1ms | Allocations: 267)
+  Rendered layout layouts/mailer.html.erb (Duration: 5.3ms | Allocations: 533)
+  Rendering layout layouts/mailer.text.erb
+  Rendering tests_mailer/completed_test.ru.text.erb within layouts/mailer
+  Rendered tests_mailer/completed_test.ru.text.erb within layouts/mailer (Duration: 1.0ms | Allocations: 170)
+  Rendered layout layouts/mailer.text.erb (Duration: 2.5ms | Allocations: 358)
+TestsMailer#completed_test: processed outbound mail in 31.1ms
+Delivered mail 6628c56258f6_1a7b45608315d@ubuntu.mail (91.5ms)
+Date: Wed, 24 Apr 2024 01:40:02 -0700
+From: "TestGuru <guru@mail.com"
+To: admin@admin.com
+Message-ID: <6628c56258f6_1a7b45608315d@ubuntu.mail>
+Subject: =?UTF-8?Q?=D0=92=D1=8B_=D1=83=D1=81=D0=BF=D0=B5=D1=88=D0=BD=D0=BE?=
+ =?UTF-8?Q?_=D0=B7=D0=B0=D0=B2=D0=B5=D1=80=D1=88=D0=B8=D0=BB=D0=B8?=
+ =?UTF-8?Q?_=D1=82=D0=B5=D1=81=D1=82_=D0=BD=D0=B0_TestGuru!?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_6628c5623f92_1a7b456083081";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_6628c5623f92_1a7b456083081
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+0KPRgNCwIQ0KPT09PT09PT09PT09PT0NCg0K0J/QvtC30LTRgNCw0LLQu9GP
+0Y4hINCS0Ysg0LLRi9C/0L7Qu9C90LjQu9C4ICBkcnlmdHlndWtsINGC0LXR
+gdGCLiDQn9C+0YfQtdC80YMg0LHRiyDQvdC1INC30LDQutC+0L3Rh9C40YLR
+jCBodHRwOi8vbG9jYWxob3N0OjMwMDAvdGVzdHM/DQo=
+
+----==_mimepart_6628c5623f92_1a7b456083081
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PCFET0NUWVBFIGh0bWw+DQo8aHRtbD4NCiAgPGhlYWQ+DQogICAgPG1ldGEg
+aHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7
+IGNoYXJzZXQ9dXRmLTgiPg0KICAgIDxzdHlsZT4NCiAgICAgLm1haWxib3h7
+DQogICAgICBib3JkZXI6IDNweCBzb2xpZCAjM2M4NWUwOw0KICAgICAgcGFk
+ZGluZzogMTBweDsNCiAgICAgIGJvcmRlci1yYWRpdXM6IDVweDsNCiAgICAg
+IHdpZHRoOiA3MCU7DQogICAgICBtYXJnaW46ICAwIGF1dG87DQogICAgICBt
+YXJnaW4tdG9wOiAyNXB4Ow0KICAgICB9DQogICAgPC9zdHlsZT4NCiAgPC9o
+ZWFkPg0KDQogIDxib2R5Pg0KICAgIDxkaXYgY2xhc3M9Im1haWxib3giPg0K
+ICAgIDxoMT4g0KPRgNCwISA8L2gxPg0KPHA+DQogINCf0L7Qt9C00YDQsNCy
+0LvRj9GOISDQktGLINCy0YvQv9C+0LvQvdC40LvQuDxiPmRyeWZ0eWd1a2w8
+L2I+INGC0LXRgdGCLiDQn9C+0YfQtdC80YMg0LHRiyDQvdC1INC30LDQutC+
+0L3Rh9C40YLRjCA8YSBocmVmPSJodHRwOi8vbG9jYWxob3N0OjMwMDAvdGVz
+dHMiPtC10YnQtTwvYT4/DQo8L3A+DQogIDwvZGl2Pg0KICA8L2JvZHk+DQo8
+L2h0bWw+DQo=
+
+----==_mimepart_6628c5623f92_1a7b456083081--
+
+Redirected to http://localhost:3000/test_passages/18/result?lang=ru
+Completed 302 Found in 184ms (ActiveRecord: 5.6ms | Allocations: 49513)
+
+
+Started GET "/test_passages/18/result?lang=ru" for 127.0.0.1 at 2024-04-24 01:40:02 -0700
+Processing by TestPassagesController#result as HTML
+  Parameters: {"lang"=>"ru", "id"=>"18"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTestPassage Load (0.1ms)[0m  [1m[34mSELECT "test_passages".* FROM "test_passages" WHERE "test_passages"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/test_passages_controller.rb:27:in `set_test_passage'
+  Rendering layout layouts/application.html.erb
+  Rendering test_passages/result.html.erb within layouts/application
+  [1m[36mTest Load (0.7ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/test_passages/result.html.erb:1
+  [1m[36mQuestion Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/models/test_passage.rb:25:in `score'
+  [1m[36mCACHE Question Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/models/test_passage.rb:25:in `score'
+  Rendered test_passages/result.html.erb within layouts/application (Duration: 43.4ms | Allocations: 2424)
+  Rendered shared/_header.html.erb (Duration: 1.7ms | Allocations: 44)
+  Rendered shared/_menu.html.erb (Duration: 0.4ms | Allocations: 77)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 25)
+  Rendered shared/_footer.html.erb (Duration: 0.3ms | Allocations: 67)
+  Rendered layout layouts/application.html.erb (Duration: 75.9ms | Allocations: 6715)
+Completed 200 OK in 102ms (Views: 76.9ms | ActiveRecord: 1.2ms | Allocations: 9061)
+
+
