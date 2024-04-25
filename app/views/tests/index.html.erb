@@ -1,19 +1,19 @@
 <div class="test-logo">
-<h1>Tricky Tests</h1>
+<h1><%= t('tests.index.header') %></h1>
 </div>
 
 <% if current_user.admin? %>
   <div class="admin-link">
-  	 <%= link_to "Try Admin mode", admin_tests_path %>
+  	 <%= link_to t('.admin'), admin_tests_path %>
   </div>
 <% end %>
 
 <table>
 	<tr>
-		<th>Title:</th>
-		<th>Level:</th>
-		<th>Questions Count:</th>
-		<th>Actions</th>
+		<th><%= t('.title') %></th>
+		<th><%= t('.level') %></th>
+		<th><%= t('.count') %></th>
+		<th><%= t('.action') %></th>
 	</tr>
 
 	<%= render @tests %>
