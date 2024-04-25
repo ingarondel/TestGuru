@@ -15,6 +15,8 @@ gem 'bootstrap'
 
 gem 'turbolinks'
 
+gem 'webpacker'
+
 gem 'jquery-rails'
 
 gem 'rails-ujs', '~> 0.1.0'
