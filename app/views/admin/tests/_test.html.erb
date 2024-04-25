@@ -4,9 +4,8 @@
 		<td><center><%= test.questions.count %></center></td>
 		<td><%= link_to t('.show'), admin_test_path(test) %> </td>
 		<td><%= link_to t('.edit') , edit_admin_test_path(test) %> </td>
-		<td><%= link_to t('.delete') ,
+		<td><%= button_to t('.delete') ,
             			 admin_test_path(test),
-            			 method: :delete,
-          			     data:   { confirm: t('.confirm') } %>
+            			 method: :delete %>
  		</td>
 </tr>
