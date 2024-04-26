@@ -3,6 +3,9 @@
     <h1><%= @test.title %> <%= t('.header') %></h1>
   </p>
 </center>
+<div class="container col-12 col-md-4 mt-5">
+<div class="form-group">
+<div class="form-control bg-light"> 
 <p>
   <strong><%= t('.level') %></strong>
   <%= @test.level %>
@@ -11,8 +14,12 @@
   <strong><%= t('.category') %></strong>
   <%= @test.category_id %>
 </p>
-<%= link_to t('.edit'), edit_admin_test_path(@test) %>
-<%= link_to t('.back'), admin_tests_path %>
+</div>
+</div>
+<div class="form-group">
+<%= link_to t('.edit'), edit_admin_test_path(@test), class: "btn btn-link text-dark" %>
+<%= link_to t('.back'), admin_tests_path, class: "btn btn-link text-dark" %>
+</div>
 <table>
   <center>
     <h1> <%=t('.list')%> <%= @test.title %></h1>
@@ -22,3 +29,4 @@
   </p>
   <%= render @test.questions %>
 </table>
+</div>

@@ -1,5 +1,8 @@
 <%= form_with model: [:admin, @test], local: true do |form| %>
   <%= render 'shared/errors', resource: @test %>
+  <div class="container col-12 col-md-4 mt-5">
+<div class="form-group">
+<div class="form-control bg-light"> 
   <p>
     <%= form.label :title %>
     <%= form.text_field :title, id: :test_title %>
@@ -19,6 +22,9 @@
     <%= form.label :author %></br>
     <%= form.text_field :author, value: current_user.first_name, readonly: true %>
   </p>
+</div>
+</div>
 
-  <p><%= form.submit %></p>
+  <p><%= form.submit class: "btn btn-success form-control" %></p>
 <% end %>
+</div>

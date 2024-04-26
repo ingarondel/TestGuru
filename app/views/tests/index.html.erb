@@ -1,22 +1,23 @@
-<div class="test-logo">
+
+<div class="test-logo text-center mt-5">
 <h1><%= t('tests.index.header') %></h1>
 </div>
 
-<% if current_user.admin? %>
-  <div class="admin-link">
-  	 <%= link_to t('.admin'), admin_tests_path %>
-  </div>
-<% end %>
+<div class="row">
+	<div class="container col-12 col-md-6 mt-3">
+		<div class="table-responsive">
+	<table class="table table-striped table-hover">
+		<tr>
+			<th scope="col"><%= t('.title') %></th>
+			<th scope="col"><%= t('.level') %></th>
+			<th scope="col"><%= t('.count') %></th>
+			<th scope="col"><%= t('.action') %></th>
+		</tr>
 
-<table>
-	<tr>
-		<th><%= t('.title') %></th>
-		<th><%= t('.level') %></th>
-		<th><%= t('.count') %></th>
-		<th><%= t('.action') %></th>
-	</tr>
+		<%= render @tests %>
 
-	<%= render @tests %>
-
-</table>
+	</table>
+	</div>
+</div>
+</div>
 

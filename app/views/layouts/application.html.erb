@@ -9,9 +9,10 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
- <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
 
@@ -20,8 +21,7 @@
     <%= render 'shared/nav'%>
 
      <div class="container">
-     <%= render partial: 'shared/header' %>
-     <%= render 'shared/menu' %>
+
      <%= render 'shared/flash' %>
     <%= yield %>
        <%= render partial: 'shared/footer' %>

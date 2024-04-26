@@ -1,8 +1,26 @@
-<h1><%= t('.header', title: @test_passage.test.title) %> </h1>
+<h1 class="text-center mt-5"><%= t('.header', title: @test_passage.test.title) %> </h1>
+<div class="container col-12 col-md-4 mt-5">
+<div class="form-group">
+<div class="form-control bg-light"> 
 <% if @test_passage.success? %>
-	<p style = "color: green">Test was passed!</p>
+	<div>
+		<strong class="text-success">
+	Test was passed!</strong></p>
 <% else %>
-	<p style="color: red">Test wasn't passed :( Please try again</p>
+	<div>
+		<strong class="text-danger">
+	Test wasn't passed :( Please try again
+</strong>
+</div>
 <% end %>
-	<p>You scored <%= @test_passage.score %></p>
-<%= link_to 'All tests', tests_path %>
+	<p>
+		<strong>
+		You scored <%= @test_passage.score %>
+	</strong>
+	</p>
+
+</div>
+</div>
+
+<%= link_to 'All tests', tests_path, class: "btn btn-primary form-control" %>
+</div>
