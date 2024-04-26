@@ -1,6 +1,10 @@
-<tr>
-		<td><%= test.title %></td>
-		<td><%= test_level(test) %></td>
-		<td><center><%= test.questions.count %></center></td>
-		<td><%= button_to t('.start'), start_test_path(test) %></td>	
+<tr class="text-center">
+	<td class="align-middle"><%= test.title %></td>
+	<td class="align-middle"><%= test_level(test) %></td>		
+	<td class="align-middle"><%= test.questions.count %></td>
+	 <% if test.questions.count > 0 %>
+	<td><%= button_to t('.start'), start_test_path(test), class: "btn btn-success" %></td>	
+	<% else %>
+		<td><%= button_to t('.start'), start_test_path(test), class: "btn btn-success disabled" %></td>
+	<% end %>	
 </tr>

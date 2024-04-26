@@ -1,8 +1,0 @@
-<div class="nav user">
-    <% if user_signed_in? %>
-    <p>Welcome, <b><%= current_user.email %></b> Guru</p>
-    <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
-    <% else %>
-     <p class="nav user"><%= link_to 'Login', new_user_session_path %> <%= link_to 'Sign in', new_user_registration_path %></p>
-    <% end %>
-  </div>

@@ -43,7 +43,7 @@ class Admin::QuestionsController < Admin::BaseController
 		@question.destroy
 
 		if @question.destroy
-	      redirect_to admin_test_questions_path(@test)
+	      redirect_to admin_test_path @test
 	  	else
 	      render :index
 	  end
