@@ -17,6 +17,10 @@ gem 'turbolinks'
 
 gem 'webpacker'
 
+gem 'faraday'
+
+gem 'octokit'
+
 gem 'jquery-rails'
 
 gem 'rails-ujs', '~> 0.1.0'
@@ -65,6 +69,7 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]  
   gem "byebug"
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -76,11 +81,14 @@ group :development do
   # gem "rack-mini-profiler"
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+   gem "spring"
+   gem 'spring-watcher-listen'
+
 end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem 'webdrivers'
 end

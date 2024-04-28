@@ -20,9 +20,11 @@
 </div>
 
 	<div class="form-group">
+	
 	<p><%= form.submit 'Next', class: "btn btn-success form-control" %></p>
 	</div>
 	<div class="form-group">
+		
 		<p>
 	<strong>Current question:</strong> <%= @test_passage.current_question_number %>
 		</p>
@@ -31,4 +33,10 @@
 		</p>
 	</div>
 <% end %>
+	<p>
+			<%= button_to 'Gist Question' ,
+            			 gist_test_passage_path(@test_passage),
+            			  class: "btn btn-primary",
+            			 method: :post %>
+		</p>
 </div>
