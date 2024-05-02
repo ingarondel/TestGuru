@@ -21,6 +21,7 @@ devise_for :users, path: :gurus, path_names: {sign_in: :login, sign_out: :logout
 namespace :admin do 
   resources :gists
   resources :tests do
+    patch :update_inline, on: :member
         resources :questions, shallow: true do
           resources :answers, shallow: true
         end
