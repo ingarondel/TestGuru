@@ -15,11 +15,13 @@ gem 'bootstrap'
 
 gem 'turbolinks'
 
-gem 'webpacker'
+gem 'webpacker', '~> 5.4'
 
 gem 'faraday'
 
 gem 'octokit'
+
+gem 'octicons_helper'
 
 gem 'jquery-rails'
 
