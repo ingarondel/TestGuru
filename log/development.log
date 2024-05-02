@@ -43621,3 +43621,95 @@ Started GET "/packs/js/application-83f933253db93ec3a755.js" for 127.0.0.1 at 202
   
 ActionController::RoutingError (No route matches [GET] "/packs/js/application-83f933253db93ec3a755.js"):
   
+Started GET "/admin/tests" for 127.0.0.1 at 2024-05-02 08:20:58 -0700
+Processing by Admin::TestsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/tests/index.html.erb within layouts/admin
+  Rendered shared/_errors.html.erb (Duration: 0.2ms | Allocations: 8)
+  [1m[36mTest Load (0.4ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" ORDER BY "tests"."title" ASC[0m
+  ↳ app/views/admin/tests/index.html.erb:26
+  Rendered admin/tests/_form_inline.html.erb (Duration: 2.8ms | Allocations: 290)
+  [1m[36mQuestion Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 4]]
+  ↳ app/views/admin/tests/_test.html.erb:7
+  Rendered admin/tests/_form_inline.html.erb (Duration: 2.3ms | Allocations: 272)
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 1]]
+  ↳ app/views/admin/tests/_test.html.erb:7
+  Rendered admin/tests/_form_inline.html.erb (Duration: 3.7ms | Allocations: 272)
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 7]]
+  ↳ app/views/admin/tests/_test.html.erb:7
+  Rendered admin/tests/_form_inline.html.erb (Duration: 2.8ms | Allocations: 272)
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 3]]
+  ↳ app/views/admin/tests/_test.html.erb:7
+  Rendered admin/tests/_form_inline.html.erb (Duration: 2.2ms | Allocations: 272)
+  [1m[36mQuestion Count (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 2]]
+  ↳ app/views/admin/tests/_test.html.erb:7
+  Rendered admin/tests/_form_inline.html.erb (Duration: 2.0ms | Allocations: 272)
+  [1m[36mQuestion Count (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 12]]
+  ↳ app/views/admin/tests/_test.html.erb:7
+  Rendered admin/tests/_form_inline.html.erb (Duration: 1.3ms | Allocations: 272)
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 11]]
+  ↳ app/views/admin/tests/_test.html.erb:7
+  Rendered admin/tests/_form_inline.html.erb (Duration: 3.0ms | Allocations: 272)
+  [1m[36mQuestion Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "questions" WHERE "questions"."test_id" = ?[0m  [["test_id", 8]]
+  ↳ app/views/admin/tests/_test.html.erb:7
+  Rendered collection of admin/tests/_test.html.erb [8 times] (Duration: 108.4ms | Allocations: 11256)
+  Rendered admin/tests/index.html.erb within layouts/admin (Duration: 119.1ms | Allocations: 12374)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+warning package.json: No license field
+[webpack-cli] Invalid configuration object. Webpack has been initialized using a configuration object that does not match the API schema.
+ - configuration.node should be one of these:
+   false | object { __dirname?, __filename?, global? }
+   -> Include polyfills or mocks for various node stuff.
+   Details:
+    * configuration.node has an unknown property 'dgram'. These properties are valid:
+      object { __dirname?, __filename?, global? }
+      -> Options object for node compatibility features.
+    * configuration.node has an unknown property 'fs'. These properties are valid:
+      object { __dirname?, __filename?, global? }
+      -> Options object for node compatibility features.
+    * configuration.node has an unknown property 'net'. These properties are valid:
+      object { __dirname?, __filename?, global? }
+      -> Options object for node compatibility features.
+    * configuration.node has an unknown property 'tls'. These properties are valid:
+      object { __dirname?, __filename?, global? }
+      -> Options object for node compatibility features.
+    * configuration.node has an unknown property 'child_process'. These properties are valid:
+      object { __dirname?, __filename?, global? }
+      -> Options object for node compatibility features.
+
+  Rendered shared/_nav.html.erb (Duration: 3.1ms | Allocations: 195)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/admin.html.erb (Duration: 9160.2ms | Allocations: 15816)
+Completed 200 OK in 9177ms (Views: 9159.6ms | ActiveRecord: 3.7ms | Allocations: 17675)
+
+
+Started GET "/packs/js/application-83f933253db93ec3a755.js" for 127.0.0.1 at 2024-05-02 08:21:07 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-83f933253db93ec3a755.js"):
+  
+Started GET "/admin/tests/4/edit" for 127.0.0.1 at 2024-05-02 08:21:19 -0700
+Processing by Admin::TestsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTest Load (0.2ms)[0m  [1m[34mSELECT "tests".* FROM "tests" INNER JOIN "categories" ON "categories"."id" = "tests"."category_id" WHERE "tests"."id" = ? ORDER BY "tests"."title" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/admin/tests_controller.rb:67:in `find_test'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/tests/edit.html.erb within layouts/admin
+  Rendered shared/_errors.html.erb (Duration: 0.1ms | Allocations: 13)
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/admin/tests/_form.html.erb:18
+  Rendered admin/tests/_form.html.erb (Duration: 15.2ms | Allocations: 1511)
+  Rendered admin/tests/edit.html.erb within layouts/admin (Duration: 17.1ms | Allocations: 1646)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_nav.html.erb (Duration: 1.5ms | Allocations: 195)
+  Rendered shared/_flash.html.erb (Duration: 0.4ms | Allocations: 20)
+  Rendered layout layouts/admin.html.erb (Duration: 35.2ms | Allocations: 3792)
+Completed 200 OK in 63ms (Views: 37.1ms | ActiveRecord: 0.5ms | Allocations: 6357)
+
+
+Started GET "/packs/js/application-83f933253db93ec3a755.js" for 127.0.0.1 at 2024-05-02 08:21:19 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/packs/js/application-83f933253db93ec3a755.js"):
+  
