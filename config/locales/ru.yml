@@ -121,6 +121,8 @@ ru:
         edit: "Редактировать|"
         delete: "Удалить"
         confirm: "Вы уверены?"
+      form_inline:
+        submit: 'OK'
       form:
         prompt: "Пожалуйста, выберите"
       edit:
