@@ -9,13 +9,11 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+gem "pg"
 
 gem 'bootstrap'
 
 gem 'turbolinks'
-
-gem 'webpacker', '~> 5.4'
 
 gem 'faraday'
 
@@ -67,18 +65,21 @@ gem "bootsnap", require: false
 
 gem 'devise', '~> 4.0'
 
+gem 'letter_opener'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]  
   gem "byebug"
   gem 'dotenv-rails'
+  gem 'dotenv'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
-  gem 'letter_opener'
+  
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
 
