@@ -8,10 +8,8 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
-gem "dotenv-rails"
-
 # Use sqlite3 as the database for Active Record
-gem "pg"
+gem "sqlite3", "~> 1.4"
 
 gem 'bootstrap'
 
@@ -46,14 +44,8 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-gem 'propshaft'
-
-gem 'jsbundling-rails'
-
-gem 'cssbundling-rails'
-
 # Use Redis adapter to run Action Cable in production
- gem "redis", ">= 4.0.1"
+# gem "redis", ">= 4.0.1"
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
@@ -70,7 +62,6 @@ gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-gem "faraday-retry"
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -80,6 +71,7 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]  
   gem "byebug"
+  gem 'dotenv-rails'
 end
 
 group :development do
