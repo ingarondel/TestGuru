@@ -19,6 +19,7 @@ devise_for :users, path: :gurus, path_names: {sign_in: :login, sign_out: :logout
     end
   end
 namespace :admin do 
+  resources :badges
   resources :gists
   resources :tests do
     patch :update_inline, on: :member
