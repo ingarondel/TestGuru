@@ -2327,3 +2327,32 @@ Processing by Admin::BadgesController#index as HTML
 Completed 200 OK in 9ms (Views: 5.3ms | ActiveRecord: 0.6ms | Allocations: 3559)
 
 
+Started GET "/admin/badges/3" for 127.0.0.1 at 2024-05-12 11:03:58 -0700
+Processing by Admin::BadgesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBadge Load (3.4ms)[0m  [1m[34mSELECT "badges".* FROM "badges" WHERE "badges"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/admin/badges_controller.rb:55:in `find_badge'
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/badges/show.html.erb within layouts/admin
+  Rendered admin/badges/show.html.erb within layouts/admin (Duration: 1.4ms | Allocations: 338)
+  Rendered shared/_nav.html.erb (Duration: 1.0ms | Allocations: 199)
+  Rendered shared/_flash.html.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/admin.html.erb (Duration: 4.4ms | Allocations: 885)
+Completed 200 OK in 53ms (Views: 5.9ms | ActiveRecord: 20.2ms | Allocations: 6644)
+
+
+Started GET "/admin/badges" for 127.0.0.1 at 2024-05-12 11:04:00 -0700
+Processing by Admin::BadgesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/admin.html.erb
+  Rendering admin/badges/index.html.erb within layouts/admin
+  [1m[36mBadge Load (0.9ms)[0m  [1m[34mSELECT "badges".* FROM "badges"[0m
+  ↳ app/views/admin/badges/index.html.erb:15
+  Rendered admin/badges/index.html.erb within layouts/admin (Duration: 11.4ms | Allocations: 1306)
+  Rendered shared/_nav.html.erb (Duration: 1.5ms | Allocations: 199)
+  Rendered shared/_flash.html.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/admin.html.erb (Duration: 17.5ms | Allocations: 1853)
+Completed 200 OK in 35ms (Views: 19.2ms | ActiveRecord: 1.7ms | Allocations: 3540)
+
+

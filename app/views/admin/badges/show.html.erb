@@ -1,0 +1,22 @@
+
+<center>
+  <p><h1>
+    <%= @badge.title %> Badge
+  </h1>
+  </p>
+</center>
+  <div class="container col-12 col-md-4 mt-5">
+<div class="form-group">
+<div class="form-control bg-light"> 
+<p>
+  <strong>Rule:</strong>
+  <%= @badge.rule %>
+</p>
+<p>
+  <strong>Img:</strong>
+  <%= @badge.img %>
+</p>
+</div>
+</div>
+  <%= link_to "Edit", edit_admin_badge_path(@badge) %>
+  <%= link_to "Back", admin_badges_path %>
