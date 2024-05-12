@@ -9,13 +9,11 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.2"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
+gem "pg"
 
 gem 'bootstrap'
 
 gem 'turbolinks'
-
-gem 'webpacker', '~> 5.4'
 
 gem 'faraday'
 
@@ -72,6 +70,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]  
   gem "byebug"
   gem 'dotenv-rails'
+  gem 'dotenv'
 end
 
 group :development do
