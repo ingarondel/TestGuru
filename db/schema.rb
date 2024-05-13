@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_12_152147) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_13_192149) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,6 +29,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_12_152147) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "rule", null: false
+    t.index ["title"], name: "index_badges_on_title"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -62,6 +63,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_12_152147) do
     t.integer "correct_question", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "success_passed"
     t.index ["current_question_id"], name: "index_test_passages_on_current_question_id"
     t.index ["test_id"], name: "index_test_passages_on_test_id"
     t.index ["user_id"], name: "index_test_passages_on_user_id"
