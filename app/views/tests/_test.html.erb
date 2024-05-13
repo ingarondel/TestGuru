@@ -1,6 +1,7 @@
 <tr class="text-center">
 	<td class="align-middle"><%= test.title %></td>
-	<td class="align-middle"><%= test_level(test) %></td>		
+	<td class="align-middle"><%= test_level(test) %></td>			
+	<td class="align-middle"><%= test.time %></td>	
 	<td class="align-middle"><%= test.questions.count %></td>
 	 <% if test.questions.count > 0 %>
 	<td><%= button_to t('.start'), start_test_path(test), class: "btn btn-success" %></td>	

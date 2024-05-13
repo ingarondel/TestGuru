@@ -1,6 +1,6 @@
 class Admin::TestsController < Admin::BaseController
  	before_action :set_tests, only: %i[index update_inline]
-	before_action :find_test, only: %i[show edit update destroy start update_inline]
+	before_action :find_test, only: %i[show edit update destroy update_inline]
 	
 	rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_test_not_found
 
@@ -52,11 +52,6 @@ class Admin::TestsController < Admin::BaseController
 	    end
  	 end
 
-	def start
-	    current_user.tests.push(@test)
-	    redirect_to current_user.test_passage(@test)
-	end
-
 	private
 
 	def set_tests
@@ -68,7 +63,7 @@ class Admin::TestsController < Admin::BaseController
 	end
 
 	def test_params
-		params.require(:test).permit(:title, :level, :category_id)
+		params.require(:test).permit(:title, :level, :category_id, :time)
 	end
 
 
