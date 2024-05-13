@@ -3,6 +3,8 @@ devise_for :users, path: :gurus, path_names: {sign_in: :login, sign_out: :logout
  
  root to: 'tests#index'
 
+  resources :user_badges
+  get 'user_badges', to: 'user_badges#index'
   resources :tests, only: :index do
     resources :questions, shallow: true do 
       resources :answers, shallow: true
@@ -19,6 +21,7 @@ devise_for :users, path: :gurus, path_names: {sign_in: :login, sign_out: :logout
     end
   end
 namespace :admin do 
+  resources :badges
   resources :gists
   resources :tests do
     patch :update_inline, on: :member

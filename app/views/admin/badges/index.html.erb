@@ -1,0 +1,36 @@
+<div class="test-logo text-center mt-5">
+<h1>Badges</h1>
+</div>
+
+
+
+
+<div class="row">
+	<div class="container col-12 col-md-6">
+		
+		<p>
+	<%= link_to "Create" , new_admin_badge_path, class: "btn btn-primary form-control" %>
+</p>
+		
+	 <% @badges.each do |badge| %>
+    <div>
+    	<div class="form-group">
+		<div class="form-control bg-light"> 
+      <h3><%= badge.title %></h3>
+     <%= image_tag(badge.img, width: 50, height: 50) %>
+      <b><%= badge.rule %></b>
+      <br>
+      <%= link_to "Show", admin_badge_path(badge) %>
+      <%= link_to "Edit", edit_admin_badge_path(badge) %>
+		<td><%= button_to 'Delete',
+           				 admin_badge_path(badge),
+           				 class: "btn btn-danger",
+           				 method: :delete,
+           				 data:   { confirm: 'Are you sure?' } %>
+    </div>
+	</div>
+	<br>
+	</div>
+  <% end %>
+
+</div>
