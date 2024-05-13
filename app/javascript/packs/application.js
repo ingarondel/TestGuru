@@ -12,6 +12,8 @@ require("utilities/password_confirmation_check")
 require("jquery")
 require ("utilities/form_inline")
 require ("utilities/progress_bar")
+require ("utilities/test_passage_answers_check")
+require ("utilities/timer")
 
 
 

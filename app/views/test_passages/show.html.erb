@@ -6,10 +6,15 @@
 	<h3 class="mb-4">
 
 	<%= render 'progress_bar', test_passage: @test_passage%>
+
 </h3>
 </div
 >
-
+	<% if @test_passage.test.time.present? %>
+  <%= content_tag :div, class: 'timer col-12 col-md-6', data:{time_left: @test_passage.time_left} do %>
+    <h3 class='time'></h3>
+  <% end %>
+  <% end %>
 
 <div class="form-group">
 <h1> <%= @test_passage.current_question.body %></h1>

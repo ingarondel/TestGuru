@@ -40,6 +40,14 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+  def time_up?
+    time_left.negative?
+  end
+
+  def time_left
+    test.time_in_sec - (Time.current - created_at)
+  end
+
   private
 
   def before_validation_set_first_question
