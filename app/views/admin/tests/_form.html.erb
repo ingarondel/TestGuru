@@ -22,6 +22,11 @@
     <%= form.label :author %></br>
     <%= form.text_field :author, value: current_user.first_name, readonly: true %>
   </p>
+
+  <p>
+    <%= form.label :time %></br>
+    <%= form.number_field :time, id: :test_time %>
+  </p>
 </div>
 </div>
 
