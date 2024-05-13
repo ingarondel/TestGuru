@@ -3,6 +3,8 @@ devise_for :users, path: :gurus, path_names: {sign_in: :login, sign_out: :logout
  
  root to: 'tests#index'
 
+  resources :user_badges
+  get 'user_badges', to: 'user_badges#index'
   resources :tests, only: :index do
     resources :questions, shallow: true do 
       resources :answers, shallow: true
