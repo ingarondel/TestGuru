@@ -17,7 +17,7 @@
     	<div class="form-group">
 		<div class="form-control bg-light"> 
       <h3><%= badge.title %></h3>
-      <%= badge.img %>
+     <%= image_tag(badge.img, width: 50, height: 50) %>
       <b><%= badge.rule %></b>
       <br>
       <%= link_to "Show", admin_badge_path(badge) %>
